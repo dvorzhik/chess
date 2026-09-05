@@ -72,6 +72,8 @@
       display: flex;
       gap: 10px;
       list-style: none;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .nav-item-btn {
@@ -143,6 +145,49 @@
 
     .section-img-wrap a:hover img {
       transform: scale(1.02);
+    }
+
+    /* Сетка шагов победы над ботами */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin: 24px 0 35px;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .step-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: contain;
+      background: #ffffff;
+      border-bottom: 1px solid var(--card-border);
+      display: block;
+      padding: 10px;
+    }
+
+    .step-card-text {
+      padding: 14px;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.4;
     }
 
     /* Видео-превью */
@@ -381,13 +426,14 @@
 </head>
 <body>
 
-  <!-- Навигация без логотипа и кнопки Записаться -->
+  <!-- Навигация -->
   <header>
     <div class="container nav-wrap">
       <ul class="nav-links">
         <li><button class="nav-item-btn active" id="btn-nav-home" onclick="switchPage('home')">Главная</button></li>
-        <li><button class="nav-item-btn" id="btn-nav-beginner" onclick="switchPage('beginner')">Как научиться</button></li>
-        <li><button class="nav-item-btn" id="btn-nav-checkmate" onclick="switchPage('checkmate')">Ставить мат</button></li>
+        <li><button class="nav-item-btn" id="btn-nav-beginner" onclick="switchPage('beginner')">Правила игры</button></li>
+        <li><button class="nav-item-btn" id="btn-nav-playchess" onclick="switchPage('playchess')">Побеждаем ботов</button></li>
+        <li><button class="nav-item-btn" id="btn-nav-checkmate" onclick="switchPage('checkmate')">Ставим мат</button></li>
         <li><button class="nav-item-btn" id="btn-nav-photo" onclick="switchPage('photo')">Фотоархив</button></li>
       </ul>
     </div>
@@ -406,7 +452,7 @@
       <!-- Обо мне -->
       <section class="section-block">
         <div class="section-img-wrap">
-          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQV90AH1ULrflRlB-H3bzAmsmaMu-fB2AouKVxxdkdEC3DbGxPB6fSUpNTlewUoIv8VcPe51xCCfukOOoNVNjtvdz2jWDOTy_d7_2nxd973wosnwUBDDHW_4MuJqHhHfR66i1-UK_jp7gYAPPZAcrFt0p-f3Qy9n4Q40nYbTGL6Ak2C7e2A5XQybh3lkiim0VqDT3HrtrpRnfqViSqsQugAhJC1fTqY9wzI8FToLxIw=w1280" alt="Александр Дворжицкий" />
+          <img src="images/dvorzhik_chess.png" alt="Александр Дворжицкий" />
         </div>
         <div class="section-content">
           <h2>Обо мне</h2>
@@ -421,7 +467,7 @@
       <section class="section-block">
         <div class="section-img-wrap">
           <a href="https://wa.me/+972534766343" target="_blank" rel="noopener noreferrer">
-            <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVbAbOnD8--KfGNvdLy8XnbdkkXfGmOYTu0abS_3us6zQQI_xJGOAXpaLmqLhUNSDAn6OwhEhtXsZnEb27IAK0Kiw3RaqiRWRqxR4DPfvrJ_YprzkvQ-5lSIY7wfg-gYmUC4FX_0raZvIant8P1NiKo5bRZaLvu5DsEmzXT-zkHzOlroQSDamL3pnzY6v7EwSV6WfzYRrj3ASp5SNnYxfvihKc3Csjdb1Lou0jpDCU=w1280" alt="Записаться" />
+            <img src="images/Recording.png" alt="Записаться" />
           </a>
         </div>
         <div class="section-content">
@@ -432,30 +478,49 @@
         </div>
       </section>
 
-      <!-- Как научиться играть -->
+      <!-- Правила игры -->
       <section class="section-block">
         <div class="section-img-wrap">
           <a href="javascript:void(0)" onclick="switchPage('beginner')">
-            <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQUUOXQuGbFu0LxCVud5vK-BcrE1vs87afi9nqnuWR4L2xOmtSkSKQGMJapjkmSWo778IpzWPMCqrIvWC3SlSsAgJI0QOKNvffEBvdnikNybn7WVPuPZEAn9D4vNA_jujtcGzcBCXa5Wh-bkkSfbnRhZZOXMMumEsck8xIs1cuKzBbR-scI1eUI9c0p3t0mrP-HKJap9_WWl6Gm9uUXpje2W7agwwvyD9Z-vDd2E=w1280" alt="Как научиться играть" />
+            <img src="images/Learn.png" alt="Правила игры в шахматы" />
           </a>
         </div>
         <div class="section-content">
-          <h2><a href="javascript:void(0)" onclick="switchPage('beginner')" style="color: inherit; text-decoration: none;">Как научиться играть в шахматы?</a></h2>
+          <h2><a href="javascript:void(0)" onclick="switchPage('beginner')" style="color: inherit; text-decoration: none;">Правила игры</a></h2>
           <p>Если вы только мечтаете научиться играть в шахматы — <a href="javascript:void(0)" onclick="switchPage('beginner')">смотрите простые и короткие уроки</a>.</p>
           <p>Если у вас маленький ребенок и он заскучал, глядя на видео выше, покажите ему вот <a href="https://youtube.com/playlist?list=PLaQxUBfXEL3-sCaiPb_nKjXo4CuunTbqU" target="_blank" rel="noopener noreferrer">эти видео</a>!</p>
           <p>А после просмотра уроков — <a href="javascript:void(0)" onclick="switchPage('beginner')">делайте упражнения на компьютере, планшете или смартфоне</a>.</p>
         </div>
       </section>
 
-      <!-- Как поставить мат -->
+      <!-- Побеждаем ботов -->
       <section class="section-block">
         <div class="section-img-wrap">
-          <a href="javascript:void(0)" onclick="switchPage('checkmate')">
-            <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXVxMjuda2lB0bC7eUKfqKowBBzOchHuLEsqHbpc4h4bKqAvvM2GpEbIrJhRwITys8RMRU5xp1hYMtw8tafegDtxAqAXgh0_5fbK0RWjzFTzOT0RFXLsjN3n93M-X9ITK7j7TfBUIURRng7Px_1x7bT3oh5HT2pDDhhfnSgCfemhG3rjnolAd5DgycIwRob8vMxL3GVG9ywSoDamc3YSM9qRzJ537KbUfuruUrFo1s=w1280" alt="Как поставить мат" />
+          <a href="javascript:void(0)" onclick="switchPage('playchess')">
+            <img src="images/play.png" alt="Побеждаем ботов" />
           </a>
         </div>
         <div class="section-content">
-          <h2><a href="javascript:void(0)" onclick="switchPage('checkmate')" style="color: inherit; text-decoration: none;">Как поставить мат одинокому королю?</a></h2>
+          <h2><a href="javascript:void(0)" onclick="switchPage('playchess')" style="color: inherit; text-decoration: none;">Побеждаем ботов</a></h2>
+          <p>Когда вы посмотрели видео и выучили правила игры — пора попробовать сыграть в шахматы.</p>
+          <p>Пошаговое руководство: как запустить приложение, настроить первого бота и выиграть свою дебютную партию на телефоне или компьютере.</p>
+          <div class="play-buttons-group">
+            <button onclick="switchPage('playchess')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
+              Инструкция: играем с ботами →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ставим мат -->
+      <section class="section-block">
+        <div class="section-img-wrap">
+          <a href="javascript:void(0)" onclick="switchPage('checkmate')">
+            <img src="images/checkmate.png" alt="Ставим мат" />
+          </a>
+        </div>
+        <div class="section-content">
+          <h2><a href="javascript:void(0)" onclick="switchPage('checkmate')" style="color: inherit; text-decoration: none;">Ставим мат</a></h2>
           <p>Когда вы освоили правила игры в шахматы и попробовали сыграть свои первые партии, пора осваивать следующие важные уроки!</p>
           <p>Цель игры в шахматы — поставить мат сопернику. <a href="javascript:void(0)" onclick="switchPage('checkmate')">Давайте научимся ставить мат одинокому королю!</a></p>
         </div>
@@ -465,7 +530,7 @@
       <section class="section-block">
         <div class="section-img-wrap">
           <a href="javascript:void(0)" onclick="switchPage('photo')">
-            <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXMsem-9Zo5BLTvBtYIpv9hkxwbVJWXGQFtQTMKDBPN_Yw9D3ctEq_kKHc5pvG0qtZxnTHKY_fzn1ICyBEvGQoxm1P5DYGzMrl1B5R1SURaPGsV_zLADbcNRjmXOqHG7CAfXex0Hma0ieCWoGPOuqcNmnZ5WzVI3sUkXLuR_7lTViiPClT2savlhdgTteOjJnvdwBv4KqFpd9sXTBj86ljS8jYY9tt01ehv52mI=w1280" alt="Фотоархив" />
+            <img src="images/photo.png" alt="Фотоархив" />
           </a>
         </div>
         <div class="section-content">
@@ -477,7 +542,7 @@
       <!-- Играть в шахматы -->
       <section class="section-block">
         <div class="section-img-wrap">
-          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQUuPERiOcqrmQCDvXhrRPut8Ed1782XVsGNeSz4HyrFO-BZtRKe1ur6UzqmMnbV-Yni0QVzTRB8KsgxUs1amwcicsZQmNQAMm-rob3u8OYRfEDeXNf-Cb-WaXCgMM2iyJgNck04x_szYP8GKcjtjlOTwZM1Uz-pjC8vb4CI-7fr0YU79HSTXmpEh0b4nlSnVHwXrrBNZnjN-NkCYuyexpPOJjytWLTDj9mGuRg6IQc=w1280" alt="Играть в шахматы" />
+          <img src="images/play.png" alt="Играть в шахматы" />
         </div>
         <div class="section-content">
           <h2>Играть в шахматы!</h2>
@@ -498,7 +563,7 @@
       <section class="section-block">
         <div class="section-img-wrap">
           <a href="https://forms.gle/FB8wTAi3YVHyffGB7" target="_blank" rel="noopener noreferrer">
-            <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQUPFpJ8HH9aEHDLuAcrZXl_dYclhEKDhauvThnFiAEvZbZ6p-_eUY4-Y_QBVNtDLCtkQzyXPKVqV1pVo2H_M4u-Vjh3ELqtTBjHMV_VETFBaCaxcw9d4aD5_BzGTy7rHPyvkGjJuZNBDsi6OtFOSIE2ovahZQGPBoSpujPqvr3QFGTTner-erSOQl3t3Rx3uI6d_zvqtZmrO_ugAgmHU_Jx5gTavJzmTL5y17NuUaY=w1280" alt="Отзывы" />
+            <img src="images/Write.png" alt="Отзывы" />
           </a>
         </div>
         <div class="section-content">
@@ -518,17 +583,17 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- 2. КАК НАУЧИТЬСЯ ИГРАТЬ (BEGINNER)                       -->
+    <!-- 2. ПРАВИЛА ИГРЫ (BEGINNER)                              -->
     <!-- ======================================================== -->
     <div id="page-beginner" class="page-view">
       <div class="top-title-sec">
-        <h1>Как научиться играть в шахматы</h1>
+        <h1>Правила игры в шахматы</h1>
       </div>
 
       <section class="section-block">
         <div class="section-img-wrap">
           <a href="https://youtube.com/playlist?list=PLqW7MbYb73tlBN1TsPiynflNVpEylE_r7&si=i8flFmEKHzZqDD36" target="_blank" rel="noopener noreferrer">
-            <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQXp5QgE9adjpt-klhhW8Jh5AUTL8M9sTfw4O0pUdTrioitWLheQi9J8R8sHk_TfmclcSsZBEUvrJFDFRb_d65preZwI9GGmHs2RF1BbhLkEkCuljvvnyL2_3WWV5LMgFkcV3YbgPYwKS54NME4jepm48kTnxtmLd5d14vkPGwCjKFjRWKJpXmxeNvlcT475Uh1CSD4d8kW6n9tPOnX2SVaUXe7gLOxhPf7vfFomDis=w1280" alt="Правила шахмат" />
+            <img src="images/Learn.png" alt="Правила шахмат" />
           </a>
         </div>
         <div class="section-content">
@@ -545,7 +610,7 @@
       <section class="section-block">
         <div class="section-img-wrap">
           <a href="https://youtube.com/playlist?list=PLqW7MbYb73tnYXE_8-5_7cSbQZa0TXAyU&si=fi1TCKoArpPQSw8S" target="_blank" rel="noopener noreferrer">
-            <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQU_S6Fo3ZOAE2XFBAYmqdv4rofiH9ywNUuy37nrxkXLdd6apfv4eoj4wsv-6unn8_Tajl67DvMT-LlPWaRr-y8ltNOushuDaQEQHOiIXFP-ZCI1NB1Epx0WYcslKI5mMu1qYTAuqCMKjH3GIdB2c2OHscnvOP4bgyF6dDr1P4Qduxky9rUvErDE5vpUMelGBJB6rwyzHkH6mllj9gnnUXWKPAM3f3RQz9O2jY-dv-Y=w1280" alt="Пора играть" />
+            <img src="images/Learn.png" alt="Пора играть" />
           </a>
         </div>
         <div class="section-content">
@@ -562,7 +627,7 @@
       <section class="section-block">
         <div class="section-img-wrap">
           <a href="https://youtube.com/playlist?list=PLaQxUBfXEL3-sCaiPb_nKjXo4CuunTbqU&si=A_GoNZWR7XBpKNad" target="_blank" rel="noopener noreferrer">
-            <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVy5NTUk0Pv1z36BSDQf00Tw00P_QV6kk3p-_v1z0KRgxuXx8MDqk9_jECZ8MCuSVQOmsjRECpI_S_l6LI5tOMNsgc5fufFS8Zka3HePGk5JhJEOMWWstZQ2WXmV-dMfe8hMM3fvj1QfRxrD_H6u_Xk8bpewmRwIMMjdgULUvQfnfXHkuR5GwFMuKRiXudbxrR_AxrUxoRjtwjJo69PcdT6upNDgQKuslKzggtlnek=w1280" alt="Для самых маленьких" />
+            <img src="images/Learn.png" alt="Для самых маленьких" />
           </a>
         </div>
         <div class="section-content">
@@ -580,7 +645,7 @@
       <section class="section-block">
         <div class="section-img-wrap">
           <a href="https://lichess.org/ru/learn" target="_blank" rel="noopener noreferrer">
-            <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVxqXqH7TVSsqp3yDDMLPKl7iAycWQPYOGFabXEg6rZgfIJXwWX2GiZkra--knim9-D_1usIi9O2_lOigGC9EiicngCxALctUCnHIAO1gvoVCEa3VJJCSiqvCzi94BSfOm2DQICoWlEPMYKaF4hvMYCt7Z_8P94n6oXcME7f7jVarCikPAWuiQKK18sQxzoJziDQnO0NiTXzAXHvn6yUd6QM_v2oeJRkhfYsl1v=w1280" alt="Интерактивный учебник" />
+            <img src="images/play.png" alt="Интерактивный учебник" />
           </a>
         </div>
         <div class="section-content">
@@ -596,7 +661,80 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- 3. УЧИМСЯ СТАВИТЬ МАТ (CHECKMATE)                         -->
+    <!-- 3. ПОБЕЖДАЕМ БОТОВ (PLAYCHESS)                           -->
+    <!-- ======================================================== -->
+    <div id="page-playchess" class="page-view">
+      <div class="top-title-sec">
+        <h1>Как сыграть в шахматы и победить ботов</h1>
+      </div>
+
+      <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; margin-bottom: 25px;">
+        <p style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 10px;">
+          <strong>Сначала установите приложение на смартфон или откройте сайт:</strong>
+        </p>
+        <div class="play-buttons-group">
+          <a href="https://www.chess.com/play/apps" target="_blank" rel="noopener noreferrer" class="play-btn btn-chesscom">
+            📱 Скачать приложение Chess.com
+          </a>
+          <a href="https://www.chess.com/home" target="_blank" rel="noopener noreferrer" class="play-btn btn-lichess">
+            💻 Открыть сайт Chess.com
+          </a>
+        </div>
+      </div>
+
+      <!-- Пошаговые карточки -->
+      <div class="steps-grid">
+        <div class="step-card">
+          <img src="images/Checkmate1.jpg" alt="Шаг 1" />
+          <div class="step-card-text">1. Запустите программу (зарегистрируйтесь, если вы в первый раз)</div>
+        </div>
+
+        <div class="step-card">
+          <img src="images/Checkmate2.jpg" alt="Шаг 2" />
+          <div class="step-card-text">2. Нажмите на главную кнопку «ИГРАТЬ»</div>
+        </div>
+
+        <div class="step-card">
+          <img src="images/Checkmate3.jpg" alt="Шаг 3" />
+          <div class="step-card-text">3. Выберите «ИГРАТЬ С БОТАМИ» (лучше всего для тренировки)</div>
+        </div>
+
+        <div class="step-card">
+          <img src="images/Checkmate4.jpg" alt="Шаг 4" />
+          <div class="step-card-text">4. Выберите самого верхнего левого бота. Нажмите «ПРОТИВНИК»</div>
+        </div>
+
+        <div class="step-card">
+          <img src="images/Checkmate5.jpg" alt="Шаг 5" />
+          <div class="step-card-text">5. Включите режим с 3 коронами и знак «?» (играть и белыми, и черными)</div>
+        </div>
+
+        <div class="step-card">
+          <img src="images/Checkmate6.jpg" alt="Шаг 6" />
+          <div class="step-card-text">6. Сделайте первые ходы, вспоминая пройденные правила!</div>
+        </div>
+
+        <div class="step-card">
+          <img src="images/Checkmate7.jpg" alt="Шаг 7" />
+          <div class="step-card-text">7. Поставьте шах и мат своему первому сопернику!</div>
+        </div>
+
+        <div class="step-card">
+          <img src="images/Checkmate8.jpg" alt="Шаг 8" />
+          <div class="step-card-text">8. Закрепите успех: сыграйте еще одну партию с новым ботом!</div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin: 30px 0;">
+        <h3 style="color: var(--accent); margin-bottom: 16px;">Удачи — у вас всё получится! 🏆</h3>
+        <button onclick="switchPage('home')" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
+          ← Вернуться на главную
+        </button>
+      </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- 4. СТАВИМ МАТ (CHECKMATE)                                -->
     <!-- ======================================================== -->
     <div id="page-checkmate" class="page-view">
       <div class="top-title-sec">
@@ -710,7 +848,7 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- 4. ФОТОАРХИВ (CHESSPHOTO)                                -->
+    <!-- 5. ФОТОАРХИВ (CHESSPHOTO)                                -->
     <!-- ======================================================== -->
     <div id="page-photo" class="page-view">
       <div class="top-title-sec">
@@ -719,7 +857,7 @@
 
       <div class="photo-grid">
         <a href="https://photos.app.goo.gl/26b5LXLq3WtqyZTT7" target="_blank" rel="noopener noreferrer" class="photo-card" style="text-decoration: none;">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczNhIq14qOs3fw7l2X3K2s6-C4XSxBTTY61-m8DtAhuR49MvDDcvVOncPeZkDfKwBVkObuSPhGlatTxhkKBJ_PC_uC56vF1EGeqp5RvBN_xdad46aBC7=w600-h315-p-k" alt="Афула" />
+          <img src="images/photo.png" alt="Афула" />
           <div class="photo-card-info">
             <h3>Афула (командный чемпионат до 14 лет) 📸</h3>
             <span>Aug 16 – 30 • Открыть альбом →</span>
@@ -727,7 +865,7 @@
         </a>
 
         <a href="https://photos.app.goo.gl/GTM4syNTo7t3Capq8" target="_blank" rel="noopener noreferrer" class="photo-card" style="text-decoration: none;">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczPjFA6rNAtAN4dDN2_IG8EnFXrumIClorf86WQCm6EQ0960bVKmpOv0UdclbCBouFZY5gmk5K1xjRDn49qfB4sEX90iCSO_ogXr3rx5pYyy3ackdXrA=w600-h315-p-k" alt="Шахматный сеанс" />
+          <img src="images/photo.png" alt="Шахматный сеанс" />
           <div class="photo-card-info">
             <h3>Шахматный сеанс 30.06.2026 📸</h3>
             <span>Tuesday, Jun 30 • Открыть альбом →</span>
@@ -735,7 +873,7 @@
         </a>
 
         <a href="https://photos.app.goo.gl/BAFffUAomtuCsSmj8" target="_blank" rel="noopener noreferrer" class="photo-card" style="text-decoration: none;">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczNQdJXNWveluozSunMHjpHva5ayVpV4Wk8nvz91NcVUN1lv1-7bgrDtPmUKUmyNtQWvzDDO9tCelFA0PzpV-9ZeFs96CFh4dQeMwxmEwteyUjEhGbZs=w600-h315-p-k" alt="Шахматный турнир" />
+          <img src="images/photo.png" alt="Шахматный турнир" />
           <div class="photo-card-info">
             <h3>Шахматный турнир 02.07.2026 📸</h3>
             <span>Jul 2 – 3 • Открыть альбом →</span>
@@ -743,7 +881,7 @@
         </a>
 
         <a href="https://photos.app.goo.gl/8Dpf4EpfMCY6TqvV7" target="_blank" rel="noopener noreferrer" class="photo-card" style="text-decoration: none;">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczPJHpi8MCFNTutmIJf2Exu1_FEdAoHqY7nqPMNW5xvXLhpeqSljLZdl_RGV52KHEiAyDZnPzffYMjfY02neK7va2XOvZchF6kY50SJl_l5y-rXrpTnI=w600-h315-p-k" alt="Старшие группы" />
+          <img src="images/photo.png" alt="Старшие группы" />
           <div class="photo-card-info">
             <h3>Шахматные занятия (старшие группы) 📸</h3>
             <span>Jan 2 – Jul 10 • Открыть альбом →</span>
@@ -751,7 +889,7 @@
         </a>
 
         <a href="https://photos.app.goo.gl/S76SBgpXja6jD5Cx9" target="_blank" rel="noopener noreferrer" class="photo-card" style="text-decoration: none;">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczOS9gkL62s3MjEiwgXWC_Fco8IDv-4QSqkAwrvoWx3wv8mPXcyvaQVk9A3PuOcX6Ad02xJYHro6QgHfFvuLoRVZGaiPdQLax-9SM0tyOgRInRkQMoks=w600-h315-p-k" alt="Младшие группы" />
+          <img src="images/photo.png" alt="Младшие группы" />
           <div class="photo-card-info">
             <h3>Шахматные занятия (младшие группы) 📸</h3>
             <span>Jan 6 – Jul 7 • Открыть альбом →</span>
@@ -759,7 +897,7 @@
         </a>
 
         <a href="https://photos.app.goo.gl/BaUodpbddW86ode59" target="_blank" rel="noopener noreferrer" class="photo-card" style="text-decoration: none;">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczMvNmDr1yao03tW7pOz56_ouhSB9bS3ljngTKQa-kQjYGLQ7_riPYOzZ2ymmqVzGuPaurGyNzLiF2dJaUG2J6kwYONg_S8hWLyJO5nr9dfaz8QZ5wKq=w600-h315-p-k" alt="Ул. Шпринцак" />
+          <img src="images/photo.png" alt="Ул. Шпринцак" />
           <div class="photo-card-info">
             <h3>Занятия (среда-четверг, ул. Шпринцак) 📸</h3>
             <span>Jan 8 – Jul 9 • Открыть альбом →</span>
