@@ -1006,14 +1006,8 @@
   </footer>
 
   <script>
-    let previousPage = 'home';
-
-    function switchPage(pageId) {
-      const currentActive = document.querySelector('.page-view.active-page');
-      if (currentActive) {
-        previousPage = currentActive.id.replace('page-', '');
-      }
-
+    // Отображает нужную страницу без изменения истории браузера
+    function showPage(pageId) {
       document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active-page'));
       document.querySelectorAll('.nav-item-btn').forEach(btn => btn.classList.remove('active'));
 
@@ -1030,8 +1024,22 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // Переключает страницу и добавляет запись в историю браузера,
+    // чтобы кнопка «Назад» возвращала на предыдущую внутреннюю страницу
+    function switchPage(pageId) {
+      showPage(pageId);
+      history.pushState({ page: pageId }, '', location.pathname + location.search);
+    }
+
+    // Обработка браузерной кнопки «Назад»/«Вперёд»
+    window.addEventListener('popstate', function (event) {
+      const pageId = event.state && event.state.page ? event.state.page : 'home';
+      showPage(pageId);
+    });
+
+    // Внутренняя кнопка «Назад» — возвращает на предыдущую внутреннюю страницу
     function goBack() {
-      switchPage(previousPage);
+      history.back();
     }
 
     const quotes = [
