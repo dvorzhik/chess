@@ -52,9 +52,8 @@
       padding: 0 20px;
     }
 
-    /* Адаптивная шапка сайта */
     header {
-      background: rgba(255, 255, 255, 0.98);
+      background: rgba(255, 255, 255, 0.95);
       border-bottom: 1px solid var(--card-border);
       position: sticky;
       top: 0;
@@ -268,6 +267,7 @@
       margin-bottom: 0;
     }
 
+    /* Google Photos Альбомы */
     .photo-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
@@ -276,47 +276,64 @@
     }
 
     .photo-card {
-      background: var(--card-bg);
+      background: #ffffff;
       border: 1px solid var(--card-border);
       border-radius: 14px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      text-decoration: none;
     }
 
     .photo-card:hover {
       transform: translateY(-3px);
-      border-color: #cbd5e1;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+      border-color: #94a3b8;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
-    .photo-card img {
+    .photo-card-cover {
       width: 100%;
-      height: 180px;
+      height: 190px;
+      background-color: #f1f5f9;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-card-cover img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.3s;
+    }
+
+    .photo-card:hover .photo-card-cover img {
+      transform: scale(1.03);
     }
 
     .photo-card-info {
-      padding: 16px;
+      padding: 16px 18px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       flex: 1;
+      border-top: 1px solid var(--card-border);
     }
 
     .photo-card-info h3 {
       font-size: 1.05rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--text-main);
       margin-bottom: 6px;
+      line-height: 1.4;
     }
 
     .photo-card-info span {
       font-size: 0.85rem;
-      color: var(--text-muted);
+      color: #64748b;
+      font-weight: 500;
     }
 
     .play-buttons-group {
@@ -415,7 +432,6 @@
       font-size: 0.9rem;
     }
 
-    /* Мобильная адаптация */
     @media (max-width: 820px) {
       .section-block {
         grid-template-columns: 1fr;
@@ -886,51 +902,69 @@
       </div>
 
       <div class="photo-grid">
-        <a href="https://photos.app.goo.gl/26b5LXLq3WtqyZTT7" target="_blank" rel="noopener noreferrer" class="photo-card" style="text-decoration: none;">
-          <img src="images/photo.png" alt="Афула" />
+        <!-- Альбом 1 -->
+        <a href="https://photos.app.goo.gl/26b5LXLq3WtqyZTT7" target="_blank" rel="noopener noreferrer" class="photo-card">
+          <div class="photo-card-cover">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczNhIq14qOs3fw7l2X3K2s6-C4XSxBTTY61-m8DtAhuR49MvDDcvVOncPeZkDfKwBVkObuSPhGlatTxhkKBJ_PC_uC56vF1EGeqp5RvBN_xdad46aBC7=w600-h315-p-k" alt="Афула" />
+          </div>
           <div class="photo-card-info">
-            <h3>Афула (командный чемпионат до 14 лет) 📸</h3>
-            <span>Aug 16 – 30 • Открыть альбом →</span>
+            <h3>Афула (командный чемпионат до 14 лет) · Aug 16 – 30 📸</h3>
+            <span>Shared album • Tap to view!</span>
           </div>
         </a>
 
-        <a href="https://photos.app.goo.gl/GTM4syNTo7t3Capq8" target="_blank" rel="noopener noreferrer" class="photo-card" style="text-decoration: none;">
-          <img src="images/photo.png" alt="Шахматный сеанс" />
+        <!-- Альбом 2 -->
+        <a href="https://photos.app.goo.gl/GTM4syNTo7t3Capq8" target="_blank" rel="noopener noreferrer" class="photo-card">
+          <div class="photo-card-cover">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczPjFA6rNAtAN4dDN2_IG8EnFXrumIClorf86WQCm6EQ0960bVKmpOv0UdclbCBouFZY5gmk5K1xjRDn49qfB4sEX90iCSO_ogXr3rx5pYyy3ackdXrA=w600-h315-p-k" alt="Шахматный сеанс" />
+          </div>
           <div class="photo-card-info">
-            <h3>Шахматный сеанс 30.06.2026 📸</h3>
-            <span>Tuesday, Jun 30 • Открыть альбом →</span>
+            <h3>Шахматный сеанс 30.06.2026 · Tuesday, Jun 30 📸</h3>
+            <span>Shared album • Tap to view!</span>
           </div>
         </a>
 
-        <a href="https://photos.app.goo.gl/BAFffUAomtuCsSmj8" target="_blank" rel="noopener noreferrer" class="photo-card" style="text-decoration: none;">
-          <img src="images/photo.png" alt="Шахматный турнир" />
+        <!-- Альбом 3 -->
+        <a href="https://photos.app.goo.gl/BAFffUAomtuCsSmj8" target="_blank" rel="noopener noreferrer" class="photo-card">
+          <div class="photo-card-cover">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczNQdJXNWveluozSunMHjpHva5ayVpV4Wk8nvz91NcVUN1lv1-7bgrDtPmUKUmyNtQWvzDDO9tCelFA0PzpV-9ZeFs96CFh4dQeMwxmEwteyUjEhGbZs=w600-h315-p-k" alt="Шахматный турнир" />
+          </div>
           <div class="photo-card-info">
-            <h3>Шахматный турнир 02.07.2026 📸</h3>
-            <span>Jul 2 – 3 • Открыть альбом →</span>
+            <h3>Шахматный турнир 02.07.2026 · Jul 2 – 3 📸</h3>
+            <span>Shared album • Tap to view!</span>
           </div>
         </a>
 
-        <a href="https://photos.app.goo.gl/8Dpf4EpfMCY6TqvV7" target="_blank" rel="noopener noreferrer" class="photo-card" style="text-decoration: none;">
-          <img src="images/photo.png" alt="Старшие группы" />
+        <!-- Альбом 4 -->
+        <a href="https://photos.app.goo.gl/8Dpf4EpfMCY6TqvV7" target="_blank" rel="noopener noreferrer" class="photo-card">
+          <div class="photo-card-cover">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczPJHpi8MCFNTutmIJf2Exu1_FEdAoHqY7nqPMNW5xvXLhpeqSljLZdl_RGV52KHEiAyDZnPzffYMjfY02neK7va2XOvZchF6kY50SJl_l5y-rXrpTnI=w600-h315-p-k" alt="Старшие группы" />
+          </div>
           <div class="photo-card-info">
-            <h3>Шахматные занятия (старшие группы) 📸</h3>
-            <span>Jan 2 – Jul 10 • Открыть альбом →</span>
+            <h3>Шахматные занятия (старшие группы) · Jan 2 – Jul 10 📸</h3>
+            <span>Shared album • Tap to view!</span>
           </div>
         </a>
 
-        <a href="https://photos.app.goo.gl/S76SBgpXja6jD5Cx9" target="_blank" rel="noopener noreferrer" class="photo-card" style="text-decoration: none;">
-          <img src="images/photo.png" alt="Младшие группы" />
+        <!-- Альбом 5 -->
+        <a href="https://photos.app.goo.gl/S76SBgpXja6jD5Cx9" target="_blank" rel="noopener noreferrer" class="photo-card">
+          <div class="photo-card-cover">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczOS9gkL62s3MjEiwgXWC_Fco8IDv-4QSqkAwrvoWx3wv8mPXcyvaQVk9A3PuOcX6Ad02xJYHro6QgHfFvuLoRVZGaiPdQLax-9SM0tyOgRInRkQMoks=w600-h315-p-k" alt="Младшие группы" />
+          </div>
           <div class="photo-card-info">
-            <h3>Шахматные занятия (младшие группы) 📸</h3>
-            <span>Jan 6 – Jul 7 • Открыть альбом →</span>
+            <h3>Шахматные занятия (младшие группы) · Jan 6 – Jul 7 📸</h3>
+            <span>Shared album • Tap to view!</span>
           </div>
         </a>
 
-        <a href="https://photos.app.goo.gl/BaUodpbddW86ode59" target="_blank" rel="noopener noreferrer" class="photo-card" style="text-decoration: none;">
-          <img src="images/photo.png" alt="Ул. Шпринцак" />
+        <!-- Альбом 6 -->
+        <a href="https://photos.app.goo.gl/BaUodpbddW86ode59" target="_blank" rel="noopener noreferrer" class="photo-card">
+          <div class="photo-card-cover">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczMvNmDr1yao03tW7pOz56_ouhSB9bS3ljngTKQa-kQjYGLQ7_riPYOzZ2ymmqVzGuPaurGyNzLiF2dJaUG2J6kwYONg_S8hWLyJO5nr9dfaz8QZ5wKq=w600-h315-p-k" alt="Ул. Шпринцак" />
+          </div>
           <div class="photo-card-info">
-            <h3>Занятия (среда-четверг, ул. Шпринцак) 📸</h3>
-            <span>Jan 8 – Jul 9 • Открыть альбом →</span>
+            <h3>Шахматные занятия (среда-четверг, ул. Шпринцак) · Jan 8 – Jul 9 📸</h3>
+            <span>Shared album • Tap to view!</span>
           </div>
         </a>
       </div>
