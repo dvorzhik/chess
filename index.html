@@ -480,7 +480,7 @@
         <li><button class="nav-item-btn active" id="btn-nav-home" onclick="switchPage('home')">Главная</button></li>
         <li><button class="nav-item-btn" id="btn-nav-beginner" onclick="switchPage('beginner')">Учимся играть</button></li>
         <li><button class="nav-item-btn" id="btn-nav-playchess" onclick="switchPage('playchess')">Побеждаем ботов</button></li>
-        <li><button class="nav-item-btn" id="btn-nav-checkmate" onclick="switchPage('checkmate')">Учимся матовать</button></li>
+        <li><button class="nav-item-btn" id="btn-nav-checkmate" onclick="switchPage('checkmate')">Учимся ставить мат</button></li>
         <li><button class="nav-item-btn" id="btn-nav-photo" onclick="switchPage('photo')">Фотоархив</button></li>
       </ul>
     </div>
@@ -506,7 +506,7 @@
           <p>Меня зовут Александр Дворжицкий.<br>Играю в шахматы с 6 лет.</p>
           <p>Занимался шахматами в Перми (тренер Марк Друккер).<br>Занимался шахматами в Петрозаводске (тренер Александр Гойхенберг).</p>
           <p>После переезда в Израиль в 2021 году начал выступать за команду города Нагария и работать тренером по шахматам.</p>
-          <p>Занимаюсь с шахматистами любого возраста (от 5 лет до бесконечности).</p>
+          <p>Занимаюсь как с начинающими шахматистами (от 5 лет и до бесконечности), так и с теми, кто уже достиг первых шахматных успехов (также любого возраста).</p>
         </div>
       </section>
 
@@ -519,33 +519,24 @@
         </div>
         <div class="section-content">
           <h2><a href="https://wa.me/+972534766343" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Записаться на занятия</a></h2>
-          <p>Хотите научиться играть в шахматы или усилить свою игру?<br>Приглашаю на занятия в Нагарии!<br>Есть группы для новичков и опытных игроков.</p>
-          <p>Для тех, кто ценит индивидуальный подход, провожу частные уроки очно и дистанционно в удобное для вас время.</p>
-          <div class="play-buttons-group">
-            <a href="https://wa.me/+972534766343" target="_blank" rel="noopener noreferrer" class="play-btn btn-whatsapp">
-              <span>💬</span> Телефон (WhatsApp)
-            </a>
-          </div>
+          <p>Я провожу занятия по шахматам в Нагарии.<br>Есть группы для начинающих шахматистов.<br>И есть группы для более опытных игроков.</p>
+          <p>Кроме ведения кружков я провожу индивидуальные занятия по шахматам (с первых шагов до первых побед в турнирах)!<br>Время и место проведения индивидуальных занятий согласовываются дополнительно.</p>
+          <p>Телефон (WhatsApp): <a href="https://wa.me/+972534766343" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #16a34a;">+972534766343</a></p>
         </div>
       </section>
 
-      <!-- Учимся играть -->
+      <!-- Правила игры -->
       <section class="section-block">
         <div class="section-img-wrap">
           <a href="javascript:void(0)" onclick="switchPage('beginner')">
-            <img src="images/Learn.png" alt="Учимся играть в шахматы" />
+            <img src="images/Learn.png" alt="Правила игры в шахматы" />
           </a>
         </div>
         <div class="section-content">
-          <h2><a href="javascript:void(0)" onclick="switchPage('beginner')" style="color: inherit; text-decoration: none;">Учимся играть</a></h2>
-          <p>Если вы только мечтаете научиться играть в шахматы — смотрите простые и короткие уроки.</p>
-          <p>Если у вас маленький ребенок — есть специальные учебные видео для «шахматят».</p>
-          <p>После просмотра уроков сделайте упражнения на компьютере, планшете или смартфоне.</p>
-          <div class="play-buttons-group">
-            <button onclick="switchPage('beginner')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
-              Учимся играть в шахматы →
-            </button>
-          </div>
+          <h2><a href="javascript:void(0)" onclick="switchPage('beginner')" style="color: inherit; text-decoration: none;">Правила игры</a></h2>
+          <p>Если вы только мечтаете научиться играть в шахматы — <a href="javascript:void(0)" onclick="switchPage('beginner')">смотрите простые и короткие уроки</a>.</p>
+          <p>Если у вас маленький ребенок и он заскучал, глядя на видео выше, покажите ему вот <a href="https://youtube.com/playlist?list=PLaQxUBfXEL3-sCaiPb_nKjXo4CuunTbqU" target="_blank" rel="noopener noreferrer">эти видео</a>!</p>
+          <p>А после просмотра уроков — <a href="javascript:void(0)" onclick="switchPage('beginner')">делайте упражнения на компьютере, планшете или смартфоне</a>.</p>
         </div>
       </section>
 
@@ -553,7 +544,7 @@
       <section class="section-block">
         <div class="section-img-wrap">
           <a href="javascript:void(0)" onclick="switchPage('playchess')">
-            <img src="images/bot.jpg" alt="Побеждаем ботов" />
+            <img src="images/play.png" alt="Побеждаем ботов" />
           </a>
         </div>
         <div class="section-content">
@@ -568,23 +559,17 @@
         </div>
       </section>
 
-      <!-- Учимся матовать -->
+      <!-- Ставим мат -->
       <section class="section-block">
         <div class="section-img-wrap">
           <a href="javascript:void(0)" onclick="switchPage('checkmate')">
-            <img src="images/checkmate.png" alt="Учимся матовать" />
+            <img src="images/checkmate.png" alt="Ставим мат" />
           </a>
         </div>
         <div class="section-content">
-          <h2><a href="javascript:void(0)" onclick="switchPage('checkmate')" style="color: inherit; text-decoration: none;">Учимся матовать</a></h2>
+          <h2><a href="javascript:void(0)" onclick="switchPage('checkmate')" style="color: inherit; text-decoration: none;">Ставим мат</a></h2>
           <p>Когда вы освоили правила игры в шахматы и попробовали сыграть свои первые партии, пора осваивать следующие важные уроки!</p>
-          <p>Цель игры в шахматы — поставить мат сопернику.</p>
-          <p>Давайте научимся ставить мат одинокому королю!</p>
-          <div class="play-buttons-group">
-            <button onclick="switchPage('checkmate')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
-              Учимся ставить мат →
-            </button>
-          </div>
+          <p>Цель игры в шахматы — поставить мат сопернику. <a href="javascript:void(0)" onclick="switchPage('checkmate')">Давайте научимся ставить мат одинокому королю!</a></p>
         </div>
       </section>
 
@@ -597,12 +582,7 @@
         </div>
         <div class="section-content">
           <h2><a href="javascript:void(0)" onclick="switchPage('photo')" style="color: inherit; text-decoration: none;">Фотоархив соревнований и занятий</a></h2>
-          <p>Здесь собраны фотографии с турниров и шахматных занятий. Ищите себя, делитесь комментариями и ставьте «лайки» понравившимся фото!</p>
-          <div class="play-buttons-group">
-            <button onclick="switchPage('photo')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
-              Посмотреть фотографии →
-            </button>
-          </div>
+          <p>Переходите на <a href="javascript:void(0)" onclick="switchPage('photo')">фотостраничку</a> — здесь собраны фотографии с турниров и шахматных занятий. Ищите себя, делитесь комментариями и ставьте "лайки" понравившимся фото!</p>
         </div>
       </section>
 
@@ -629,12 +609,14 @@
       <!-- Отзывы -->
       <section class="section-block">
         <div class="section-img-wrap">
-          <img src="images/Write.png" alt="Отзывы" />
+          <a href="https://forms.gle/FB8wTAi3YVHyffGB7" target="_blank" rel="noopener noreferrer">
+            <img src="images/Write.png" alt="Отзывы" />
+          </a>
         </div>
         <div class="section-content">
           <h2>Напишите свои пожелания!</h2>
           <p>Поделитесь своим мнением в удобном мессенджере в один клик:</p>
-          <div class="play-buttons-group">
+          <div class="play-buttons-group" style="margin-bottom: 16px;">
             <a href="https://wa.me/972534766343?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B7%D1%8B%D0%B2%20%D0%BE%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F%D1%85%20%D1%88%D0%B0%D1%85%D0%BC%D0%B0%D1%82%D0%B0%D0%BC%D0%B8%3A%20" target="_blank" rel="noopener noreferrer" class="play-btn btn-whatsapp">
               <span>💬</span> WhatsApp
             </a>
@@ -642,6 +624,7 @@
               <span>✈️</span> Telegram
             </a>
           </div>
+          <p>Или заполните форму: <a href="https://forms.gle/FB8wTAi3YVHyffGB7" target="_blank" rel="noopener noreferrer">Google Форма для отзывов</a></p>
         </div>
       </section>
     </div>
@@ -790,8 +773,8 @@
 
       <div style="text-align: center; margin: 30px 0;">
         <h3 style="color: var(--accent); margin-bottom: 16px;">Удачи — у вас всё получится! 🏆</h3>
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
-          ← Назад
+        <button onclick="switchPage('home')" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
+          ← Вернуться на главную
         </button>
       </div>
     </div>
@@ -1006,8 +989,7 @@
   </footer>
 
   <script>
-    // Отображает нужную страницу без изменения истории браузера
-    function showPage(pageId) {
+    function switchPage(pageId) {
       document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active-page'));
       document.querySelectorAll('.nav-item-btn').forEach(btn => btn.classList.remove('active'));
 
@@ -1022,24 +1004,6 @@
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Переключает страницу и добавляет запись в историю браузера,
-    // чтобы кнопка «Назад» возвращала на предыдущую внутреннюю страницу
-    function switchPage(pageId) {
-      showPage(pageId);
-      history.pushState({ page: pageId }, '', location.pathname + location.search);
-    }
-
-    // Обработка браузерной кнопки «Назад»/«Вперёд»
-    window.addEventListener('popstate', function (event) {
-      const pageId = event.state && event.state.page ? event.state.page : 'home';
-      showPage(pageId);
-    });
-
-    // Внутренняя кнопка «Назад» — возвращает на предыдущую внутреннюю страницу
-    function goBack() {
-      history.back();
     }
 
     const quotes = [
