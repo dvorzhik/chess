@@ -1144,23 +1144,39 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Переключает страницу и добавляет запись в историю браузера,
-    // чтобы кнопка «Назад» возвращала на предыдущую внутреннюю страницу
-    function switchPage(pageId) {
+    // Читает текущий хэш (#раздел) и показывает соответствующую страницу.
+    // Если хэша нет или он неизвестен — показывает главную.
+    function handleHash() {
+      let pageId = location.hash.replace('#', '');
+      if (!pageId || !document.getElementById('page-' + pageId)) {
+        pageId = 'home';
+      }
       showPage(pageId);
-      history.pushState({ page: pageId }, '', location.pathname + location.search);
     }
 
-    // Обработка браузерной кнопки «Назад»/«Вперёд»
-    window.addEventListener('popstate', function (event) {
-      const pageId = event.state && event.state.page ? event.state.page : 'home';
-      showPage(pageId);
-    });
+    // Переключает страницу. URL получает хэш вида #beginner, #checkmate и т.д.,
+    // поэтому на любой раздел можно дать прямую ссылку.
+    // Изменение location.hash само добавляет запись в историю браузера,
+    // поэтому кнопка «Назад» продолжает работать.
+    function switchPage(pageId) {
+      if (location.hash === '#' + pageId) {
+        // Уже на этой странице — просто показываем её (например, при повторном клике)
+        showPage(pageId);
+      } else {
+        location.hash = pageId;
+      }
+    }
+
+    // Обработка браузерной кнопки «Назад»/«Вперёд» и ручного ввода хэша
+    window.addEventListener('hashchange', handleHash);
 
     // Внутренняя кнопка «Назад» — возвращает на предыдущую внутреннюю страницу
     function goBack() {
       history.back();
     }
+
+    // При первой загрузке открываем раздел из хэша (прямая ссылка) или главную
+    handleHash();
 
     const quotes = [
       { text: "Шахматы — это жизнь в миниатюре.", author: "Гарри Каспаров", icon: "♔" },
