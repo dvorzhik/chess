@@ -195,6 +195,82 @@
       line-height: 1.4;
     }
 
+    /* Инструкции «Побеждаем ботов» */
+    .platform-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 34px 0 6px;
+    }
+
+    .platform-subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .platform-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 22px 26px;
+      margin-bottom: 22px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .platform-box p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      margin-bottom: 10px;
+    }
+
+    .platform-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .phone-steps {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .step-card.phone a {
+      display: block;
+      background: #0f172a;
+    }
+
+    .step-card.phone img {
+      height: auto;
+      object-fit: contain;
+      background: #0f172a;
+      padding: 10px;
+      cursor: zoom-in;
+    }
+
+    .step-card.phone .step-card-text {
+      text-align: left;
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+
+    .step-card.phone .step-card-text strong {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    @media (max-width: 900px) {
+      .phone-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 600px) {
+      .phone-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .video-preview-card {
       position: relative;
       width: 100%;
@@ -1006,9 +1082,72 @@
         <h1>Как сыграть в шахматы и победить ботов</h1>
       </div>
 
+      <!-- Lichess.org -->
+      <h2 class="platform-heading">♞ Побеждаем ботов на Lichess.org</h2>
+      <p class="platform-subtitle">Пошаговая инструкция для телефона — на компьютере шаги такие же. Нажмите на скриншот, чтобы рассмотреть его крупнее.</p>
+
+      <div class="platform-box">
+        <p><strong>Lichess.org</strong> — полностью бесплатная платформа без рекламы. Играть с компьютером можно прямо в браузере телефона или компьютера.</p>
+        <p>Для сохранения прогресса и рейтинга создайте аккаунт. Первые партии можно сыграть и без регистрации.</p>
+      </div>
+
+      <div class="play-buttons-group" style="margin-bottom: 22px;">
+        <a href="https://lichess.org/" target="_blank" rel="noopener noreferrer" class="play-btn btn-lichess">
+          💻 Открыть Lichess.org
+        </a>
+      </div>
+
+      <div class="steps-grid phone-steps">
+        <div class="step-card phone">
+          <a href="images/lichess1.jpg" target="_blank" rel="noopener noreferrer" title="Открыть скриншот в полном размере">
+            <img src="images/lichess1.jpg" alt="Главная страница Lichess с кнопкой Игра" loading="lazy" />
+          </a>
+          <div class="step-card-text"><strong>1.</strong> Откройте lichess.org и нажмите кнопку «Игра» на главной странице.</div>
+        </div>
+
+        <div class="step-card phone">
+          <a href="images/lichess2.jpg" target="_blank" rel="noopener noreferrer" title="Открыть скриншот в полном размере">
+            <img src="images/lichess2.jpg" alt="Меню Lichess с пунктом Сыграть с компьютером" loading="lazy" />
+          </a>
+          <div class="step-card-text"><strong>2.</strong> В открывшемся меню выберите «Сыграть с компьютером».</div>
+        </div>
+
+        <div class="step-card phone">
+          <a href="images/lichess3.jpg" target="_blank" rel="noopener noreferrer" title="Открыть скриншот в полном размере">
+            <img src="images/lichess3.jpg" alt="Настройки партии с компьютером на Lichess" loading="lazy" />
+          </a>
+          <div class="step-card-text"><strong>3.</strong> Проверьте настройки: Stockfish level 1, «Случайный цвет», включённая «Товарищеская» (подсказки и возврат ходов). Нажмите «Игра».</div>
+        </div>
+
+        <div class="step-card phone">
+          <a href="images/lichess4.jpg" target="_blank" rel="noopener noreferrer" title="Открыть скриншот в полном размере">
+            <img src="images/lichess4.jpg" alt="Выбор уровня Stockfish на Lichess" loading="lazy" />
+          </a>
+          <div class="step-card-text"><strong>4.</strong> Хотите другой уровень? Нажмите на строку «Соперник» и передвиньте ползунок. Для первой партии оставьте уровень 1.</div>
+        </div>
+
+        <div class="step-card phone">
+          <a href="images/lichess5.jpg" target="_blank" rel="noopener noreferrer" title="Открыть скриншот в полном размере">
+            <img src="images/lichess5.jpg" alt="Первые ходы в партии против Stockfish level 1" loading="lazy" />
+          </a>
+          <div class="step-card-text"><strong>5.</strong> Сделайте первые ходы. В «Товарищеской» партии можно вернуть ход или взять подсказку.</div>
+        </div>
+
+        <div class="step-card phone">
+          <a href="images/lichess6.jpg" target="_blank" rel="noopener noreferrer" title="Открыть скриншот в полном размере">
+            <img src="images/lichess6.jpg" alt="Окно Победа после мата боту на Lichess" loading="lazy" />
+          </a>
+          <div class="step-card-text"><strong>6.</strong> Поставьте мат. Когда появится окно «Победа», разберите партию или начните новую.</div>
+        </div>
+      </div>
+
+      <!-- Chess.com -->
+      <h2 class="platform-heading">♟️ Побеждаем ботов на Chess.com</h2>
+      <p class="platform-subtitle">Инструкция для приложения и сайта Chess.com.</p>
+
       <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; margin-bottom: 25px;">
         <p style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 10px;">
-          <strong>Сначала установите приложение на смартфон или откройте сайт:</strong>
+          <strong>Установите приложение Chess.com на смартфон или откройте сайт:</strong>
         </p>
         <div class="play-buttons-group">
           <a href="https://www.chess.com/play/apps" target="_blank" rel="noopener noreferrer" class="play-btn btn-chesscom">
