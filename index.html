@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DVORZHIK - ШАХМАТНЫЙ ТРЕНЕР</title>
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <meta name="description" content="Обучение шахматам в Нагарии и онлайн с Александром Дворжицким. Кружки, уроки, фотоархив турниров." />
+  <meta name="description" content="Обучение шахматам в Нагарии и онлайн с Александром Дворжицким. Кружки, уроки, подборка фильмов и мультфильмов о шахматах, фотоархив турниров." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -268,6 +268,221 @@
       margin-bottom: 0;
     }
 
+    /* Кино и мультфильмы о шахматах */
+    .films-intro {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .films-intro p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      margin-bottom: 10px;
+    }
+
+    .films-intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .films-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin: 8px 0 8px;
+    }
+
+    .films-subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 22px;
+    }
+
+    .film-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin: 22px 0 42px;
+    }
+
+    .film-card {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .film-card:hover {
+      transform: translateY(-3px);
+      border-color: #94a3b8;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .film-cover {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #0f172a;
+      overflow: hidden;
+    }
+
+    .film-cover img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .film-cover:hover img {
+      transform: scale(1.04);
+      filter: brightness(0.82);
+    }
+
+    .film-rank {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      min-width: 30px;
+      height: 30px;
+      padding: 0 8px;
+      border-radius: 8px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .film-rating {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 4px 9px;
+      border-radius: 8px;
+      background: #facc15;
+      color: #1c1917;
+      font-size: 0.85rem;
+      font-weight: 800;
+      line-height: 1.3;
+      z-index: 2;
+    }
+
+    .film-source {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 4px 9px;
+      border-radius: 8px;
+      background: #dc2626;
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      line-height: 1.4;
+      z-index: 2;
+    }
+
+    .film-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 54px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(220, 38, 38, 0.92);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      padding-left: 3px;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      z-index: 2;
+    }
+
+    .film-cover:hover .film-play {
+      transform: translate(-50%, -50%) scale(1.1);
+      background: #dc2626;
+    }
+
+    .film-info {
+      padding: 16px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .film-info h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .film-year {
+      color: #94a3b8;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .film-meta {
+      font-size: 0.82rem;
+      color: #64748b;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .film-desc {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .film-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .film-actions .play-btn {
+      padding: 9px 15px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+      .film-grid {
+        grid-template-columns: 1fr;
+      }
+      .films-intro {
+        padding: 18px 20px;
+      }
+      .films-heading {
+        font-size: 1.25rem;
+      }
+    }
+
     /* Google Photos Альбомы */
     .photo-grid {
       display: grid;
@@ -494,6 +709,7 @@
         <li><button class="nav-item-btn" id="btn-nav-beginner" onclick="switchPage('beginner')">Учимся играть</button></li>
         <li><button class="nav-item-btn" id="btn-nav-playchess" onclick="switchPage('playchess')">Побеждаем ботов</button></li>
         <li><button class="nav-item-btn" id="btn-nav-checkmate" onclick="switchPage('checkmate')">Учимся матовать</button></li>
+        <li><button class="nav-item-btn" id="btn-nav-films" onclick="switchPage('films')">Фильмы о шахматах</button></li>
         <li><button class="nav-item-btn" id="btn-nav-photo" onclick="switchPage('photo')">Фотоархив</button></li>
       </ul>
     </div>
@@ -616,6 +832,25 @@
           <div class="play-buttons-group">
             <button onclick="switchPage('checkmate')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
               Учимся ставить мат →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Фильмы о шахматах -->
+      <section class="section-block">
+        <div class="section-img-wrap">
+          <a href="javascript:void(0)" onclick="switchPage('films')">
+            <img src="https://img.youtube.com/vi/Lso2O3o9nwU/maxresdefault.jpg" alt="Фильмы и мультфильмы о шахматах" loading="lazy" />
+          </a>
+        </div>
+        <div class="section-content">
+          <h2><a href="javascript:void(0)" onclick="switchPage('films')" style="color: inherit; text-decoration: none;">Фильмы и мультфильмы о шахматах</a></h2>
+          <p>10 лучших фильмов и сериалов о шахматах по рейтингу Кинопоиска — с короткими описаниями и трейлерами.</p>
+          <p>А ещё 10 мультфильмов, которые в лёгкой форме познакомят ребёнка с доской, фигурами и первой партией.</p>
+          <div class="play-buttons-group">
+            <button onclick="switchPage('films')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
+              Смотреть подборку →
             </button>
           </div>
         </div>
@@ -956,7 +1191,371 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- 5. ФОТОАРХИВ (CHESSPHOTO)                                -->
+    <!-- 5. ФИЛЬМЫ И МУЛЬТФИЛЬМЫ О ШАХМАТАХ (FILMS)               -->
+    <!-- ======================================================== -->
+    <div id="page-films" class="page-view">
+      <div class="top-title-sec">
+        <h1>Фильмы и мультфильмы о шахматах</h1>
+      </div>
+
+      <div class="films-intro">
+        <p>Шахматы — это не только спорт, но и огромный мир историй: о гениях и аутсайдерах, о победах и поражениях, о том, как одна партия может изменить жизнь.</p>
+        <p>Мы собрали 10 лучших фильмов и сериалов о шахматах по рейтингу Кинопоиска, а также 10 мультфильмов, с которых удобно начать знакомство ребёнка с игрой. Рейтинги указаны на октябрь 2026 года.</p>
+      </div>
+
+      <h2 class="films-heading">🎬 10 лучших фильмов и сериалов о шахматах</h2>
+      <p class="films-subtitle">Подборка отсортирована по рейтингу Кинопоиска. Нажмите на обложку, чтобы открыть трейлер.</p>
+
+      <div class="film-grid">
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=Lso2O3o9nwU" target="_blank" rel="noopener noreferrer" aria-label="Смотреть трейлер сериала «Ход королевы»">
+            <img src="https://img.youtube.com/vi/Lso2O3o9nwU/hq720.jpg" alt="Кадр из трейлера «Ход королевы»" loading="lazy" />
+            <span class="film-rank">1</span>
+            <span class="film-rating">★ 8,3</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Ход королевы <span class="film-year">2020</span></h3>
+            <p class="film-meta">США · мини-сериал · драма, спорт</p>
+            <p class="film-desc">История сироты Бет Хармон, которая открывает в себе шахматный талант и становится звездой, бросая вызов мужскому миру больших шахмат.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=Lso2O3o9nwU" target="_blank" rel="noopener noreferrer">▶ Трейлер</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=iJZA3WyeB_E" target="_blank" rel="noopener noreferrer" aria-label="Смотреть трейлер фильма «Седьмая печать»">
+            <img src="https://img.youtube.com/vi/iJZA3WyeB_E/hq720.jpg" alt="Кадр из трейлера «Седьмая печать»" loading="lazy" />
+            <span class="film-rank">2</span>
+            <span class="film-rating">★ 8,0</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Седьмая печать <span class="film-year">1957</span></h3>
+            <p class="film-meta">Швеция · фильм · фэнтези, драма</p>
+            <p class="film-desc">Рыцарь возвращается из крестового похода в охваченную чумой Европу и играет в шахматы со Смертью, отстаивая право на жизнь.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=iJZA3WyeB_E" target="_blank" rel="noopener noreferrer">▶ Трейлер</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=JcNKKpqY0xE" target="_blank" rel="noopener noreferrer" aria-label="Смотреть трейлер фильма «Чемпион мира»">
+            <img src="https://img.youtube.com/vi/JcNKKpqY0xE/hq720.jpg" alt="Кадр из трейлера «Чемпион мира»" loading="lazy" />
+            <span class="film-rank">3</span>
+            <span class="film-rating">★ 7,8</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Чемпион мира <span class="film-year">2021</span></h3>
+            <p class="film-meta">Россия · фильм · спорт, биография, драма</p>
+            <p class="film-desc">Драма о легендарном матче Анатолия Карпова и Виктора Корчного в Багио, где на кону стояла шахматная корона.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=JcNKKpqY0xE" target="_blank" rel="noopener noreferrer">▶ Трейлер</a>
+            </div>
+          </div>
+        </article>
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=fnoMzcGyitQ" target="_blank" rel="noopener noreferrer" aria-label="Смотреть трейлер фильма «Шахматист»">
+            <img src="https://img.youtube.com/vi/fnoMzcGyitQ/hq720.jpg" alt="Кадр из трейлера «Шахматист»" loading="lazy" />
+            <span class="film-rank">4</span>
+            <span class="film-rating">★ 7,7</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Шахматист <span class="film-year">2019</span></h3>
+            <p class="film-meta">Франция · фильм · драма, комедия, биография</p>
+            <p class="film-desc">Юный Фахим из Бангладеш оказывается в Париже без документов, но с мечтой стать гроссмейстером. На его пути встречается бывший чемпион.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=fnoMzcGyitQ" target="_blank" rel="noopener noreferrer">▶ Трейлер</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=P1pVv2YpAaA" target="_blank" rel="noopener noreferrer" aria-label="Смотреть трейлер фильма «Выбор игры»">
+            <img src="https://img.youtube.com/vi/P1pVv2YpAaA/mqdefault.jpg" alt="Кадр из трейлера «Выбор игры»" loading="lazy" />
+            <span class="film-rank">5</span>
+            <span class="film-rating">★ 7,4</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Выбор игры <span class="film-year">1993</span></h3>
+            <p class="film-meta">США · фильм · драма, биография, спорт</p>
+            <p class="film-desc">Семилетний Джош Вайцкин поражает всех шахматным талантом. Ему предстоит научиться побеждать, не потеряв детства и любви к игре.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=P1pVv2YpAaA" target="_blank" rel="noopener noreferrer">▶ Трейлер</a>
+            </div>
+          </div>
+        </article>
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=aMNeJpxdnf0" target="_blank" rel="noopener noreferrer" aria-label="Смотреть трейлер фильма «Королева из Катве»">
+            <img src="https://img.youtube.com/vi/aMNeJpxdnf0/hq720.jpg" alt="Кадр из трейлера «Королева из Катве»" loading="lazy" />
+            <span class="film-rank">6</span>
+            <span class="film-rating">★ 7,3</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Королева из Катве <span class="film-year">2016</span></h3>
+            <p class="film-meta">США · фильм · драма, биография, спорт</p>
+            <p class="film-desc">Реальная история Фионы Мутези из угандийских трущоб: шахматы помогают ей поверить в себя и изменить жизнь своей семьи.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=aMNeJpxdnf0" target="_blank" rel="noopener noreferrer">▶ Трейлер</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=xmwkcdV_rRc" target="_blank" rel="noopener noreferrer" aria-label="Смотреть трейлер фильма «Шахматы ветра»">
+            <img src="https://img.youtube.com/vi/xmwkcdV_rRc/hq720.jpg" alt="Кадр из трейлера «Шахматы ветра»" loading="lazy" />
+            <span class="film-rank">7</span>
+            <span class="film-rating">★ 7,3</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Шахматы ветра <span class="film-year">1976</span></h3>
+            <p class="film-meta">Иран · фильм · драма</p>
+            <p class="film-desc">Поэтическая драма об угасающем аристократическом доме, где шахматная партия становится метафорой борьбы за власть. Долгое время фильм был запрещён.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=xmwkcdV_rRc" target="_blank" rel="noopener noreferrer">▶ Трейлер</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=XQwg1NYfhKQ" target="_blank" rel="noopener noreferrer" aria-label="Смотреть трейлер фильма «Бобби Фишер против всего мира»">
+            <img src="https://img.youtube.com/vi/XQwg1NYfhKQ/mqdefault.jpg" alt="Кадр из трейлера «Бобби Фишер против всего мира»" loading="lazy" />
+            <span class="film-rank">8</span>
+            <span class="film-rating">★ 7,1</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Бобби Фишер против всего мира <span class="film-year">2011</span></h3>
+            <p class="film-meta">США · документальный фильм</p>
+            <p class="film-desc">Документальный портрет Бобби Фишера — гения, скандалиста и чемпиона мира, а также его матча с Борисом Спасским в 1972 году.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=XQwg1NYfhKQ" target="_blank" rel="noopener noreferrer">▶ Трейлер</a>
+            </div>
+          </div>
+        </article>
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=vYscj0lWA8E" target="_blank" rel="noopener noreferrer" aria-label="Смотреть трейлер фильма «Шахматистка»">
+            <img src="https://img.youtube.com/vi/vYscj0lWA8E/mqdefault.jpg" alt="Кадр из трейлера «Шахматистка»" loading="lazy" />
+            <span class="film-rank">9</span>
+            <span class="film-rating">★ 7,1</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Шахматистка <span class="film-year">2009</span></h3>
+            <p class="film-meta">Франция · фильм · драма</p>
+            <p class="film-desc">Уборщица из отеля случайно открывает для себя шахматы. Новая страсть постепенно меняет её размеренную жизнь и отношения с близкими.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=vYscj0lWA8E" target="_blank" rel="noopener noreferrer">▶ Трейлер</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=gR-95HtX3so" target="_blank" rel="noopener noreferrer" aria-label="Смотреть трейлер фильма «Жертвуя пешкой»">
+            <img src="https://img.youtube.com/vi/gR-95HtX3so/hq720.jpg" alt="Кадр из трейлера «Жертвуя пешкой»" loading="lazy" />
+            <span class="film-rank">10</span>
+            <span class="film-rating">★ 7,0</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Жертвуя пешкой <span class="film-year">2014</span></h3>
+            <p class="film-meta">США · фильм · триллер, драма, биография</p>
+            <p class="film-desc">Тоби Магуайр в роли Бобби Фишера: история пути гения к матчу века против Бориса Спасского и его собственных демонов.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=gR-95HtX3so" target="_blank" rel="noopener noreferrer">▶ Трейлер</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <h2 class="films-heading">🎨 10 лучших мультфильмов о шахматах</h2>
+      <p class="films-subtitle">Весёлые и познавательные серии, которые помогут ребёнку полюбить игру. Все мультфильмы можно посмотреть на YouTube.</p>
+
+      <div class="film-grid">
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=x6H8hUWyj8A" target="_blank" rel="noopener noreferrer" aria-label="Смотреть мультфильм «Фиксики: Шахматы»">
+            <img src="https://img.youtube.com/vi/x6H8hUWyj8A/hq720.jpg" alt="Кадр из мультфильма «Фиксики: Шахматы»" loading="lazy" />
+            <span class="film-rank">1</span>
+            <span class="film-source">YOUTUBE</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Фиксики: «Шахматы»</h3>
+            <p class="film-meta">Россия · обучающий мультфильм</p>
+            <p class="film-desc">Фиксики объясняют, как устроена шахматная доска, как ходят фигуры и почему в шахматах важно думать наперёд.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=x6H8hUWyj8A" target="_blank" rel="noopener noreferrer">▶ Смотреть</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=vLLoFKbl0Y8" target="_blank" rel="noopener noreferrer" aria-label="Смотреть «Фикси-советы: как играть в шахматы»">
+            <img src="https://img.youtube.com/vi/vLLoFKbl0Y8/hq720.jpg" alt="Кадр из «Фикси-советов» о шахматах" loading="lazy" />
+            <span class="film-rank">2</span>
+            <span class="film-source">YOUTUBE</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Фиксики: «Фикси-советы. Как играть в шахматы»</h3>
+            <p class="film-meta">Россия · обучающий мультфильм</p>
+            <p class="film-desc">Короткий выпуск «Фикси-советов»: простые правила и первые шаги для тех, кто только садится за доску.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=vLLoFKbl0Y8" target="_blank" rel="noopener noreferrer">▶ Смотреть</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=wEf6lVAuYQ0" target="_blank" rel="noopener noreferrer" aria-label="Смотреть мультфильм «Смешарики: Шахматы»">
+            <img src="https://img.youtube.com/vi/wEf6lVAuYQ0/hq720.jpg" alt="Кадр из мультфильма «Смешарики: Шахматы»" loading="lazy" />
+            <span class="film-rank">3</span>
+            <span class="film-source">YOUTUBE</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Смешарики: «Шахматы»</h3>
+            <p class="film-meta">Россия · мультсериал</p>
+            <p class="film-desc">Смешарики открывают для себя шахматы и на собственном опыте узнают, что главное — не спешить и думать на несколько ходов вперёд.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=wEf6lVAuYQ0" target="_blank" rel="noopener noreferrer">▶ Смотреть</a>
+            </div>
+          </div>
+        </article>
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=hOZyrOYf5ks" target="_blank" rel="noopener noreferrer" aria-label="Смотреть серию «Барбоскины: Гроссмейстер»">
+            <img src="https://img.youtube.com/vi/hOZyrOYf5ks/hq720.jpg" alt="Кадр из серии «Барбоскины: Гроссмейстер»" loading="lazy" />
+            <span class="film-rank">4</span>
+            <span class="film-source">YOUTUBE</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Барбоскины: «Гроссмейстер»</h3>
+            <p class="film-meta">Россия · мультсериал</p>
+            <p class="film-desc">В семье Барбоскиных решают выяснить, кто настоящий гроссмейстер. Весёлая серия о шахматном соперничестве и азарте.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=hOZyrOYf5ks" target="_blank" rel="noopener noreferrer">▶ Смотреть</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=1uKs-lO1wGY" target="_blank" rel="noopener noreferrer" aria-label="Смотреть серию «Три кота: Игра в шахматы»">
+            <img src="https://img.youtube.com/vi/1uKs-lO1wGY/hq720.jpg" alt="Кадр из серии «Три кота: Игра в шахматы»" loading="lazy" />
+            <span class="film-rank">5</span>
+            <span class="film-source">YOUTUBE</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Три кота: «Игра в шахматы»</h3>
+            <p class="film-meta">Россия · мультсериал</p>
+            <p class="film-desc">Коржик, Карамелька и Компот учатся играть в шахматы и понимают, что это не просто игра, а настоящая тренировка ума.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=1uKs-lO1wGY" target="_blank" rel="noopener noreferrer">▶ Смотреть</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=I1t8-QjiJ4U" target="_blank" rel="noopener noreferrer" aria-label="Смотреть серию «Маша и Медведь: Ход конём»">
+            <img src="https://img.youtube.com/vi/I1t8-QjiJ4U/hq720.jpg" alt="Кадр из серии «Маша и Медведь: Ход конём»" loading="lazy" />
+            <span class="film-rank">6</span>
+            <span class="film-source">YOUTUBE</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Маша и Медведь: «Ход конём» <span class="film-year">28 серия</span></h3>
+            <p class="film-meta">Россия · мультсериал</p>
+            <p class="film-desc">Медведь собирается спокойно сыграть партию, но Маша, как всегда, вносит свои правила. Шахматы превращаются в весёлое приключение.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=I1t8-QjiJ4U" target="_blank" rel="noopener noreferrer">▶ Смотреть</a>
+            </div>
+          </div>
+        </article>
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=rKROK9PD2tA" target="_blank" rel="noopener noreferrer" aria-label="Смотреть мультфильм «Мудрые сказки тётушки Совы: Шахматы»">
+            <img src="https://img.youtube.com/vi/rKROK9PD2tA/hq720.jpg" alt="Кадр из мультфильма «Мудрые сказки тётушки Совы: Шахматы»" loading="lazy" />
+            <span class="film-rank">7</span>
+            <span class="film-source">YOUTUBE</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Мудрые сказки тётушки Совы: «Шахматы»</h3>
+            <p class="film-meta">Россия · обучающий мультфильм</p>
+            <p class="film-desc">Тётушка Сова знакомит малышей с шахматными фигурами и объясняет правила игры в форме доброй сказки.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=rKROK9PD2tA" target="_blank" rel="noopener noreferrer">▶ Смотреть</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=J0k9O5KhXEI" target="_blank" rel="noopener noreferrer" aria-label="Смотреть мультфильм «Ёжик-шахматист»">
+            <img src="https://img.youtube.com/vi/J0k9O5KhXEI/hq720.jpg" alt="Кадр из мультфильма «Ёжик-шахматист»" loading="lazy" />
+            <span class="film-rank">8</span>
+            <span class="film-source">YOUTUBE</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Мудрые сказки: «Ёжик-шахматист»</h3>
+            <p class="film-meta">Россия · обучающий мультфильм</p>
+            <p class="film-desc">Сказка о ёжике, который учится играть в шахматы и понимает: чтобы победить, нужно думать наперёд и не бояться ошибок.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=J0k9O5KhXEI" target="_blank" rel="noopener noreferrer">▶ Смотреть</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=1Pv71u8dgrg" target="_blank" rel="noopener noreferrer" aria-label="Смотреть выпуск «Почему шахматного ферзя называют королевой?»">
+            <img src="https://img.youtube.com/vi/1Pv71u8dgrg/hq720.jpg" alt="Кадр из выпуска «Почему шахматного ферзя называют королевой?»" loading="lazy" />
+            <span class="film-rank">9</span>
+            <span class="film-source">YOUTUBE</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Профессор Почемушкин: «Почему шахматного ферзя называют королевой?»</h3>
+            <p class="film-meta">Россия · познавательный мультфильм</p>
+            <p class="film-desc">Почему самая сильная фигура на доске называется королевой? Короткий познавательный выпуск для юных шахматистов.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=1Pv71u8dgrg" target="_blank" rel="noopener noreferrer">▶ Смотреть</a>
+            </div>
+          </div>
+        </article>
+        <article class="film-card">
+          <a class="film-cover" href="https://www.youtube.com/watch?v=eKfvkOrRiWw" target="_blank" rel="noopener noreferrer" aria-label="Смотреть мультфильм «Шахматы» Союзмультфильм">
+            <img src="https://img.youtube.com/vi/eKfvkOrRiWw/hq720.jpg" alt="Кадр из мультфильма «Шахматы» Союзмультфильм" loading="lazy" />
+            <span class="film-rank">10</span>
+            <span class="film-source">YOUTUBE</span>
+            <span class="film-play">▶</span>
+          </a>
+          <div class="film-info">
+            <h3>Союзмультфильм: «Шахматы» <span class="film-year">2019</span></h3>
+            <p class="film-meta">Россия · короткометражный мультфильм</p>
+            <p class="film-desc">Короткометражный мультфильм Союзмультфильма о шахматной партии, где фигуры оживают и становятся героями собственной истории.</p>
+            <div class="film-actions">
+              <a class="play-btn btn-youtube" href="https://www.youtube.com/watch?v=eKfvkOrRiWw" target="_blank" rel="noopener noreferrer">▶ Смотреть</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div style="text-align: center; margin: 30px 0;">
+        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
+          ← Назад
+        </button>
+      </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- 6. ФОТОАРХИВ (CHESSPHOTO)                                -->
     <!-- ======================================================== -->
     <div id="page-photo" class="page-view">
       <div class="top-title-sec">
@@ -1033,7 +1632,7 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- 6. ИНФОРМАЦИЯ ДЛЯ РОДИТЕЛЕЙ (PARENTS)                    -->
+    <!-- 7. ИНФОРМАЦИЯ ДЛЯ РОДИТЕЛЕЙ (PARENTS)                    -->
     <!-- ======================================================== -->
     <div id="page-parents" class="page-view">
       <div class="top-title-sec">
