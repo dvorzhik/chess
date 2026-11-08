@@ -9,18 +9,20 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #ffffff;
-      --card-bg: #f8fafc;
-      --card-border: #e2e8f0;
-      --accent: #ca8a04;
-      --accent-hover: #a16207;
-      --text-main: #0f172a;
-      --text-muted: #475569;
-      --link: #0284c7;
+      --bg: #FAF7F0;
+      --card-bg: #ffffff;
+      --card-border: #E7DFD2;
+      --accent: #0E5A46;
+      --accent-hover: #0A4335;
+      --accent-soft: #E7F0EC;
+      --gold: #B8873B;
+      --text-main: #1B1815;
+      --text-muted: #5A544C;
+      --link: #0E5A46;
     }
 
     * {
@@ -98,13 +100,13 @@
 
     .nav-item-btn:hover {
       color: var(--text-main);
-      background: #f1f5f9;
+      background: #F2EDE4;
     }
 
     .nav-item-btn.active {
-      color: #0f172a;
-      background: #e2e8f0;
-      border-color: #cbd5e1;
+      color: #1B1815;
+      background: #E7DFD2;
+      border-color: #D8CFC0;
     }
 
     .top-title-sec {
@@ -137,7 +139,7 @@
       width: 100%;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #E7DFD2;
       background: #ffffff;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
@@ -237,13 +239,13 @@
 
     .step-card.phone a {
       display: block;
-      background: #0f172a;
+      background: #1B1815;
     }
 
     .step-card.phone img {
       height: auto;
       object-fit: contain;
-      background: #0f172a;
+      background: #1B1815;
       padding: 10px;
       cursor: zoom-in;
     }
@@ -277,7 +279,7 @@
       padding-top: 56.25%;
       border-radius: 12px;
       overflow: hidden;
-      background-color: #0f172a;
+      background-color: #1B1815;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       display: block;
     }
@@ -304,7 +306,7 @@
       transform: translate(-50%, -50%);
       width: 64px;
       height: 44px;
-      background-color: rgba(15, 23, 42, 0.85);
+      background-color: rgba(27, 24, 21, 0.85);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -354,7 +356,7 @@
       margin-left: 8px;
       font-size: 0.8em;
       font-weight: 400;
-      color: #94a3b8;
+      color: #9A9184;
       text-decoration: none;
       vertical-align: middle;
       transition: color 0.2s, opacity 0.2s;
@@ -384,7 +386,7 @@
       bottom: 10px;
       width: 3px;
       border-radius: 3px;
-      background: linear-gradient(to bottom, #ca8a04, #94a3b8 70%, #e2e8f0);
+      background: linear-gradient(to bottom, #0E5A46, #9A9184 70%, #E7DFD2);
       opacity: 0.45;
     }
 
@@ -402,7 +404,7 @@
       height: 13px;
       border-radius: 50%;
       background: #ffffff;
-      border: 3px solid #ca8a04;
+      border: 3px solid #0E5A46;
       box-shadow: 0 0 0 3px #ffffff;
     }
 
@@ -417,7 +419,7 @@
 
     .timeline-card:hover {
       transform: translateY(-2px);
-      border-color: #94a3b8;
+      border-color: #9A9184;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
@@ -425,9 +427,9 @@
       display: inline-block;
       padding: 3px 11px;
       border-radius: 999px;
-      background: #fef3c7;
-      border: 1px solid #fde68a;
-      color: #92400e;
+      background: #E7F0EC;
+      border: 1px solid #C9DED6;
+      color: #0A4335;
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.3px;
@@ -554,7 +556,7 @@
 
     .film-card:hover {
       transform: translateY(-3px);
-      border-color: #94a3b8;
+      border-color: #9A9184;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
@@ -563,7 +565,7 @@
       display: block;
       width: 100%;
       padding-top: 56.25%;
-      background: #0f172a;
+      background: #1B1815;
       overflow: hidden;
     }
 
@@ -590,7 +592,7 @@
       height: 30px;
       padding: 0 8px;
       border-radius: 8px;
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(27, 24, 21, 0.85);
       color: #ffffff;
       font-size: 0.9rem;
       font-weight: 700;
@@ -670,14 +672,14 @@
     }
 
     .film-year {
-      color: #94a3b8;
+      color: #9A9184;
       font-weight: 600;
       font-size: 0.92rem;
     }
 
     .film-meta {
       font-size: 0.82rem;
-      color: #64748b;
+      color: #6B645B;
       font-weight: 500;
       margin-bottom: 10px;
     }
@@ -757,7 +759,7 @@
 
     .channel-row:hover {
       transform: translateY(-3px);
-      border-color: #94a3b8;
+      border-color: #9A9184;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
@@ -780,7 +782,7 @@
       height: 52px;
       flex: 0 0 52px;
       border-radius: 50%;
-      background: #f1f5f9;
+      background: #F2EDE4;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -810,7 +812,7 @@
 
     .channel-meta {
       font-size: 0.8rem;
-      color: #64748b;
+      color: #6B645B;
       font-weight: 600;
       line-height: 1.4;
     }
@@ -822,8 +824,8 @@
       height: 28px;
       padding: 0 7px;
       border-radius: 8px;
-      background: #e2e8f0;
-      color: #0f172a;
+      background: #E7DFD2;
+      color: #1B1815;
       font-size: 0.85rem;
       font-weight: 800;
       display: flex;
@@ -871,7 +873,7 @@
       padding-top: 56.25%;
       border-radius: 10px;
       overflow: hidden;
-      background: #0f172a;
+      background: #1B1815;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
     }
 
@@ -926,7 +928,7 @@
 
     .channel-video-meta {
       font-size: 0.78rem;
-      color: #64748b;
+      color: #6B645B;
       font-weight: 600;
     }
 
@@ -939,7 +941,7 @@
     /* Наглядная «обложка» раздела для главной страницы */
     .yt-teaser-art {
       aspect-ratio: 1 / 1;
-      background: radial-gradient(circle at 50% 40%, #1e293b 0%, #0f172a 70%);
+      background: radial-gradient(circle at 50% 40%, #2B2621 0%, #1B1815 70%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -975,7 +977,7 @@
 
     .yt-teaser-sub {
       font-size: 0.85rem;
-      color: #cbd5e1;
+      color: #D8CFC0;
       font-weight: 500;
     }
 
@@ -1000,14 +1002,14 @@
 
     .news-card:hover {
       transform: translateY(-3px);
-      border-color: #94a3b8;
+      border-color: #9A9184;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     .news-cover {
       position: relative;
       display: block;
-      background: #0f172a;
+      background: #1B1815;
       overflow: hidden;
       min-height: 200px;
     }
@@ -1039,7 +1041,7 @@
       align-self: flex-start;
       padding: 4px 11px;
       border-radius: 999px;
-      background: #f1f5f9;
+      background: #F2EDE4;
       border: 1px solid var(--card-border);
       color: #475569;
       font-size: 0.8rem;
@@ -1076,7 +1078,7 @@
     /* Заглушка-обложка раздела для главной страницы */
     .news-teaser-art {
       aspect-ratio: 1 / 1;
-      background: radial-gradient(circle at 50% 35%, #1e293b 0%, #0f172a 70%);
+      background: radial-gradient(circle at 50% 35%, #2B2621 0%, #1B1815 70%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1100,7 +1102,7 @@
 
     .news-teaser-sub {
       font-size: 0.85rem;
-      color: #cbd5e1;
+      color: #D8CFC0;
       font-weight: 500;
     }
 
@@ -1155,7 +1157,7 @@
     }
 
     .poll-option:hover {
-      border-color: #94a3b8;
+      border-color: #9A9184;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
@@ -1173,7 +1175,7 @@
       flex: 0 0 30px;
       border-radius: 50%;
       object-fit: cover;
-      background: #f1f5f9;
+      background: #F2EDE4;
       display: block;
     }
 
@@ -1243,7 +1245,7 @@
 
     .poll-status {
       font-size: 0.9rem;
-      color: #64748b;
+      color: #6B645B;
       margin-top: 12px;
       min-height: 1.3em;
     }
@@ -1252,7 +1254,7 @@
       display: none;
       margin-top: 22px;
       padding-top: 18px;
-      border-top: 1px dashed #cbd5e1;
+      border-top: 1px dashed #D8CFC0;
     }
 
     .poll-results.visible {
@@ -1268,7 +1270,7 @@
 
     .poll-total {
       font-size: 0.85rem;
-      color: #64748b;
+      color: #6B645B;
       margin-bottom: 16px;
     }
 
@@ -1288,7 +1290,7 @@
     }
 
     .poll-row-num {
-      color: #64748b;
+      color: #6B645B;
       font-weight: 600;
       white-space: nowrap;
       font-size: 0.85rem;
@@ -1296,7 +1298,7 @@
 
     .poll-bar {
       height: 9px;
-      background: #e2e8f0;
+      background: #E7DFD2;
       border-radius: 999px;
       overflow: hidden;
     }
@@ -1305,13 +1307,13 @@
       height: 100%;
       width: 0;
       border-radius: 999px;
-      background: linear-gradient(90deg, #ca8a04, #dc2626);
+      background: linear-gradient(90deg, #0E5A46, #dc2626);
       transition: width 0.6s ease;
     }
 
     .poll-note {
       font-size: 0.82rem;
-      color: #64748b;
+      color: #6B645B;
       line-height: 1.5;
       margin-top: 14px;
     }
@@ -1375,14 +1377,14 @@
 
     .photo-card:hover {
       transform: translateY(-3px);
-      border-color: #94a3b8;
+      border-color: #9A9184;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     .photo-card-cover {
       width: 100%;
       height: 190px;
-      background-color: #f1f5f9;
+      background-color: #F2EDE4;
       position: relative;
       overflow: hidden;
     }
@@ -1418,7 +1420,7 @@
 
     .photo-card-info span {
       font-size: 0.85rem;
-      color: #64748b;
+      color: #6B645B;
       font-weight: 500;
     }
 
@@ -1459,7 +1461,7 @@
     .btn-site { background-color: #475569; }
 
     .quote-box {
-      background: #f8fafc;
+      background: #FFFFFF;
       border: 1px solid var(--card-border);
       border-radius: 16px;
       padding: 35px 24px;
@@ -1476,7 +1478,7 @@
       border-radius: 50%;
       background-color: #ffffff;
       border: 1px solid var(--card-border);
-      color: #ca8a04;
+      color: #0E5A46;
       font-size: 34px;
       display: flex;
       align-items: center;
@@ -1488,7 +1490,7 @@
     #quote-text {
       font-size: 1.15rem;
       font-style: italic;
-      color: #1e293b;
+      color: #2B2621;
       max-width: 650px;
       line-height: 1.5;
       margin-bottom: 8px;
@@ -1497,7 +1499,7 @@
     #quote-author {
       font-size: 0.95rem;
       font-weight: 700;
-      color: #ca8a04;
+      color: #0E5A46;
     }
 
     .page-view {
@@ -1558,6 +1560,721 @@
         font-size: 1.35rem;
       }
     }
+    /* ============================================================
+       РЕДИЗАЙН «КЛУБНАЯ КЛАССИКА» — этап 1
+       Дизайн-система, хедер, первый экран, главная, футер
+       ============================================================ */
+
+    body {
+      background-color: var(--bg);
+      background-image: radial-gradient(circle at 10% -10%, rgba(14, 90, 70, 0.07), transparent 55%);
+      background-repeat: no-repeat;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Lora', Georgia, 'Times New Roman', serif;
+      letter-spacing: -0.01em;
+    }
+
+    /* Заголовки внутренних страниц: тот же характер, что и в hero */
+    .top-title-sec h1 {
+      font-size: clamp(1.85rem, 4vw, 2.6rem);
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: -0.01em;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(14, 90, 70, 0.45);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+
+    /* Универсальные кнопки */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 0.97rem;
+      font-weight: 600;
+      line-height: 1.2;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:active { transform: translateY(1px); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 6px 16px rgba(14, 90, 70, 0.22);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      color: #ffffff;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-main);
+      border-color: var(--card-border);
+    }
+    .btn-ghost:hover {
+      color: var(--accent-hover);
+      border-color: var(--accent);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--accent-hover);
+      border-color: #CFDDD7;
+    }
+    .btn-secondary:hover {
+      background: var(--accent-soft);
+      color: var(--accent-hover);
+      border-color: var(--accent);
+    }
+
+    .btn-brand-chess { background: #769656; color: #ffffff; }
+    .btn-brand-chess:hover { background: #648049; color: #ffffff; }
+    .btn-brand-lichess { background: #33403A; color: #ffffff; }
+    .btn-brand-lichess:hover { background: #24302B; color: #ffffff; }
+    .btn-brand-whatsapp { background: #16a34a; color: #ffffff; }
+    .btn-brand-whatsapp:hover { background: #13873e; color: #ffffff; }
+    .btn-brand-telegram { background: #0284c7; color: #ffffff; }
+    .btn-brand-telegram:hover { background: #026aa2; color: #ffffff; }
+
+    /* Хедер: логотип + меню + бургер */
+    .site-header {
+      background: rgba(250, 247, 240, 0.92);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 64px;
+      padding: 10px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-main);
+      flex: 0 0 auto;
+    }
+    .brand:hover { color: var(--accent-hover); }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: var(--accent);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+      line-height: 1;
+      box-shadow: 0 4px 12px rgba(14, 90, 70, 0.22);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .brand-text strong {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+    .brand-text span {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-group { position: relative; }
+
+    .site-nav .nav-item-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 40px;
+      padding: 8px 12px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      background: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.93rem;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .site-nav .nav-item-btn:hover {
+      color: var(--text-main);
+      background: #F2EDE4;
+    }
+
+    .site-nav .nav-item-btn.active,
+    .nav-group.sub-active > .nav-item-btn {
+      color: var(--accent-hover);
+      background: var(--accent-soft);
+      border-color: #C9DED6;
+    }
+
+    .caret {
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+      opacity: 0.6;
+      transition: transform 0.2s;
+    }
+    .nav-group.open > .sub-toggle .caret { transform: rotate(180deg); }
+
+    .submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      min-width: 232px;
+      margin: 0;
+      padding: 8px;
+      list-style: none;
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      box-shadow: 0 18px 40px rgba(27, 24, 21, 0.12);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+      z-index: 120;
+    }
+
+    .nav-group:hover .submenu,
+    .nav-group:focus-within .submenu,
+    .nav-group.open .submenu {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+    }
+
+    .submenu .nav-item-btn {
+      width: 100%;
+      justify-content: flex-start;
+      min-height: 42px;
+    }
+
+    .header-cta {
+      min-height: 40px;
+      padding: 9px 16px;
+      font-size: 0.9rem;
+      border-radius: 10px;
+      flex: 0 0 auto;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      background: #ffffff;
+      cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--text-main);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    body.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    body.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Первый экран */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+      padding: 56px 0 64px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 5.2vw, 3.4rem);
+      line-height: 1.06;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 18px;
+    }
+
+    .hero-lead {
+      font-size: 1.06rem;
+      color: var(--text-muted);
+      max-width: 52ch;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .hero-facts {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 20px 0 0;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .hero-facts li { display: flex; flex-direction: column; }
+    .hero-facts strong {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .hero-facts span { font-size: 0.82rem; color: var(--text-muted); }
+
+    .hero-media { position: relative; }
+
+    .hero-board {
+      position: absolute;
+      inset: 6% -7% -8% 12%;
+      border-radius: 22px;
+      background-image:
+        linear-gradient(45deg, rgba(14, 90, 70, 0.13) 25%, transparent 25%, transparent 75%, rgba(14, 90, 70, 0.13) 75%),
+        linear-gradient(45deg, rgba(14, 90, 70, 0.13) 25%, transparent 25%, transparent 75%, rgba(14, 90, 70, 0.13) 75%);
+      background-size: 64px 64px;
+      background-position: 0 0, 32px 32px;
+      transform: rotate(-4deg);
+    }
+
+    .hero-photo {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 6px solid #ffffff;
+      box-shadow: 0 24px 60px rgba(27, 24, 21, 0.16);
+    }
+    .hero-photo img { display: block; width: 100%; height: auto; }
+
+    /* Секции главной */
+    .home-section { padding: 14px 0 44px; }
+
+    .section-head { margin-bottom: 22px; }
+    .section-head h2 {
+      font-size: clamp(1.5rem, 2.8vw, 2rem);
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+    .section-head p { color: var(--text-muted); font-size: 1rem; }
+
+    .start-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .start-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(27, 24, 21, 0.05);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .start-card:hover {
+      transform: translateY(-3px);
+      border-color: #CFC5B4;
+      box-shadow: 0 18px 40px rgba(27, 24, 21, 0.1);
+    }
+
+    .start-cover {
+      display: block;
+      aspect-ratio: 16 / 10;
+      background: #F2EDE4;
+      overflow: hidden;
+    }
+    .start-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .start-card:hover .start-cover img { transform: scale(1.03); }
+
+    .start-body {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      flex: 1;
+      padding: 20px 20px 22px;
+    }
+    .start-step {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .start-body h3 { font-size: 1.15rem; font-weight: 700; color: var(--text-main); }
+    .start-body h3 a { color: inherit; text-decoration: none; }
+    .start-body p { font-size: 0.95rem; color: var(--text-muted); }
+    .start-body .btn { margin-top: auto; }
+
+    .cta-band {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      margin-top: 24px;
+      padding: 26px 30px;
+      border-radius: 18px;
+      background: var(--accent);
+      box-shadow: 0 16px 40px rgba(14, 90, 70, 0.22);
+    }
+    .cta-band h3 {
+      font-size: 1.3rem;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .cta-band p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.86);
+      max-width: 72ch;
+    }
+    .cta-band .btn-primary {
+      flex: 0 0 auto;
+      background: #ffffff;
+      color: var(--accent-hover);
+      box-shadow: none;
+    }
+    .cta-band .btn-primary:hover { background: #F2EDE4; color: var(--accent-hover); }
+
+    /* Плитки разделов */
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .tile {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 18px;
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      color: var(--text-main);
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(27, 24, 21, 0.04);
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .tile:hover {
+      transform: translateY(-2px);
+      border-color: #C9DED6;
+      color: var(--text-main);
+      box-shadow: 0 12px 26px rgba(27, 24, 21, 0.08);
+    }
+    .tile-icon {
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: var(--accent-hover);
+      font-size: 1.2rem;
+    }
+    .tile-body { display: flex; flex-direction: column; gap: 2px; }
+    .tile-body strong {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.02rem;
+      font-weight: 700;
+    }
+    .tile-body span { font-size: 0.88rem; line-height: 1.4; color: var(--text-muted); }
+
+    /* Обо мне */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 32px;
+      align-items: start;
+      padding: 28px 30px;
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(27, 24, 21, 0.05);
+    }
+    .about-text p {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-facts {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .about-facts li {
+      display: flex;
+      flex-direction: column;
+      padding-left: 14px;
+      border-left: 3px solid var(--accent);
+    }
+    .about-facts strong {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.05rem;
+      color: var(--text-main);
+    }
+    .about-facts span { font-size: 0.86rem; color: var(--text-muted); }
+
+    /* Играть и связаться */
+    .contact-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 28px 30px;
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(27, 24, 21, 0.05);
+    }
+    .contact-info h2 {
+      font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .contact-info p { color: var(--text-muted); max-width: 56ch; }
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    /* Футер */
+    .site-footer { background: #ffffff; text-align: left; }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 12px; }
+    .footer-brand div { display: flex; flex-direction: column; }
+    .footer-brand strong {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+    .footer-brand span { font-size: 0.84rem; color: var(--text-muted); }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .footer-links button {
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .footer-links button:hover { color: var(--accent-hover); }
+    .footer-brand div { text-align: left; }
+    .footer-note {
+      width: 100%;
+      margin-top: 8px;
+      padding-top: 18px;
+      border-top: 1px solid var(--card-border);
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* Адаптив */
+    @media (max-width: 900px) {
+      .nav-toggle { display: inline-flex; }
+      /* backdrop-filter у хедера делает position: fixed панели относительным хедера */
+      .site-header {
+        background: var(--bg);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+      }
+      .top-title-sec h1 { font-size: 1.5rem; }
+      .header-cta {
+        width: 100%;
+        margin-top: 14px;
+        min-height: 48px;
+        justify-content: center;
+      }
+
+      .site-nav {
+        position: fixed;
+        inset: 64px 0 0;
+        display: block;
+        padding: 8px 16px 28px;
+        overflow-y: auto;
+        background: var(--bg);
+        border-top: 1px solid var(--card-border);
+        box-shadow: 0 20px 40px rgba(27, 24, 21, 0.1);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+      }
+      body.nav-open .site-nav { opacity: 1; visibility: visible; transform: none; }
+      body.nav-open { overflow: hidden; }
+
+      .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+        width: 100%;
+      }
+      .site-nav .nav-item-btn {
+        width: 100%;
+        min-height: 48px;
+        justify-content: flex-start;
+        padding: 10px 12px;
+        font-size: 1rem;
+      }
+      .nav-group { width: 100%; }
+      .submenu {
+        position: static;
+        min-width: 0;
+        padding: 0 0 6px 10px;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+      .submenu .nav-item-btn { min-height: 42px; font-size: 0.95rem; }
+      .sub-toggle { pointer-events: none; color: var(--text-main); font-weight: 700; }
+      .caret { display: none; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 34px 0 44px;
+      }
+      .hero-media { max-width: 420px; width: 100%; margin: 0 auto; }
+      .hero-board { inset: 6% 0 -8% 12%; }
+      .start-grid { grid-template-columns: 1fr; }
+      .tiles { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .cta-band,
+      .contact-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .contact-actions { justify-content: flex-start; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.1rem; }
+      .hero-facts { gap: 18px; }
+      .hero-actions .btn,
+      .cta-band .btn { width: 100%; }
+      .cta-band,
+      .contact-card,
+      .about-grid { padding: 22px 20px; }
+      .tile { padding: 14px; }
+      .tile-icon { width: 40px; height: 40px; flex-basis: 40px; font-size: 1.05rem; }
+      .brand-text span { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
   <!-- Google Analytics 4 (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0B5JG034H"></script>
@@ -1571,280 +2288,220 @@
 <body>
 
   <!-- Навигация -->
-  <header>
-    <div class="container nav-wrap">
-      <ul class="nav-links">
-        <li><button class="nav-item-btn active" id="btn-nav-home" onclick="switchPage('home')">Главная</button></li>
-        <li><button class="nav-item-btn" id="btn-nav-parents" onclick="switchPage('parents')">Для родителей</button></li>
-        <li><button class="nav-item-btn" id="btn-nav-beginner" onclick="switchPage('beginner')">Учимся играть</button></li>
-        <li><button class="nav-item-btn" id="btn-nav-playchess" onclick="switchPage('playchess')">Побеждаем ботов</button></li>
-        <li><button class="nav-item-btn" id="btn-nav-checkmate" onclick="switchPage('checkmate')">Учимся матовать</button></li>
-        <li><button class="nav-item-btn" id="btn-nav-history" onclick="switchPage('history')">История шахмат</button></li>
-        <li><button class="nav-item-btn" id="btn-nav-films" onclick="switchPage('films')">Фильмы о шахматах</button></li>
-        <li><button class="nav-item-btn" id="btn-nav-youtube" onclick="switchPage('youtube')">YouTube о шахматах</button></li>
-        <li><button class="nav-item-btn" id="btn-nav-news" onclick="switchPage('news')">Это интересно</button></li>
-        <li><button class="nav-item-btn" id="btn-nav-photo" onclick="switchPage('photo')">Фотоархив</button></li>
-      </ul>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="javascript:void(0)" onclick="switchPage('home')" aria-label="Дворжик — на главную">
+        <span class="brand-mark" aria-hidden="true">♞</span>
+        <span class="brand-text">
+          <strong>Дворжик</strong>
+          <span>шахматный тренер</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+        <ul class="nav-list">
+          <li><button class="nav-item-btn active" id="btn-nav-home" type="button" onclick="switchPage('home')">Главная</button></li>
+          <li class="nav-group">
+            <button class="nav-item-btn sub-toggle" type="button" aria-expanded="false" onclick="toggleSub(this)">Обучение <span class="caret" aria-hidden="true"></span></button>
+            <ul class="submenu">
+              <li><button class="nav-item-btn" id="btn-nav-beginner" type="button" onclick="switchPage('beginner')">Учимся играть</button></li>
+              <li><button class="nav-item-btn" id="btn-nav-playchess" type="button" onclick="switchPage('playchess')">Побеждаем ботов</button></li>
+              <li><button class="nav-item-btn" id="btn-nav-checkmate" type="button" onclick="switchPage('checkmate')">Учимся матовать</button></li>
+            </ul>
+          </li>
+          <li class="nav-group">
+            <button class="nav-item-btn sub-toggle" type="button" aria-expanded="false" onclick="toggleSub(this)">Материалы <span class="caret" aria-hidden="true"></span></button>
+            <ul class="submenu">
+              <li><button class="nav-item-btn" id="btn-nav-history" type="button" onclick="switchPage('history')">История шахмат</button></li>
+              <li><button class="nav-item-btn" id="btn-nav-films" type="button" onclick="switchPage('films')">Фильмы о шахматах</button></li>
+              <li><button class="nav-item-btn" id="btn-nav-youtube" type="button" onclick="switchPage('youtube')">YouTube о шахматах</button></li>
+            </ul>
+          </li>
+          <li><button class="nav-item-btn" id="btn-nav-parents" type="button" onclick="switchPage('parents')">Для родителей</button></li>
+          <li><button class="nav-item-btn" id="btn-nav-news" type="button" onclick="switchPage('news')">Это интересно</button></li>
+          <li><button class="nav-item-btn" id="btn-nav-photo" type="button" onclick="switchPage('photo')">Фотоархив</button></li>
+        </ul>
+        <a class="btn btn-primary header-cta" href="https://wa.me/+972534766343" target="_blank" rel="noopener noreferrer">Записаться</a>
+      </nav>
     </div>
   </header>
 
   <main class="container">
-
-    <!-- ======================================================== -->
-    <!-- 1. ГЛАВНАЯ СТРАНИЦА (HOME)                               -->
-    <!-- ======================================================== -->
     <div id="page-home" class="page-view active-page">
-      <div class="top-title-sec">
-        <h1>DVORZHIK - ШАХМАТНЫЙ ТРЕНЕР</h1>
-      </div>
+
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Шахматный тренер · Нагария, Израиль</p>
+          <h1>Александр<br>Дворжицкий</h1>
+          <p class="hero-lead">Учу играть в шахматы детей от 5 лет и взрослых: группы, частные уроки, очно в Нагарии и онлайн по всему миру.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/+972534766343" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13c-1.5 0-2.97-.4-4.26-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.69 8.21-8.16 8.21zm4.52-6.16c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.96-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.09s.9 2.42 1.02 2.59c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+              Записаться на занятие
+            </a>
+            <a class="btn btn-ghost" href="#start" onclick="document.getElementById('start').scrollIntoView({behavior:'smooth'}); return false;">С чего начать</a>
+          </div>
+          <ul class="hero-facts">
+            <li><strong>с 6 лет</strong><span>в шахматах</span></li>
+            <li><strong>Нагария</strong><span>команда города</span></li>
+            <li><strong>5+</strong><span>возраст ученика</span></li>
+          </ul>
+        </div>
+        <div class="hero-media">
+          <div class="hero-board" aria-hidden="true"></div>
+          <div class="hero-photo">
+            <img src="images/dvorzhik_chess.png" width="480" height="480" alt="Александр Дворжицкий — шахматный тренер" />
+          </div>
+        </div>
+      </section>
+
+      <!-- С чего начать -->
+      <section class="home-section" id="start">
+        <div class="section-head">
+          <h2>С чего начать</h2>
+          <p>Три шага от правил до первой выигранной партии.</p>
+        </div>
+
+        <div class="start-grid">
+          <article class="start-card">
+            <a class="start-cover" href="javascript:void(0)" onclick="switchPage('beginner')">
+              <img src="images/Learn.png" width="640" height="400" loading="lazy" decoding="async" alt="Учимся играть в шахматы" />
+            </a>
+            <div class="start-body">
+              <span class="start-step">Шаг 1</span>
+              <h3><a href="javascript:void(0)" onclick="switchPage('beginner')">Учимся играть</a></h3>
+              <p>Короткие уроки для тех, кто только знакомится с доской. Есть отдельные видео для самых маленьких.</p>
+              <button class="btn btn-secondary" onclick="switchPage('beginner')">Учимся играть →</button>
+            </div>
+          </article>
+
+          <article class="start-card">
+            <a class="start-cover" href="javascript:void(0)" onclick="switchPage('playchess')">
+              <img src="images/bot.jpg" width="640" height="400" loading="lazy" decoding="async" alt="Побеждаем ботов" />
+            </a>
+            <div class="start-body">
+              <span class="start-step">Шаг 2</span>
+              <h3><a href="javascript:void(0)" onclick="switchPage('playchess')">Побеждаем ботов</a></h3>
+              <p>Пошагово: как запустить приложение, настроить первого бота и выиграть дебютную партию на телефоне или компьютере.</p>
+              <button class="btn btn-secondary" onclick="switchPage('playchess')">Инструкция →</button>
+            </div>
+          </article>
+
+          <article class="start-card">
+            <a class="start-cover" href="javascript:void(0)" onclick="switchPage('checkmate')">
+              <img src="images/Checkmate1.jpg" width="640" height="400" loading="lazy" decoding="async" alt="Учимся ставить мат" />
+            </a>
+            <div class="start-body">
+              <span class="start-step">Шаг 3</span>
+              <h3><a href="javascript:void(0)" onclick="switchPage('checkmate')">Учимся матовать</a></h3>
+              <p>Цель игры — мат. Ставим мат одинокому королю ферзём, ладьёй, двумя ладьями и слоном с конём.</p>
+              <button class="btn btn-secondary" onclick="switchPage('checkmate')">Учимся матовать →</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="cta-band">
+          <div class="cta-band-text">
+            <h3>Записаться на занятия</h3>
+            <p>Хотите научиться играть или усилить свою игру? Приглашаю в Нагарию: есть группы для новичков и опытных игроков, а для ценителей индивидуального подхода — частные уроки очно и дистанционно.</p>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/+972534766343" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13c-1.5 0-2.97-.4-4.26-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.69 8.21-8.16 8.21zm4.52-6.16c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.96-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.09s.9 2.42 1.02 2.59c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+            Телефон (WhatsApp)
+          </a>
+        </div>
+      </section>
+
+      <!-- Разделы -->
+      <section class="home-section" id="sections">
+        <div class="section-head">
+          <h2>Разделы сайта</h2>
+          <p>Материалы, которые помогают учиться и держат в курсе шахматной жизни.</p>
+        </div>
+
+        <div class="tiles">
+          <a class="tile" href="javascript:void(0)" onclick="switchPage('history')">
+            <span class="tile-icon" aria-hidden="true">♜</span>
+            <span class="tile-body">
+              <strong>История шахмат</strong>
+              <span>1500 лет: главные вехи от истоков до наших дней</span>
+            </span>
+          </a>
+          <a class="tile" href="javascript:void(0)" onclick="switchPage('films')">
+            <span class="tile-icon" aria-hidden="true">🎬</span>
+            <span class="tile-body">
+              <strong>Фильмы и мультфильмы</strong>
+              <span>10 фильмов и 10 мультфильмов о шахматах</span>
+            </span>
+          </a>
+          <a class="tile" href="javascript:void(0)" onclick="switchPage('youtube')">
+            <span class="tile-icon" aria-hidden="true">📺</span>
+            <span class="tile-body">
+              <strong>YouTube о шахматах</strong>
+              <span>11 русскоязычных каналов и анонимный опрос</span>
+            </span>
+          </a>
+          <a class="tile" href="javascript:void(0)" onclick="switchPage('news')">
+            <span class="tile-icon" aria-hidden="true">🗞️</span>
+            <span class="tile-body">
+              <strong>Это интересно</strong>
+              <span>Короткие шахматные новости недели</span>
+            </span>
+          </a>
+          <a class="tile" href="javascript:void(0)" onclick="switchPage('photo')">
+            <span class="tile-icon" aria-hidden="true">📸</span>
+            <span class="tile-body">
+              <strong>Фотоархив</strong>
+              <span>Турниры, сеансы и занятия в фотографиях</span>
+            </span>
+          </a>
+          <a class="tile" href="javascript:void(0)" onclick="switchPage('parents')">
+            <span class="tile-icon" aria-hidden="true">👨‍👩‍👧</span>
+            <span class="tile-body">
+              <strong>Для родителей</strong>
+              <span>Гаджеты с пользой: Lichess и Chess.com дома</span>
+            </span>
+          </a>
+        </div>
+      </section>
 
       <!-- Обо мне -->
-      <section class="section-block">
-        <div class="section-img-wrap">
-          <img src="images/dvorzhik_chess.png" alt="Александр Дворжицкий" />
-        </div>
-        <div class="section-content">
+      <section class="home-section" id="about">
+        <div class="section-head">
           <h2>Обо мне</h2>
-          <p>Меня зовут Александр Дворжицкий.<br>Играю в шахматы с 6 лет.</p>
-          <p>Занимался шахматами в Перми (тренер Марк Друккер).<br>Занимался шахматами в Петрозаводске (тренер Александр Гойхенберг).</p>
-          <p>После переезда в Израиль в 2021 году начал выступать за команду города Нагария и работать тренером по шахматам.</p>
-          <p>Занимаюсь с шахматистами любого возраста (от 5 лет до бесконечности).</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>Меня зовут Александр Дворжицкий. Играю в шахматы с 6 лет.</p>
+            <p>Занимался шахматами в Перми (тренер Марк Друккер), затем в Петрозаводске (тренер Александр Гойхенберг).</p>
+            <p>После переезда в Израиль в 2021 году начал выступать за команду города Нагария и работать тренером по шахматам.</p>
+            <p>Занимаюсь с шахматистами любого возраста — от 5 лет до бесконечности.</p>
+          </div>
+          <ul class="about-facts">
+            <li><strong>2021</strong><span>переезд в Израиль</span></li>
+            <li><strong>Нагария</strong><span>выступаю за команду города</span></li>
+            <li><strong>5+</strong><span>минимальный возраст ученика</span></li>
+          </ul>
         </div>
       </section>
 
-      <!-- Записаться -->
-      <section class="section-block">
-        <div class="section-img-wrap">
-          <a href="https://wa.me/+972534766343" target="_blank" rel="noopener noreferrer">
-            <img src="images/Recording.png" alt="Записаться" />
-          </a>
-        </div>
-        <div class="section-content">
-          <h2><a href="https://wa.me/+972534766343" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Записаться на занятия</a></h2>
-          <p>Хотите научиться играть в шахматы или усилить свою игру?<br>Приглашаю на занятия в Нагарии!<br>Есть группы для новичков и опытных игроков.</p>
-          <p>Для тех, кто ценит индивидуальный подход, провожу частные уроки очно и дистанционно в удобное для вас время.</p>
-          <div class="play-buttons-group">
-            <a href="https://wa.me/+972534766343" target="_blank" rel="noopener noreferrer" class="play-btn btn-whatsapp">
-              <span>💬</span> Телефон (WhatsApp)
-            </a>
+      <!-- Играть и связаться -->
+      <section class="home-section" id="contact">
+        <div class="contact-card">
+          <div class="contact-info">
+            <h2>Играть и связаться</h2>
+            <p>Мой ник на игровых платформах — <strong>dvorzhik</strong>. Вызывайте на партию, а если есть вопросы или пожелания к занятиям — напишите в удобном мессенджере.</p>
           </div>
-        </div>
-      </section>
-
-      <!-- Информация для родителей -->
-      <section class="section-block">
-        <div class="section-img-wrap">
-          <a href="javascript:void(0)" onclick="switchPage('parents')">
-            <img src="images/parents.jpg" alt="Информация для родителей" />
-          </a>
-        </div>
-        <div class="section-content">
-          <h2><a href="javascript:void(0)" onclick="switchPage('parents')" style="color: inherit; text-decoration: none;">Информация для родителей</a></h2>
-          <p>Дети легко осваивают гаджеты, но редко умеют вовремя остановиться. Бороться с экранами бессмысленно — лучше превратить их из пустой траты времени в мощный тренажер мышления.</p>
-          <p>Планшет или телефон могут стать лучшим инструментом для домашних шахматных тренировок.</p>
-          <p>Загляните в этот раздел, чтобы забрать список проверенных программ и рекомендаций для ребенка.</p>
-          <div class="play-buttons-group">
-            <button onclick="switchPage('parents')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
-              Информация для родителей →
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Учимся играть -->
-      <section class="section-block">
-        <div class="section-img-wrap">
-          <a href="javascript:void(0)" onclick="switchPage('beginner')">
-            <img src="images/Learn.png" alt="Учимся играть в шахматы" />
-          </a>
-        </div>
-        <div class="section-content">
-          <h2><a href="javascript:void(0)" onclick="switchPage('beginner')" style="color: inherit; text-decoration: none;">Учимся играть</a></h2>
-          <p>Если вы только мечтаете научиться играть в шахматы — смотрите простые и короткие уроки.</p>
-          <p>Если у вас маленький ребенок — есть специальные учебные видео для «шахматят».</p>
-          <p>После просмотра уроков сделайте упражнения на компьютере, планшете или смартфоне.</p>
-          <div class="play-buttons-group">
-            <button onclick="switchPage('beginner')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
-              Учимся играть в шахматы →
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Побеждаем ботов -->
-      <section class="section-block">
-        <div class="section-img-wrap">
-          <a href="javascript:void(0)" onclick="switchPage('playchess')">
-            <img src="images/bot.jpg" alt="Побеждаем ботов" />
-          </a>
-        </div>
-        <div class="section-content">
-          <h2><a href="javascript:void(0)" onclick="switchPage('playchess')" style="color: inherit; text-decoration: none;">Побеждаем ботов</a></h2>
-          <p>Когда вы посмотрели видео и выучили правила игры — пора попробовать сыграть в шахматы.</p>
-          <p>Пошаговое руководство: как запустить приложение, настроить первого бота и выиграть свою дебютную партию на телефоне или компьютере.</p>
-          <div class="play-buttons-group">
-            <button onclick="switchPage('playchess')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
-              Инструкция: играем с ботами →
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Учимся матовать -->
-      <section class="section-block">
-        <div class="section-img-wrap">
-          <a href="javascript:void(0)" onclick="switchPage('checkmate')">
-            <img src="images/checkmate.png" alt="Учимся матовать" />
-          </a>
-        </div>
-        <div class="section-content">
-          <h2><a href="javascript:void(0)" onclick="switchPage('checkmate')" style="color: inherit; text-decoration: none;">Учимся матовать</a></h2>
-          <p>Когда вы освоили правила игры в шахматы и попробовали сыграть свои первые партии, пора осваивать следующие важные уроки!</p>
-          <p>Цель игры в шахматы — поставить мат сопернику.</p>
-          <p>Давайте научимся ставить мат одинокому королю!</p>
-          <div class="play-buttons-group">
-            <button onclick="switchPage('checkmate')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
-              Учимся ставить мат →
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- История шахмат -->
-      <section class="section-block">
-        <div class="section-img-wrap">
-          <div class="history-teaser-art">
-            <div class="history-teaser-icon" aria-hidden="true">♜</div>
-            <p class="history-teaser-title">История шахмат</p>
-            <p class="history-teaser-sub">1500 лет: главные вехи</p>
-          </div>
-        </div>
-        <div class="section-content">
-          <h2><a href="javascript:void(0)" onclick="switchPage('history')" style="color: inherit; text-decoration: none;">История шахмат</a></h2>
-          <p>От индийской игры для знати до миллионов онлайн-партий в день: главные вехи развития шахмат от истоков до современности.</p>
-          <p>Как игра меняла правила, почему XIX век называют эпохой романтизма и как компьютеры перевернули всё в 1997 году.</p>
-          <div class="play-buttons-group">
-            <button onclick="switchPage('history')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
-              Пройти по вехам →
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Фильмы о шахматах -->
-      <section class="section-block">
-        <div class="section-img-wrap is-square">
-          <a href="javascript:void(0)" onclick="switchPage('films')">
-            <img src="https://img.youtube.com/vi/Lso2O3o9nwU/maxresdefault.jpg" alt="Фильмы и мультфильмы о шахматах" loading="lazy" />
-          </a>
-        </div>
-        <div class="section-content">
-          <h2><a href="javascript:void(0)" onclick="switchPage('films')" style="color: inherit; text-decoration: none;">Фильмы и мультфильмы о шахматах</a></h2>
-          <p>10 лучших фильмов и сериалов о шахматах по рейтингу Кинопоиска — с короткими описаниями и трейлерами.</p>
-          <p>А ещё 10 мультфильмов, которые в лёгкой форме познакомят ребёнка с доской, фигурами и первой партией.</p>
-          <div class="play-buttons-group">
-            <button onclick="switchPage('films')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
-              Смотреть подборку →
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- YouTube о шахматах -->
-      <section class="section-block">
-        <div class="section-img-wrap">
-          <div class="yt-teaser-art">
-            <div class="yt-teaser-play" aria-hidden="true"></div>
-            <p class="yt-teaser-title">YouTube</p>
-            <p class="yt-teaser-sub">11 каналов о шахматах</p>
-          </div>
-        </div>
-        <div class="section-content">
-          <h2><a href="javascript:void(0)" onclick="switchPage('youtube')" style="color: inherit; text-decoration: none;">YouTube о шахматах</a></h2>
-          <p>11 русскоязычных каналов о шахматах, которые регулярно выпускают новые видео: гроссмейстерские разборы, уроки «с нуля» и живые стримы.</p>
-          <p>Справа от каждого канала — его самое популярное видео. А ещё анонимный опрос: отметьте каналы, которые нравятся вам больше всего, и посмотрите, что выбирают другие.</p>
-          <div class="play-buttons-group">
-            <button onclick="switchPage('youtube')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
-              Смотреть подборку →
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Это интересно -->
-      <section class="section-block">
-        <div class="section-img-wrap">
-          <div class="news-teaser-art">
-            <div class="news-teaser-icon" aria-hidden="true">🗞️</div>
-            <p class="news-teaser-title">Это интересно</p>
-            <p class="news-teaser-sub">Шахматные новости недели</p>
-          </div>
-        </div>
-        <div class="section-content">
-          <h2><a href="javascript:void(0)" onclick="switchPage('news')" style="color: inherit; text-decoration: none;">Это интересно</a></h2>
-          <p>Короткие новости из мира шахмат: рекорды, рейтинги, правила и события, о которых стоит знать.</p>
-          <p>Раздел обновляется каждую неделю — свежие заметки всегда сверху, с датой публикации и ссылкой на источник.</p>
-          <div class="play-buttons-group">
-            <button onclick="switchPage('news')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
-              Читать новости →
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Фотоархив -->
-      <section class="section-block">
-        <div class="section-img-wrap">
-          <a href="javascript:void(0)" onclick="switchPage('photo')">
-            <img src="images/photo.png" alt="Фотоархив" />
-          </a>
-        </div>
-        <div class="section-content">
-          <h2><a href="javascript:void(0)" onclick="switchPage('photo')" style="color: inherit; text-decoration: none;">Фотоархив соревнований и занятий</a></h2>
-          <p>Здесь собраны фотографии с турниров и шахматных занятий. Ищите себя, делитесь комментариями и ставьте «лайки» понравившимся фото!</p>
-          <div class="play-buttons-group">
-            <button onclick="switchPage('photo')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
-              Посмотреть фотографии →
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Играть в шахматы -->
-      <section class="section-block">
-        <div class="section-img-wrap">
-          <img src="images/play.png" alt="Играть в шахматы" />
-        </div>
-        <div class="section-content">
-          <h2>Играть в шахматы!</h2>
-          <p>Вызывайте меня на популярных игровых платформах:</p>
-          <p>Мой ник — <strong style="color: var(--text-main); font-size: 1.1rem;">dvorzhik</strong></p>
-          <div class="play-buttons-group">
-            <a href="https://www.chess.com/member/dvorzhik" target="_blank" rel="noopener noreferrer" class="play-btn btn-chesscom">
-              <span>♟️</span> Chess.com
-            </a>
-            <a href="https://lichess.org/@/dvorzhik" target="_blank" rel="noopener noreferrer" class="play-btn btn-lichess">
-              <span>♞</span> Lichess.org
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Отзывы -->
-      <section class="section-block">
-        <div class="section-img-wrap">
-          <img src="images/Write.png" alt="Отзывы" />
-        </div>
-        <div class="section-content">
-          <h2>Напишите свои пожелания!</h2>
-          <p>Поделитесь своим мнением в удобном мессенджере в один клик:</p>
-          <div class="play-buttons-group">
-            <a href="https://wa.me/972534766343?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B7%D1%8B%D0%B2%20%D0%BE%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F%D1%85%20%D1%88%D0%B0%D1%85%D0%BC%D0%B0%D1%82%D0%B0%D0%BC%D0%B8%3A%20" target="_blank" rel="noopener noreferrer" class="play-btn btn-whatsapp">
-              <span>💬</span> WhatsApp
-            </a>
-            <a href="https://t.me/dvorzhik" target="_blank" rel="noopener noreferrer" class="play-btn btn-telegram">
-              <span>✈️</span> Telegram
-            </a>
+          <div class="contact-actions">
+            <a class="btn btn-brand-chess" href="https://www.chess.com/member/dvorzhik" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">♟</span> Chess.com</a>
+            <a class="btn btn-brand-lichess" href="https://lichess.org/@/dvorzhik" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">♞</span> Lichess.org</a>
+            <a class="btn btn-brand-whatsapp" href="https://wa.me/972534766343?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B7%D1%8B%D0%B2%20%D0%BE%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F%D1%85%20%D1%88%D0%B0%D1%85%D0%BC%D0%B0%D1%82%D0%B0%D0%BC%D0%B8%3A%20" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13c-1.5 0-2.97-.4-4.26-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.69 8.21-8.16 8.21zm4.52-6.16c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.96-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.09s.9 2.42 1.02 2.59c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg> WhatsApp</a>
+            <a class="btn btn-brand-telegram" href="https://t.me/dvorzhik" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M21.9 4.3 18.7 19c-.2 1-.8 1.2-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.5.5-1 .5l.3-4.7 8.5-7.7c.4-.3-.1-.5-.6-.2L6.9 12.9 2.4 11.5c-1-.3-1-1 .2-1.4l17.7-6.8c.8-.3 1.5.2 1.3 1z"/></svg> Telegram</a>
           </div>
         </div>
       </section>
@@ -1928,7 +2585,7 @@
       </section>
 
       <div style="text-align: center; margin: 30px 0;">
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
+        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
           ← Назад
         </button>
       </div>
@@ -2068,7 +2725,7 @@
 
       <div style="text-align: center; margin: 30px 0;">
         <h3 style="color: var(--accent); margin-bottom: 16px;">Удачи — у вас всё получится! 🏆</h3>
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
+        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
           ← Назад
         </button>
       </div>
@@ -2188,7 +2845,7 @@
       </section>
 
       <div style="text-align: center; margin: 30px 0;">
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
+        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
           ← Назад
         </button>
       </div>
@@ -2262,7 +2919,7 @@
       </div>
 
       <div style="text-align: center; margin: 30px 0;">
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
+        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
           ← Назад
         </button>
       </div>
@@ -2626,7 +3283,7 @@
       </div>
 
       <div style="text-align: center; margin: 30px 0;">
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
+        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
           ← Назад
         </button>
       </div>
@@ -3038,7 +3695,7 @@
       </div>
 
       <div style="text-align: center; margin: 30px 0;">
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
+        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
           ← Назад
         </button>
       </div>
@@ -3155,7 +3812,7 @@
       </div>
 
       <div style="text-align: center; margin: 30px 0;">
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
+        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
           ← Назад
         </button>
       </div>
@@ -3315,7 +3972,7 @@
       </section>
 
       <div style="text-align: center; margin: 30px 0;">
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
+        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
           ← Назад
         </button>
       </div>
@@ -3330,12 +3987,25 @@
 
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="container">
-      <p>© Александр Дворжицкий • Шахматный тренер</p>
-      <p style="margin-top: 6px; font-size: 0.82rem; color: #64748b;">
-        Нагария, Израиль • Онлайн по всему миру
-      </p>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true">♞</span>
+          <div>
+            <strong>Александр Дворжицкий</strong>
+            <span>Шахматный тренер · Нагария, Израиль</span>
+          </div>
+        </div>
+        <ul class="footer-links">
+          <li><button type="button" onclick="switchPage('beginner')">Учимся играть</button></li>
+          <li><button type="button" onclick="switchPage('playchess')">Побеждаем ботов</button></li>
+          <li><button type="button" onclick="switchPage('checkmate')">Учимся матовать</button></li>
+          <li><button type="button" onclick="switchPage('films')">Фильмы о шахматах</button></li>
+          <li><button type="button" onclick="switchPage('parents')">Для родителей</button></li>
+        </ul>
+      </div>
+      <p class="footer-note">© <span id="footer-year">2026</span> Александр Дворжицкий • Шахматный тренер • Онлайн по всему миру • <a href="https://wa.me/+972534766343" target="_blank" rel="noopener noreferrer">WhatsApp</a> • <a href="https://t.me/dvorzhik" target="_blank" rel="noopener noreferrer">Telegram</a></p>
     </div>
   </footer>
 
@@ -3344,7 +4014,15 @@
     // anchorId — необязательный id блока внутри раздела: к нему прокручиваем вместо верха страницы.
     function showPage(pageId, anchorId) {
       document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active-page'));
-      document.querySelectorAll('.nav-item-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.nav-item-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.removeAttribute('aria-current');
+      });
+      document.querySelectorAll('.nav-group').forEach(group => {
+        group.classList.remove('sub-active', 'open');
+        const toggle = group.querySelector('.sub-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
 
       const targetPage = document.getElementById('page-' + pageId);
       if (targetPage) {
@@ -3354,7 +4032,19 @@
       const activeBtn = document.getElementById('btn-nav-' + pageId);
       if (activeBtn) {
         activeBtn.classList.add('active');
+        activeBtn.setAttribute('aria-current', 'page');
+
+        // Пункт внутри выпадающей группы — подсвечиваем и саму группу
+        const group = activeBtn.closest('.nav-group');
+        if (group) {
+          group.classList.add('sub-active');
+          const toggle = group.querySelector('.sub-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'true');
+        }
       }
+
+      // После перехода по меню мобильная панель закрывается
+      toggleNav(false);
 
       // Раздел «YouTube о шахматах»: при первом открытии подгружаем результаты опроса
       if (pageId === 'youtube') {
@@ -3414,6 +4104,70 @@
 
     // Обработка браузерной кнопки «Назад»/«Вперёд» и ручного ввода хэша
     window.addEventListener('hashchange', handleHash);
+
+    // Мобильное меню: открыть/закрыть панель навигации
+    function toggleNav(force) {
+      const nav = document.getElementById('site-nav');
+      const btn = document.getElementById('nav-toggle');
+      if (!nav || !btn) return;
+
+      const isOpen = typeof force === 'boolean' ? force : !document.body.classList.contains('nav-open');
+      document.body.classList.toggle('nav-open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      btn.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+    }
+
+    // Выпадающие группы в хедере: работают по клику, Enter и с клавиатуры
+    function toggleSub(button) {
+      if (!button) return;
+      const group = button.closest('.nav-group');
+      if (!group) return;
+
+      const willOpen = !group.classList.contains('open');
+      document.querySelectorAll('.nav-group.open').forEach(other => {
+        other.classList.remove('open');
+        const otherToggle = other.querySelector('.sub-toggle');
+        if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+      });
+      group.classList.toggle('open', willOpen);
+      button.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    }
+
+    function closeSubmenus() {
+      document.querySelectorAll('.nav-group.open').forEach(group => {
+        group.classList.remove('open');
+        const toggle = group.querySelector('.sub-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    // Клик мимо выпадающего меню или вне мобильной панели закрывает её
+    document.addEventListener('click', event => {
+      if (!event.target.closest('.nav-group')) {
+        closeSubmenus();
+      }
+      if (document.body.classList.contains('nav-open') && !event.target.closest('.site-header')) {
+        toggleNav(false);
+      }
+    });
+
+    // Esc закрывает меню, а на широких экранах панель не нужна
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        toggleNav(false);
+        closeSubmenus();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) toggleNav(false);
+    });
+
+    // Актуальный год в футере
+    (function setFooterYear() {
+      const yearEl = document.getElementById('footer-year');
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+    })();
 
     // Внутренняя кнопка «Назад» — возвращает на предыдущую внутреннюю страницу
     function goBack() {
