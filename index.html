@@ -2006,6 +2006,10 @@
     }
     .start-card:hover .start-cover img { transform: scale(1.03); }
 
+    /* «Учимся матовать»: рисунок занимает весь кадр, поэтому показываем его целиком */
+    .start-cover--full { background: #DBA82C; }
+    .start-cover--full img { object-fit: contain; }
+
     .start-body {
       display: flex;
       flex-direction: column;
@@ -2471,8 +2475,8 @@
           </article>
 
           <article class="start-card">
-            <a class="start-cover" href="javascript:void(0)" onclick="switchPage('checkmate')">
-              <img src="images/Checkmate1.jpg" width="640" height="400" loading="lazy" decoding="async" alt="Учимся ставить мат" />
+            <a class="start-cover start-cover--full" href="javascript:void(0)" onclick="switchPage('checkmate')">
+              <img src="images/checkmate.png" width="640" height="640" loading="lazy" decoding="async" alt="Учимся ставить мат" />
             </a>
             <div class="start-body">
               <span class="start-step">Шаг 3</span>
