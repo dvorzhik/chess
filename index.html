@@ -344,6 +344,25 @@
       margin-bottom: 0;
     }
 
+    /* Якорные ссылки на блоки внутри разделов */
+    .section-block[id] {
+      scroll-margin-top: 90px;
+    }
+
+    .anchor-link {
+      margin-left: 8px;
+      font-size: 0.8em;
+      font-weight: 400;
+      color: #94a3b8;
+      text-decoration: none;
+      vertical-align: middle;
+      transition: color 0.2s, opacity 0.2s;
+    }
+
+    .anchor-link:hover {
+      color: var(--link);
+    }
+
     /* Кино и мультфильмы о шахматах */
     .films-intro {
       background: var(--card-bg);
@@ -1564,14 +1583,14 @@
         </div>
       </section>
 
-      <section class="section-block">
+      <section class="section-block" id="tutorial">
         <div class="section-img-wrap">
           <a href="https://lichess.org/ru/learn?any=1" target="_blank" rel="noopener noreferrer">
             <img src="images/play.png" alt="Интерактивный учебник" />
           </a>
         </div>
         <div class="section-content">
-          <h3>Интерактивный учебник шахмат</h3>
+          <h3>Интерактивный учебник шахмат<a class="anchor-link" href="#beginner/tutorial" title="Прямая ссылка на этот блок" aria-label="Прямая ссылка на блок «Интерактивный учебник шахмат»">🔗</a></h3>
           <p><a href="https://lichess.org/ru/learn?any=1" target="_blank" rel="noopener noreferrer">Пройдите все уроки по порядку</a> (смотрите на подсказки на доске).</p>
           <div class="play-buttons-group">
             <a href="https://lichess.org/ru/learn?any=1" target="_blank" rel="noopener noreferrer" class="play-btn btn-lichess">
@@ -2803,8 +2822,9 @@
   </footer>
 
   <script>
-    // Отображает нужную страницу без изменения истории браузера
-    function showPage(pageId) {
+    // Отображает нужную страницу без изменения истории браузера.
+    // anchorId — необязательный id блока внутри раздела: к нему прокручиваем вместо верха страницы.
+    function showPage(pageId, anchorId) {
       document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active-page'));
       document.querySelectorAll('.nav-item-btn').forEach(btn => btn.classList.remove('active'));
 
@@ -2823,17 +2843,42 @@
         initYoutubePoll();
       }
 
+      // Прямая ссылка на блок внутри раздела, например #beginner/tutorial
+      const anchorTarget = anchorId ? document.getElementById(anchorId) : null;
+      if (anchorTarget) {
+        anchorTarget.scrollIntoView({ block: 'start' });
+
+        // Картинки в разделе догружаются и могут сдвинуть вёрстку — один раз уточняем позицию
+        window.setTimeout(() => {
+          const rect = anchorTarget.getBoundingClientRect();
+          if (rect.top < 0 || rect.top > 110) {
+            anchorTarget.scrollIntoView({ block: 'start' });
+          }
+        }, 700);
+
+        return;
+      }
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Читает текущий хэш (#раздел) и показывает соответствующую страницу.
+    // Разбирает хэш вида #beginner или #beginner/tutorial
+    function parseHash(hash) {
+      const raw = (hash || '').replace(/^#/, '');
+      const parts = raw.split('/');
+      const pagePart = parts[0];
+      const pageId = pagePart && document.getElementById('page-' + pagePart) ? pagePart : 'home';
+      return {
+        pageId: pageId,
+        anchorId: parts[1] ? decodeURIComponent(parts[1]) : ''
+      };
+    }
+
+    // Читает текущий хэш (#раздел или #раздел/блок) и показывает соответствующую страницу.
     // Если хэша нет или он неизвестен — показывает главную.
     function handleHash() {
-      let pageId = location.hash.replace('#', '');
-      if (!pageId || !document.getElementById('page-' + pageId)) {
-        pageId = 'home';
-      }
-      showPage(pageId);
+      const route = parseHash(location.hash);
+      showPage(route.pageId, route.anchorId);
     }
 
     // Переключает страницу. URL получает хэш вида #beginner, #checkmate и т.д.,
