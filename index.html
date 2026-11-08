@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DVORZHIK - ШАХМАТНЫЙ ТРЕНЕР</title>
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <meta name="description" content="Обучение шахматам в Нагарии и онлайн с Александром Дворжицким. Кружки, уроки, новости шахмат, подборка фильмов и мультфильмов о шахматах, 10 лучших YouTube-каналов, фотоархив турниров." />
+  <meta name="description" content="Обучение шахматам в Нагарии и онлайн с Александром Дворжицким. Кружки, уроки, история шахмат, новости шахмат, подборка фильмов и мультфильмов о шахматах, 10 лучших YouTube-каналов, фотоархив турниров." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -367,6 +367,135 @@
     /* В заголовке-флексе отступ даёт gap, лишний margin не нужен */
     .films-heading .anchor-link {
       margin-left: 0;
+    }
+
+    /* История шахмат: таймлайн */
+    .timeline {
+      position: relative;
+      margin: 26px 0 40px;
+      padding-left: 36px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      bottom: 10px;
+      width: 3px;
+      border-radius: 3px;
+      background: linear-gradient(to bottom, #ca8a04, #94a3b8 70%, #e2e8f0);
+      opacity: 0.45;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -33px;
+      top: 24px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid #ca8a04;
+      box-shadow: 0 0 0 3px #ffffff;
+    }
+
+    .timeline-card {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 16px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-2px);
+      border-color: #94a3b8;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .timeline-era {
+      display: inline-block;
+      padding: 3px 11px;
+      border-radius: 999px;
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      color: #92400e;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+
+    .timeline-text {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      line-height: 1.55;
+    }
+
+    /* Обложка раздела «История шахмат» для главной страницы */
+    .history-teaser-art {
+      aspect-ratio: 1 / 1;
+      background: radial-gradient(circle at 50% 30%, #3f2d12 0%, #1c1409 70%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .history-teaser-icon {
+      font-size: 54px;
+      line-height: 1;
+    }
+
+    .history-teaser-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .history-teaser-sub {
+      font-size: 0.85rem;
+      color: #e2d3b8;
+      font-weight: 500;
+    }
+
+    @media (max-width: 480px) {
+      .timeline {
+        padding-left: 28px;
+      }
+      .timeline::before {
+        left: 7px;
+      }
+      .timeline-item::before {
+        left: -26px;
+        top: 22px;
+      }
+      .timeline-card {
+        padding: 14px 16px;
+      }
+      .timeline-title {
+        font-size: 1rem;
+      }
     }
 
     /* Кино и мультфильмы о шахматах */
@@ -1450,6 +1579,7 @@
         <li><button class="nav-item-btn" id="btn-nav-beginner" onclick="switchPage('beginner')">Учимся играть</button></li>
         <li><button class="nav-item-btn" id="btn-nav-playchess" onclick="switchPage('playchess')">Побеждаем ботов</button></li>
         <li><button class="nav-item-btn" id="btn-nav-checkmate" onclick="switchPage('checkmate')">Учимся матовать</button></li>
+        <li><button class="nav-item-btn" id="btn-nav-history" onclick="switchPage('history')">История шахмат</button></li>
         <li><button class="nav-item-btn" id="btn-nav-films" onclick="switchPage('films')">Фильмы о шахматах</button></li>
         <li><button class="nav-item-btn" id="btn-nav-youtube" onclick="switchPage('youtube')">YouTube о шахматах</button></li>
         <li><button class="nav-item-btn" id="btn-nav-news" onclick="switchPage('news')">Это интересно</button></li>
@@ -1575,6 +1705,27 @@
           <div class="play-buttons-group">
             <button onclick="switchPage('checkmate')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
               Учимся ставить мат →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- История шахмат -->
+      <section class="section-block">
+        <div class="section-img-wrap">
+          <div class="history-teaser-art">
+            <div class="history-teaser-icon" aria-hidden="true">♜</div>
+            <p class="history-teaser-title">История шахмат</p>
+            <p class="history-teaser-sub">1500 лет: главные вехи</p>
+          </div>
+        </div>
+        <div class="section-content">
+          <h2><a href="javascript:void(0)" onclick="switchPage('history')" style="color: inherit; text-decoration: none;">История шахмат</a></h2>
+          <p>От индийской игры для знати до миллионов онлайн-партий в день: главные вехи развития шахмат от истоков до современности.</p>
+          <p>Как игра меняла правила, почему XIX век называют эпохой романтизма и как компьютеры перевернули всё в 1997 году.</p>
+          <div class="play-buttons-group">
+            <button onclick="switchPage('history')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
+              Пройти по вехам →
             </button>
           </div>
         </div>
@@ -2044,7 +2195,81 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- 5. ФИЛЬМЫ И МУЛЬТФИЛЬМЫ О ШАХМАТАХ (FILMS)               -->
+    <!-- 5. ИСТОРИЯ ШАХМАТ (HISTORY)                              -->
+    <!-- ======================================================== -->
+    <div id="page-history" class="page-view">
+      <div class="top-title-sec">
+        <h1>История шахмат</h1>
+      </div>
+
+      <div class="yt-intro">
+        <p>История шахмат насчитывает около 1500 лет: от настольной игры индийской знати до миллионов онлайн-партий каждый день. Правила, фигуры и даже сама роль игры в обществе менялись десятки раз.</p>
+        <p>Без этих событий шахмат в привычном нам виде просто не было бы. Ниже — главные вехи развития игры от истоков до современности: коротко, по эпохам.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <span class="timeline-era">VI век</span>
+            <p class="timeline-title">Рождение игры на севере Индии</p>
+            <p class="timeline-text">История шахмат насчитывает около 1500 лет. Игра впервые появилась на севере Индии, оттуда шахматы распространились в Персию, а затем приобрели широкую популярность во всей Азии.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <span class="timeline-era">X век</span>
+            <p class="timeline-title">Шахматы приходят в Европу</p>
+            <p class="timeline-text">В Европу шахматы проникли через расширившуюся территорию Арабского халифата — вместе с торговыми путями и переводами восточных книг.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <span class="timeline-era">XV век</span>
+            <p class="timeline-title">Фигуры и правила становятся современными</p>
+            <p class="timeline-text">До конца XV века шахматные фигуры и правила неоднократно менялись: игра переживала санкции христианской церкви, а время от времени и полные запреты. К концу XV века шахматы приобрели форму, близкую к той, в какую мы играем сегодня.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <span class="timeline-era">1880–1950</span>
+            <p class="timeline-title">Эпоха «шахматного романтизма»</p>
+            <p class="timeline-text">Этот период известен как «шахматный романтизм»: шахматисты в основном полагались на тактику, жертвы фигур и чрезвычайно динамичную игру. В 1886 году состоялся первый официальный чемпионат мира — его выиграл Вильгельм Стейниц.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <span class="timeline-era">1997</span>
+            <p class="timeline-title">Компьютерная революция и Deep Blue</p>
+            <p class="timeline-text">XX век стал настоящей эпохой революции в шахматах: появились базы данных и шахматные движки. В 1997 году чемпион мира Гарри Каспаров проиграл матч компьютеру IBM Deep Blue — машина впервые победила действующего чемпиона мира в классическом матче.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <span class="timeline-era">2007 — настоящее время</span>
+            <p class="timeline-title">Онлайн-эпоха</p>
+            <p class="timeline-text">Появляются шахматные сайты, где можно играть онлайн-партии, и игра становится всё популярнее. Два крупнейших портала — Chess.com (запущен в 2007 году) и lichess.org (2010).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="play-buttons-group" style="margin-bottom: 30px;">
+        <a class="play-btn btn-telegram" href="https://t.me/chessgames/13713" target="_blank" rel="noopener noreferrer">✈️ Источник: @chessgames</a>
+      </div>
+
+      <div style="text-align: center; margin: 30px 0;">
+        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
+          ← Назад
+        </button>
+      </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- 6. ФИЛЬМЫ И МУЛЬТФИЛЬМЫ О ШАХМАТАХ (FILMS)               -->
     <!-- ======================================================== -->
     <div id="page-films" class="page-view">
       <div class="top-title-sec">
@@ -2408,7 +2633,7 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- 6. YOUTUBE О ШАХМАТАХ (YOUTUBE)                          -->
+    <!-- 7. YOUTUBE О ШАХМАТАХ (YOUTUBE)                          -->
     <!-- ======================================================== -->
     <div id="page-youtube" class="page-view">
       <div class="top-title-sec">
@@ -2820,7 +3045,7 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- 7. ЭТО ИНТЕРЕСНО (NEWS)                                  -->
+    <!-- 8. ЭТО ИНТЕРЕСНО (NEWS)                                  -->
     <!-- ======================================================== -->
     <!--
       ПРАВИЛА РАЗДЕЛА «ЭТО ИНТЕРЕСНО» — читать перед добавлением новости
@@ -2937,7 +3162,7 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- 8. ФОТОАРХИВ (CHESSPHOTO)                                -->
+    <!-- 9. ФОТОАРХИВ (CHESSPHOTO)                                -->
     <!-- ======================================================== -->
     <div id="page-photo" class="page-view">
       <div class="top-title-sec">
@@ -3014,7 +3239,7 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- 9. ИНФОРМАЦИЯ ДЛЯ РОДИТЕЛЕЙ (PARENTS)                    -->
+    <!-- 10. ИНФОРМАЦИЯ ДЛЯ РОДИТЕЛЕЙ (PARENTS)                   -->
     <!-- ======================================================== -->
     <div id="page-parents" class="page-view">
       <div class="top-title-sec">
