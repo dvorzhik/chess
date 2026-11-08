@@ -345,7 +345,8 @@
     }
 
     /* Якорные ссылки на блоки внутри разделов */
-    .section-block[id] {
+    .section-block[id],
+    .films-heading[id] {
       scroll-margin-top: 90px;
     }
 
@@ -361,6 +362,11 @@
 
     .anchor-link:hover {
       color: var(--link);
+    }
+
+    /* В заголовке-флексе отступ даёт gap, лишний margin не нужен */
+    .films-heading .anchor-link {
+      margin-left: 0;
     }
 
     /* Кино и мультфильмы о шахматах */
@@ -2052,7 +2058,7 @@
         </article>
       </div>
 
-      <h2 class="films-heading">🎨 10 лучших мультфильмов о шахматах</h2>
+      <h2 class="films-heading" id="cartoons">🎨 10 лучших мультфильмов о шахматах<a class="anchor-link" href="#films/cartoons" title="Прямая ссылка на подборку мультфильмов" aria-label="Прямая ссылка на подборку «10 лучших мультфильмов о шахматах»">🔗</a></h2>
       <p class="films-subtitle">Весёлые и познавательные серии, которые помогут ребёнку полюбить игру. Все мультфильмы можно посмотреть на YouTube.</p>
 
       <div class="film-grid">
