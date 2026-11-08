@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DVORZHIK - ШАХМАТНЫЙ ТРЕНЕР</title>
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <meta name="description" content="Обучение шахматам в Нагарии и онлайн с Александром Дворжицким. Кружки, уроки, подборка фильмов и мультфильмов о шахматах, 10 лучших YouTube-каналов, фотоархив турниров." />
+  <meta name="description" content="Обучение шахматам в Нагарии и онлайн с Александром Дворжицким. Кружки, уроки, новости шахмат, подборка фильмов и мультфильмов о шахматах, 10 лучших YouTube-каналов, фотоархив турниров." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -585,7 +585,8 @@
     }
 
     /* YouTube-каналы о шахматах и опрос */
-    .yt-intro {
+    .yt-intro,
+    .news-intro {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 16px;
@@ -594,13 +595,15 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
-    .yt-intro p {
+    .yt-intro p,
+    .news-intro p {
       color: var(--text-muted);
       font-size: 1.02rem;
       margin-bottom: 10px;
     }
 
-    .yt-intro p:last-child {
+    .yt-intro p:last-child,
+    .news-intro p:last-child {
       margin-bottom: 0;
     }
 
@@ -847,6 +850,131 @@
       font-weight: 500;
     }
 
+    /* Это интересно: лента новостей */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin: 22px 0 42px;
+    }
+
+    .news-card {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-3px);
+      border-color: #94a3b8;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .news-cover {
+      position: relative;
+      display: block;
+      background: #0f172a;
+      overflow: hidden;
+      min-height: 200px;
+    }
+
+    .news-cover img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s, filter 0.3s;
+    }
+
+    .news-cover:hover img {
+      transform: scale(1.03);
+      filter: brightness(0.92);
+    }
+
+    .news-body {
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .news-date {
+      align-self: flex-start;
+      padding: 4px 11px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      border: 1px solid var(--card-border);
+      color: #475569;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .news-title {
+      font-size: 1.22rem;
+      font-weight: 800;
+      line-height: 1.3;
+      color: var(--text-main);
+    }
+
+    .news-text {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.55;
+    }
+
+    .news-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 6px;
+    }
+
+    .news-links .play-btn {
+      padding: 9px 15px;
+      font-size: 0.9rem;
+    }
+
+    /* Заглушка-обложка раздела для главной страницы */
+    .news-teaser-art {
+      aspect-ratio: 1 / 1;
+      background: radial-gradient(circle at 50% 35%, #1e293b 0%, #0f172a 70%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .news-teaser-icon {
+      font-size: 54px;
+      line-height: 1;
+    }
+
+    .news-teaser-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .news-teaser-sub {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      font-weight: 500;
+    }
+
     /* Опрос о каналах */
     .poll-card {
       background: var(--card-bg);
@@ -1066,6 +1194,13 @@
       .channel-video {
         max-width: 420px;
       }
+      .news-card {
+        grid-template-columns: 1fr;
+      }
+      .news-cover {
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+      }
     }
 
     @media (max-width: 480px) {
@@ -1074,11 +1209,18 @@
         grid-auto-rows: auto;
       }
       .yt-intro,
+      .news-intro,
       .poll-card {
         padding: 18px 20px;
       }
       .poll-card h2 {
         font-size: 1.2rem;
+      }
+      .news-title {
+        font-size: 1.1rem;
+      }
+      .news-body {
+        padding: 16px 18px;
       }
     }
 
@@ -1310,6 +1452,7 @@
         <li><button class="nav-item-btn" id="btn-nav-checkmate" onclick="switchPage('checkmate')">Учимся матовать</button></li>
         <li><button class="nav-item-btn" id="btn-nav-films" onclick="switchPage('films')">Фильмы о шахматах</button></li>
         <li><button class="nav-item-btn" id="btn-nav-youtube" onclick="switchPage('youtube')">YouTube о шахматах</button></li>
+        <li><button class="nav-item-btn" id="btn-nav-news" onclick="switchPage('news')">Это интересно</button></li>
         <li><button class="nav-item-btn" id="btn-nav-photo" onclick="switchPage('photo')">Фотоархив</button></li>
       </ul>
     </div>
@@ -1472,6 +1615,27 @@
           <div class="play-buttons-group">
             <button onclick="switchPage('youtube')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
               Смотреть подборку →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Это интересно -->
+      <section class="section-block">
+        <div class="section-img-wrap">
+          <div class="news-teaser-art">
+            <div class="news-teaser-icon" aria-hidden="true">🗞️</div>
+            <p class="news-teaser-title">Это интересно</p>
+            <p class="news-teaser-sub">Шахматные новости недели</p>
+          </div>
+        </div>
+        <div class="section-content">
+          <h2><a href="javascript:void(0)" onclick="switchPage('news')" style="color: inherit; text-decoration: none;">Это интересно</a></h2>
+          <p>Короткие новости из мира шахмат: рекорды, рейтинги, правила и события, о которых стоит знать.</p>
+          <p>Раздел обновляется каждую неделю — свежие заметки всегда сверху, с датой публикации и ссылкой на источник.</p>
+          <div class="play-buttons-group">
+            <button onclick="switchPage('news')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
+              Читать новости →
             </button>
           </div>
         </div>
@@ -2656,7 +2820,91 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- 7. ФОТОАРХИВ (CHESSPHOTO)                                -->
+    <!-- 7. ЭТО ИНТЕРЕСНО (NEWS)                                  -->
+    <!-- ======================================================== -->
+    <!--
+      ПРАВИЛА РАЗДЕЛА «ЭТО ИНТЕРЕСНО» — читать перед добавлением новости
+
+      1. Ритм: одна-две новости в неделю. Пишем коротко — 2-4 предложения:
+         что произошло и почему это важно. Без воды и пересказа постов.
+
+      2. НОВАЯ НОВОСТЬ ВСЕГДА СТАВИТСЯ СВЕРХУ списка <div class="news-list">.
+         Порядок блоков в файле = порядок на странице: первый <article> —
+         самая свежая новость, ниже — более старые. Сортировки скриптом нет,
+         поэтому новый блок вставляем ПЕРВЫМ, сразу после открывающего тега
+         <div class="news-list">.
+
+      3. Дата обязательна и указывается в двух видах:
+            <time datetime="2026-10-05">5 октября 2026</time>
+         Если дату публикации не указали — ставим фактическую дату добавления.
+
+      4. Структура карточки всегда одна и та же:
+         картинка → дата → заголовок → текст → ссылки.
+
+      5. Картинка: берём из источника, кладём в images/news/ с понятным именем
+         (например, fide-fischer-ratings.jpg), уменьшаем до ширины 600-800 px,
+         сохраняем JPEG качеством 80-85. Если картинки нет — блок
+         <a class="news-cover"> просто убираем.
+
+      6. Ссылки — внутри <div class="news-links">, кнопкой
+         class="play-btn btn-telegram" (Telegram) или "btn-site" (обычный сайт),
+         всегда с target="_blank" rel="noopener noreferrer".
+
+      7. Заголовок — до 70 символов, без КАПСА, без лишних эмодзи.
+         Дата в заголовок не дублируется — она уже стоит в плашке выше.
+    -->
+    <div id="page-news" class="page-view">
+      <div class="top-title-sec">
+        <h1>Это интересно</h1>
+      </div>
+
+      <div class="news-intro">
+        <p>Короткие новости из мира шахмат: рекорды, рейтинги, изменения правил и события, о которых стоит знать.</p>
+        <p>Раздел обновляется каждую неделю. Свежие заметки всегда сверху, у каждой есть дата публикации и ссылка на источник.</p>
+      </div>
+
+      <div class="news-list">
+        <!-- 6 октября 2026 — Накамура и 3500 в блице -->
+        <article class="news-card">
+          <a class="news-cover" href="https://t.me/ChessMaestro/15071" target="_blank" rel="noopener noreferrer" aria-label="Открыть пост о рекорде Накамуры в Telegram">
+            <img src="images/news/nakamura-3500-blitz.jpg" alt="Профиль Хикару Накамуры на Chess.com с рейтингом 3500 в блице" loading="lazy" />
+          </a>
+          <div class="news-body">
+            <p class="news-date"><time datetime="2026-10-06">6 октября 2026</time></p>
+            <h2 class="news-title">Накамура перешагнул 3500 в блице на Chess.com</h2>
+            <p class="news-text">Хикару Накамура пробил историческую отметку 3500 в блиц-рейтинге на Chess.com. Пятиминутный контроль — его родная стихия: американец годами держит первое место в блиц-рейтинге платформы, а теперь его цифра начинается с «35». На скриншоте — профиль Хикару в этот момент: 3500 в блице, 3346 в пуле, 2838 в рапиде и 2239 в дейли.</p>
+            <div class="news-links">
+              <a class="play-btn btn-telegram" href="https://t.me/ChessMaestro/15071" target="_blank" rel="noopener noreferrer">✈️ Пост в Telegram</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5 октября 2026 — официальные рейтинги по шахматам Фишера -->
+        <article class="news-card">
+          <a class="news-cover" href="https://t.me/matveygalchenko/2572" target="_blank" rel="noopener noreferrer" aria-label="Открыть пост о рейтингах по шахматам Фишера в Telegram">
+            <img src="images/news/fide-fischer-ratings.jpg" alt="Иллюстрация к новости о рейтингах по шахматам Фишера" loading="lazy" />
+          </a>
+          <div class="news-body">
+            <p class="news-date"><time datetime="2026-10-05">5 октября 2026</time></p>
+            <h2 class="news-title">FIDE вводит официальные рейтинги по шахматам Фишера</h2>
+            <p class="news-text">FIDE одобрили эту идею, в связи с «постоянным ростом популярности этого варианта игры и необходимостью в официальной системе рейтингов для соревнований». Одним словом, намечается движ!</p>
+            <p class="news-text">Напомним: в шахматах Фишера (Chess960) фигуры в начале партии расставляются случайно, поэтому дебютная теория почти не работает — всё решают идеи за доской.</p>
+            <div class="news-links">
+              <a class="play-btn btn-telegram" href="https://t.me/matveygalchenko/2572" target="_blank" rel="noopener noreferrer">✈️ Пост в Telegram</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div style="text-align: center; margin: 30px 0;">
+        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
+          ← Назад
+        </button>
+      </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- 8. ФОТОАРХИВ (CHESSPHOTO)                                -->
     <!-- ======================================================== -->
     <div id="page-photo" class="page-view">
       <div class="top-title-sec">
@@ -2733,7 +2981,7 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- 8. ИНФОРМАЦИЯ ДЛЯ РОДИТЕЛЕЙ (PARENTS)                    -->
+    <!-- 9. ИНФОРМАЦИЯ ДЛЯ РОДИТЕЛЕЙ (PARENTS)                    -->
     <!-- ======================================================== -->
     <div id="page-parents" class="page-view">
       <div class="top-title-sec">
