@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DVORZHIK - ШАХМАТНЫЙ ТРЕНЕР</title>
-  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
   <meta name="description" content="Обучение шахматам в Нагарии и онлайн с Александром Дворжицким. Кружки, уроки, история шахмат, новости шахмат, подборка фильмов и мультфильмов о шахматах, 10 лучших YouTube-каналов, фотоархив турниров." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1916,6 +1917,46 @@
     }
     .hero-photo img { display: block; width: 100%; height: auto; }
 
+    /* Логотип вместо символа в марке */
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      padding: 0;
+      background: transparent;
+      box-shadow: none;
+      color: inherit;
+      overflow: hidden;
+    }
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Бейдж с логотипом на фото */
+    .hero-photo { position: relative; }
+    .hero-logo-badge {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      width: 84px;
+      height: 84px;
+      padding: 8px;
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(27, 24, 21, 0.18);
+      display: grid;
+      place-items: center;
+    }
+    .hero-logo-badge img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
     /* Секции главной */
     .home-section { padding: 14px 0 44px; }
 
@@ -2119,6 +2160,26 @@
     .contact-info p { color: var(--text-muted); max-width: 56ch; }
     .contact-actions {
       display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 14px;
+      flex: 0 0 auto;
+    }
+    .contact-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .contact-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .contact-buttons {
+      display: flex;
       flex-wrap: wrap;
       gap: 10px;
       justify-content: flex-end;
@@ -2248,7 +2309,16 @@
         flex-direction: column;
         align-items: flex-start;
       }
-      .contact-actions { justify-content: flex-start; }
+      .contact-actions {
+        align-items: stretch;
+        width: 100%;
+      }
+      .contact-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .contact-buttons { justify-content: flex-start; }
       .footer-inner { flex-direction: column; align-items: flex-start; }
     }
 
@@ -2260,6 +2330,11 @@
       .cta-band,
       .contact-card,
       .about-grid { padding: 22px 20px; }
+      .contact-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .contact-buttons .btn { width: 100%; padding: 12px 10px; font-size: 0.9rem; }
       .tile { padding: 14px; }
       .tile-icon { width: 40px; height: 40px; flex-basis: 40px; font-size: 1.05rem; }
       .brand-text span { display: none; }
@@ -2291,7 +2366,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="javascript:void(0)" onclick="switchPage('home')" aria-label="Дворжик — на главную">
-        <span class="brand-mark" aria-hidden="true">♞</span>
+        <span class="brand-mark" aria-hidden="true"><img src="images/logo-mark.png" width="40" height="40" alt="" /></span>
         <span class="brand-text">
           <strong>Дворжик</strong>
           <span>шахматный тренер</span>
@@ -2356,6 +2431,9 @@
           <div class="hero-board" aria-hidden="true"></div>
           <div class="hero-photo">
             <img src="images/dvorzhik_chess.png" width="480" height="480" alt="Александр Дворжицкий — шахматный тренер" />
+            <span class="hero-logo-badge" aria-hidden="true">
+              <img src="images/logo-mark.png" width="96" height="96" alt="" />
+            </span>
           </div>
         </div>
       </section>
@@ -2498,10 +2576,20 @@
             <p>Мой ник на игровых платформах — <strong>dvorzhik</strong>. Вызывайте на партию, а если есть вопросы или пожелания к занятиям — напишите в удобном мессенджере.</p>
           </div>
           <div class="contact-actions">
-            <a class="btn btn-brand-chess" href="https://www.chess.com/member/dvorzhik" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">♟</span> Chess.com</a>
-            <a class="btn btn-brand-lichess" href="https://lichess.org/@/dvorzhik" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">♞</span> Lichess.org</a>
-            <a class="btn btn-brand-whatsapp" href="https://wa.me/972534766343?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B7%D1%8B%D0%B2%20%D0%BE%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F%D1%85%20%D1%88%D0%B0%D1%85%D0%BC%D0%B0%D1%82%D0%B0%D0%BC%D0%B8%3A%20" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13c-1.5 0-2.97-.4-4.26-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.69 8.21-8.16 8.21zm4.52-6.16c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.96-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.09s.9 2.42 1.02 2.59c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg> WhatsApp</a>
-            <a class="btn btn-brand-telegram" href="https://t.me/dvorzhik" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M21.9 4.3 18.7 19c-.2 1-.8 1.2-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.5.5-1 .5l.3-4.7 8.5-7.7c.4-.3-.1-.5-.6-.2L6.9 12.9 2.4 11.5c-1-.3-1-1 .2-1.4l17.7-6.8c.8-.3 1.5.2 1.3 1z"/></svg> Telegram</a>
+            <div class="contact-group">
+              <span class="contact-label">Играть</span>
+              <div class="contact-buttons">
+                <a class="btn btn-brand-chess" href="https://www.chess.com/member/dvorzhik" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">♟</span> Chess.com</a>
+                <a class="btn btn-brand-lichess" href="https://lichess.org/@/dvorzhik" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">♞</span> Lichess.org</a>
+              </div>
+            </div>
+            <div class="contact-group">
+              <span class="contact-label">Связаться</span>
+              <div class="contact-buttons">
+                <a class="btn btn-brand-whatsapp" href="https://wa.me/972534766343?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B7%D1%8B%D0%B2%20%D0%BE%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F%D1%85%20%D1%88%D0%B0%D1%85%D0%BC%D0%B0%D1%82%D0%B0%D0%BC%D0%B8%3A%20" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13c-1.5 0-2.97-.4-4.26-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.26.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.69 8.21-8.16 8.21zm4.52-6.16c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.65.8-.8.96-.15.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.83-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.09s.9 2.42 1.02 2.59c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg> WhatsApp</a>
+                <a class="btn btn-brand-telegram" href="https://t.me/dvorzhik" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M21.9 4.3 18.7 19c-.2 1-.8 1.2-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.5.5-1 .5l.3-4.7 8.5-7.7c.4-.3-.1-.5-.6-.2L6.9 12.9 2.4 11.5c-1-.3-1-1 .2-1.4l17.7-6.8c.8-.3 1.5.2 1.3 1z"/></svg> Telegram</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -3991,7 +4079,7 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <span class="brand-mark" aria-hidden="true">♞</span>
+          <span class="brand-mark" aria-hidden="true"><img src="images/logo-mark.png" width="40" height="40" alt="" /></span>
           <div>
             <strong>Александр Дворжицкий</strong>
             <span>Шахматный тренер · Нагария, Израиль</span>
