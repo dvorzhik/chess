@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DVORZHIK - ШАХМАТНЫЙ ТРЕНЕР</title>
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <meta name="description" content="Обучение шахматам в Нагарии и онлайн с Александром Дворжицким. Кружки, уроки, подборка фильмов и мультфильмов о шахматах, фотоархив турниров." />
+  <meta name="description" content="Обучение шахматам в Нагарии и онлайн с Александром Дворжицким. Кружки, уроки, подборка фильмов и мультфильмов о шахматах, 10 лучших YouTube-каналов, фотоархив турниров." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -559,6 +559,379 @@
       }
     }
 
+    /* YouTube-каналы о шахматах и опрос */
+    .yt-intro {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .yt-intro p {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      margin-bottom: 10px;
+    }
+
+    .yt-intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .channel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 22px 0 42px;
+    }
+
+    .channel-card {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .channel-card:hover {
+      transform: translateY(-3px);
+      border-color: #94a3b8;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .channel-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .channel-avatar {
+      width: 52px;
+      height: 52px;
+      flex: 0 0 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dc2626, #991b1b);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.02rem;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 8px rgba(220, 38, 38, 0.25);
+    }
+
+    .channel-titles {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .channel-name {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.3;
+      margin-bottom: 3px;
+    }
+
+    .channel-meta {
+      font-size: 0.8rem;
+      color: #64748b;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .channel-rank {
+      flex: 0 0 auto;
+      align-self: flex-start;
+      min-width: 28px;
+      height: 28px;
+      padding: 0 7px;
+      border-radius: 8px;
+      background: #e2e8f0;
+      color: #0f172a;
+      font-size: 0.85rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .channel-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .channel-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .channel-actions .play-btn {
+      padding: 9px 15px;
+      font-size: 0.9rem;
+    }
+
+    /* Наглядная «обложка» раздела для главной страницы */
+    .yt-teaser-art {
+      aspect-ratio: 16 / 10;
+      background: radial-gradient(circle at 50% 40%, #1e293b 0%, #0f172a 70%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      color: #ffffff;
+    }
+
+    .yt-teaser-play {
+      width: 74px;
+      height: 52px;
+      border-radius: 14px;
+      background: #dc2626;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(220, 38, 38, 0.4);
+    }
+
+    .yt-teaser-play::before {
+      content: "";
+      border-style: solid;
+      border-width: 10px 0 10px 18px;
+      border-color: transparent transparent transparent #ffffff;
+      margin-left: 4px;
+    }
+
+    .yt-teaser-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .yt-teaser-sub {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      font-weight: 500;
+    }
+
+    /* Опрос о каналах */
+    .poll-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 26px 28px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .poll-card h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .poll-sub {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 18px;
+    }
+
+    .poll-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .poll-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 11px 13px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+    }
+
+    .poll-option:hover {
+      border-color: #94a3b8;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .poll-option input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: #b91c1c;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .poll-option.checked {
+      border-color: #b91c1c;
+      background: #fef2f2;
+    }
+
+    .poll-option.locked {
+      cursor: default;
+    }
+
+    .poll-option.locked input {
+      cursor: default;
+    }
+
+    .poll-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .poll-btn {
+      background: #dc2626;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 22px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .poll-btn:hover:not(:disabled) {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    .poll-btn:disabled {
+      opacity: 0.55;
+      cursor: default;
+    }
+
+    .poll-link {
+      background: none;
+      border: none;
+      padding: 0;
+      color: var(--link);
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .poll-link:hover {
+      color: var(--accent);
+    }
+
+    .poll-status {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 12px;
+      min-height: 1.3em;
+    }
+
+    .poll-results {
+      display: none;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px dashed #cbd5e1;
+    }
+
+    .poll-results.visible {
+      display: block;
+    }
+
+    .poll-results-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .poll-total {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 16px;
+    }
+
+    .poll-row {
+      margin-bottom: 12px;
+    }
+
+    .poll-row-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 5px;
+    }
+
+    .poll-row-num {
+      color: #64748b;
+      font-weight: 600;
+      white-space: nowrap;
+      font-size: 0.85rem;
+    }
+
+    .poll-bar {
+      height: 9px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .poll-bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #ca8a04, #dc2626);
+      transition: width 0.6s ease;
+    }
+
+    .poll-note {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.5;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .channel-grid,
+      .poll-options {
+        grid-template-columns: 1fr;
+      }
+      .yt-intro,
+      .poll-card {
+        padding: 18px 20px;
+      }
+      .poll-card h2 {
+        font-size: 1.2rem;
+      }
+    }
+
     /* Google Photos Альбомы */
     .photo-grid {
       display: grid;
@@ -786,6 +1159,7 @@
         <li><button class="nav-item-btn" id="btn-nav-playchess" onclick="switchPage('playchess')">Побеждаем ботов</button></li>
         <li><button class="nav-item-btn" id="btn-nav-checkmate" onclick="switchPage('checkmate')">Учимся матовать</button></li>
         <li><button class="nav-item-btn" id="btn-nav-films" onclick="switchPage('films')">Фильмы о шахматах</button></li>
+        <li><button class="nav-item-btn" id="btn-nav-youtube" onclick="switchPage('youtube')">YouTube о шахматах</button></li>
         <li><button class="nav-item-btn" id="btn-nav-photo" onclick="switchPage('photo')">Фотоархив</button></li>
       </ul>
     </div>
@@ -926,6 +1300,27 @@
           <p>А ещё 10 мультфильмов, которые в лёгкой форме познакомят ребёнка с доской, фигурами и первой партией.</p>
           <div class="play-buttons-group">
             <button onclick="switchPage('films')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
+              Смотреть подборку →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- YouTube о шахматах -->
+      <section class="section-block">
+        <div class="section-img-wrap">
+          <div class="yt-teaser-art">
+            <div class="yt-teaser-play" aria-hidden="true"></div>
+            <p class="yt-teaser-title">YouTube</p>
+            <p class="yt-teaser-sub">10 лучших каналов о шахматах</p>
+          </div>
+        </div>
+        <div class="section-content">
+          <h2><a href="javascript:void(0)" onclick="switchPage('youtube')" style="color: inherit; text-decoration: none;">YouTube о шахматах</a></h2>
+          <p>10 самых популярных русскоязычных каналов о шахматах: официальный Chess.com, гроссмейстерские разборы, уроки «с нуля» и живые стримы.</p>
+          <p>А ещё — анонимный опрос: отметьте каналы, которые нравятся вам больше всего, и посмотрите, что выбирают другие.</p>
+          <div class="play-buttons-group">
+            <button onclick="switchPage('youtube')" class="play-btn btn-chesscom" style="cursor: pointer; border: none;">
               Смотреть подборку →
             </button>
           </div>
@@ -1699,7 +2094,217 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- 6. ФОТОАРХИВ (CHESSPHOTO)                                -->
+    <!-- 6. YOUTUBE О ШАХМАТАХ (YOUTUBE)                          -->
+    <!-- ======================================================== -->
+    <div id="page-youtube" class="page-view">
+      <div class="top-title-sec">
+        <h1>YouTube о шахматах</h1>
+      </div>
+
+      <div class="yt-intro">
+        <p>Видео — самый быстрый способ подружиться с шахматами: десять минут урока, и вечером вы уже понимаете, почему проиграли партию.</p>
+        <p>Мы собрали 10 самых популярных русскоязычных каналов о шахматах — от официального канала Chess.com до гроссмейстерских разборов и уроков «с нуля» для детей и взрослых. Количество подписчиков указано в ноябре 2026 года.</p>
+      </div>
+
+      <h2 class="films-heading">📺 Топ-10 русскоязычных каналов</h2>
+      <p class="films-subtitle">Отсортировано по числу подписчиков. Нажмите на кнопку, чтобы перейти на канал.</p>
+
+      <div class="channel-grid">
+        <article class="channel-card">
+          <div class="channel-head">
+            <div class="channel-avatar" aria-hidden="true">C</div>
+            <div class="channel-titles">
+              <h3 class="channel-name">Chess.com на русском</h3>
+              <p class="channel-meta">@chesscomRU · 2,97 млн подписчиков</p>
+            </div>
+            <span class="channel-rank">1</span>
+          </div>
+          <p class="channel-desc">Официальный русскоязычный канал Chess.com: разборы партий, уроки, задачи и трансляции. Удобная точка входа для новичков и родителей.</p>
+          <div class="channel-actions">
+            <a class="play-btn btn-youtube" href="https://www.youtube.com/@chesscomRU" target="_blank" rel="noopener noreferrer">▶ Открыть канал</a>
+          </div>
+        </article>
+
+        <article class="channel-card">
+          <div class="channel-head">
+            <div class="channel-avatar" aria-hidden="true">CM</div>
+            <div class="channel-titles">
+              <h3 class="channel-name">ChessMaster LIVE — Максим Омариев</h3>
+              <p class="channel-meta">@chessmasterlive · 682 тыс. подписчиков</p>
+            </div>
+            <span class="channel-rank">2</span>
+          </div>
+          <p class="channel-desc">Блиц-партии и стримы с комментариями мастера FIDE Максима Омариева: живая игра, эмоции и разбор ошибок прямо в эфире.</p>
+          <div class="channel-actions">
+            <a class="play-btn btn-youtube" href="https://www.youtube.com/@chessmasterlive" target="_blank" rel="noopener noreferrer">▶ Открыть канал</a>
+          </div>
+        </article>
+
+        <article class="channel-card">
+          <div class="channel-head">
+            <div class="channel-avatar" aria-hidden="true">E</div>
+            <div class="channel-titles">
+              <h3 class="channel-name">Eclipse — Шахматы</h3>
+              <p class="channel-meta">@EclipseChess · 259 тыс. подписчиков</p>
+            </div>
+            <span class="channel-rank">3</span>
+          </div>
+          <p class="channel-desc">Шахматные разборы, тактика и ловушки в понятном формате: короткие видео, после которых сразу хочется сыграть партию.</p>
+          <div class="channel-actions">
+            <a class="play-btn btn-youtube" href="https://www.youtube.com/@EclipseChess" target="_blank" rel="noopener noreferrer">▶ Открыть канал</a>
+          </div>
+        </article>
+
+        <article class="channel-card">
+          <div class="channel-head">
+            <div class="channel-avatar" aria-hidden="true">ШК</div>
+            <div class="channel-titles">
+              <h3 class="channel-name">Шахматы — это Круто</h3>
+              <p class="channel-meta">@AndreyMikitin · 227 тыс. подписчиков</p>
+            </div>
+            <span class="channel-rank">4</span>
+          </div>
+          <p class="channel-desc">Анализ партий чемпионов мира, разборы современных гроссмейстеров и обзоры супертурниров — для тех, кто уже знает правила.</p>
+          <div class="channel-actions">
+            <a class="play-btn btn-youtube" href="https://www.youtube.com/@AndreyMikitin" target="_blank" rel="noopener noreferrer">▶ Открыть канал</a>
+          </div>
+        </article>
+
+        <article class="channel-card">
+          <div class="channel-head">
+            <div class="channel-avatar" aria-hidden="true">ШДВ</div>
+            <div class="channel-titles">
+              <h3 class="channel-name">Шахматы Для Всех</h3>
+              <p class="channel-meta">@PugachAlexey · 211 тыс. подписчиков</p>
+            </div>
+            <span class="channel-rank">5</span>
+          </div>
+          <p class="channel-desc">Учебные видео и разборы для начинающих: правила, тактика, дебюты и типичные ошибки — спокойно и по делу.</p>
+          <div class="channel-actions">
+            <a class="play-btn btn-youtube" href="https://www.youtube.com/@PugachAlexey" target="_blank" rel="noopener noreferrer">▶ Открыть канал</a>
+          </div>
+        </article>
+
+        <article class="channel-card">
+          <div class="channel-head">
+            <div class="channel-avatar" aria-hidden="true">CB</div>
+            <div class="channel-titles">
+              <h3 class="channel-name">Crestbook — Сергей Шипов</h3>
+              <p class="channel-meta">@Crestbook · 149 тыс. подписчиков</p>
+            </div>
+            <span class="channel-rank">6</span>
+          </div>
+          <p class="channel-desc">Гроссмейстер Сергей Шипов — самый известный русскоязычный комментатор шахмат: обзоры турниров, интервью и классические партии.</p>
+          <div class="channel-actions">
+            <a class="play-btn btn-youtube" href="https://www.youtube.com/@Crestbook" target="_blank" rel="noopener noreferrer">▶ Открыть канал</a>
+          </div>
+        </article>
+
+        <article class="channel-card">
+          <div class="channel-head">
+            <div class="channel-avatar" aria-hidden="true">О</div>
+            <div class="channel-titles">
+              <h3 class="channel-name">Шахматы с Олесей</h3>
+              <p class="channel-meta">@Chess-progressRu · 149 тыс. подписчиков</p>
+            </div>
+            <span class="channel-rank">7</span>
+          </div>
+          <p class="channel-desc">Пошаговые уроки «с нуля до 1-го разряда»: понятная программа, домашние задания и разбор ошибок новичка.</p>
+          <div class="channel-actions">
+            <a class="play-btn btn-youtube" href="https://www.youtube.com/@Chess-progressRu" target="_blank" rel="noopener noreferrer">▶ Открыть канал</a>
+          </div>
+        </article>
+
+        <article class="channel-card">
+          <div class="channel-head">
+            <div class="channel-avatar" aria-hidden="true">M</div>
+            <div class="channel-titles">
+              <h3 class="channel-name">Chess Marta</h3>
+              <p class="channel-meta">@Chess_Marta · 140 тыс. подписчиков</p>
+            </div>
+            <span class="channel-rank">8</span>
+          </div>
+          <p class="channel-desc">Марта — тренер, которая объясняет шахматы дружелюбно и просто: много уроков для детей и их родителей.</p>
+          <div class="channel-actions">
+            <a class="play-btn btn-youtube" href="https://www.youtube.com/@Chess_Marta" target="_blank" rel="noopener noreferrer">▶ Открыть канал</a>
+          </div>
+        </article>
+
+        <article class="channel-card">
+          <div class="channel-head">
+            <div class="channel-avatar" aria-hidden="true">LC</div>
+            <div class="channel-titles">
+              <h3 class="channel-name">Levitov Chess</h3>
+              <p class="channel-meta">@LevitovChess · 133 тыс. подписчиков</p>
+            </div>
+            <span class="channel-rank">9</span>
+          </div>
+          <p class="channel-desc">Илья Левитов: обзоры, аналитика и истории из мира шахмат — для тех, кому интересна не только игра, но и её контекст.</p>
+          <div class="channel-actions">
+            <a class="play-btn btn-youtube" href="https://www.youtube.com/@LevitovChess" target="_blank" rel="noopener noreferrer">▶ Открыть канал</a>
+          </div>
+        </article>
+
+        <article class="channel-card">
+          <div class="channel-head">
+            <div class="channel-avatar" aria-hidden="true">Д</div>
+            <div class="channel-titles">
+              <h3 class="channel-name">Дарио: школа шахмат</h3>
+              <p class="channel-meta">@dario_chess · 113 тыс. подписчиков</p>
+            </div>
+            <span class="channel-rank">10</span>
+          </div>
+          <p class="channel-desc">Обучение через идеи и здравый смысл, без зубрёжки: почему этот ход сильный, а этот — ошибочный.</p>
+          <div class="channel-actions">
+            <a class="play-btn btn-youtube" href="https://www.youtube.com/@dario_chess" target="_blank" rel="noopener noreferrer">▶ Открыть канал</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Анонимный опрос о каналах -->
+      <div class="poll-card" id="yt-poll">
+        <h2>А какой канал нравится вам больше всего?</h2>
+        <p class="poll-sub">Отметьте один или несколько каналов — можно выбрать сразу несколько любимых. Опрос анонимный: без имени, почты и регистрации, мы видим только общее число голосов.</p>
+
+        <form id="yt-poll-form" novalidate>
+          <div class="poll-options">
+            <label class="poll-option"><input type="checkbox" value="chesscom-ru" /><span>Chess.com на русском</span></label>
+            <label class="poll-option"><input type="checkbox" value="chessmaster-live" /><span>ChessMaster LIVE — Максим Омариев</span></label>
+            <label class="poll-option"><input type="checkbox" value="eclipse" /><span>Eclipse — Шахматы</span></label>
+            <label class="poll-option"><input type="checkbox" value="shahmaty-kruto" /><span>Шахматы — это Круто</span></label>
+            <label class="poll-option"><input type="checkbox" value="shahmaty-dlya-vseh" /><span>Шахматы Для Всех</span></label>
+            <label class="poll-option"><input type="checkbox" value="crestbook" /><span>Crestbook — Сергей Шипов</span></label>
+            <label class="poll-option"><input type="checkbox" value="olesya" /><span>Шахматы с Олесей</span></label>
+            <label class="poll-option"><input type="checkbox" value="chess-marta" /><span>Chess Marta</span></label>
+            <label class="poll-option"><input type="checkbox" value="levitov" /><span>Levitov Chess</span></label>
+            <label class="poll-option"><input type="checkbox" value="dario" /><span>Дарио: школа шахмат</span></label>
+          </div>
+
+          <div class="poll-actions">
+            <button type="submit" class="poll-btn" id="yt-poll-submit">Отправить голос</button>
+            <button type="button" class="poll-link" id="yt-poll-show">Показать результаты</button>
+          </div>
+
+          <p class="poll-status" id="yt-poll-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="poll-results" id="yt-poll-results">
+          <p class="poll-results-title">Результаты опроса</p>
+          <p class="poll-total" id="yt-poll-total"></p>
+          <div id="yt-poll-bars"></div>
+          <p class="poll-note">Голосовать можно было за несколько каналов, поэтому сумма процентов больше 100%. Проценты считаются от общего числа голосов за все каналы. Один голос с устройства — без регистрации и без личных данных.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin: 30px 0;">
+        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #cbd5e1;">
+          ← Назад
+        </button>
+      </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- 7. ФОТОАРХИВ (CHESSPHOTO)                                -->
     <!-- ======================================================== -->
     <div id="page-photo" class="page-view">
       <div class="top-title-sec">
@@ -1776,7 +2381,7 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- 7. ИНФОРМАЦИЯ ДЛЯ РОДИТЕЛЕЙ (PARENTS)                    -->
+    <!-- 8. ИНФОРМАЦИЯ ДЛЯ РОДИТЕЛЕЙ (PARENTS)                    -->
     <!-- ======================================================== -->
     <div id="page-parents" class="page-view">
       <div class="top-title-sec">
@@ -1892,6 +2497,11 @@
         activeBtn.classList.add('active');
       }
 
+      // Раздел «YouTube о шахматах»: при первом открытии подгружаем результаты опроса
+      if (pageId === 'youtube') {
+        initYoutubePoll();
+      }
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -1926,7 +2536,318 @@
       history.back();
     }
 
-    // При первой загрузке открываем раздел из хэша (прямая ссылка) или главную
+    // При первой загрузке открываем раздел из хэша (прямая ссылка) или главную.
+    // Вызов стоит в самом конце скрипта — после объявления всех функций опроса.
+
+    /* ------------------------------------------------------------------
+       Анонимный опрос «какой канал нравится больше всего».
+       Голоса хранятся не на нашем сервере, а в открытом анонимном
+       счётчике abacus.jasoncameron.dev: у каждого канала свой счётчик.
+       Никаких имён, почты и cookies — при голосовании мы только
+       прибавляем единицу к выбранным каналам. Защита от повторного
+       голоса — только на самом устройстве (localStorage).
+       ------------------------------------------------------------------ */
+    const YT_POLL_API = 'https://abacus.jasoncameron.dev';
+    const YT_POLL_NAMESPACE = 'dvorzhik-chess-yt-poll-2026';
+    const YT_POLL_STORAGE_KEY = 'dvorzhik-yt-poll-2026';
+
+    const ytPollState = {
+      initialized: false,
+      voting: false,
+      voted: false,
+      resultsLoaded: false,
+      votes: {}
+    };
+
+    function ytPollInputs() {
+      return Array.from(document.querySelectorAll('#yt-poll-form input[type="checkbox"]'));
+    }
+
+    function ytPollSetStatus(text) {
+      const el = document.getElementById('yt-poll-status');
+      if (el) {
+        el.textContent = text;
+      }
+    }
+
+    // 1234 -> "1 234"
+    function ytPollFormatNumber(value) {
+      return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
+
+    // Подсветка выбранных вариантов — работает во всех браузерах
+    function ytPollSyncChecked() {
+      ytPollInputs().forEach(input => {
+        const option = input.closest('.poll-option');
+        if (option) {
+          option.classList.toggle('checked', input.checked);
+        }
+      });
+    }
+
+    // Читает один счётчик. Ответ 404 значит «за этот канал ещё не голосовали»
+    async function ytPollGet(key) {
+      const response = await fetch(`${YT_POLL_API}/get/${YT_POLL_NAMESPACE}/${key}`, {
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.status === 404) {
+        return 0;
+      }
+      if (!response.ok) {
+        throw new Error('HTTP ' + response.status);
+      }
+      const data = await response.json();
+      return Number(data.value) || 0;
+    }
+
+    async function ytPollHit(key) {
+      const response = await fetch(`${YT_POLL_API}/hit/${YT_POLL_NAMESPACE}/${key}`, {
+        headers: { 'Accept': 'application/json' }
+      });
+      if (!response.ok) {
+        throw new Error('HTTP ' + response.status);
+      }
+      return true;
+    }
+
+    function ytPollRenderResults() {
+      const barsBox = document.getElementById('yt-poll-bars');
+      const totalEl = document.getElementById('yt-poll-total');
+      if (!barsBox || !totalEl) {
+        return;
+      }
+
+      const items = ytPollInputs().map(input => {
+        const option = input.closest('.poll-option');
+        const label = option ? option.querySelector('span') : null;
+        return {
+          name: label ? label.textContent : input.value,
+          count: ytPollState.votes[input.value] || 0
+        };
+      });
+
+      const total = items.reduce((sum, item) => sum + item.count, 0);
+      items.sort((a, b) => b.count - a.count);
+
+      totalEl.textContent = total
+        ? 'Всего голосов: ' + ytPollFormatNumber(total) + ' · каналов в опросе: ' + items.length
+        : 'Пока никто не голосовал — станьте первым!';
+
+      barsBox.innerHTML = '';
+
+      items.forEach(item => {
+        const percent = total ? Math.round((item.count / total) * 100) : 0;
+
+        const row = document.createElement('div');
+        row.className = 'poll-row';
+        row.innerHTML =
+          '<div class="poll-row-top">' +
+            '<span class="poll-row-name"></span>' +
+            '<span class="poll-row-num"></span>' +
+          '</div>' +
+          '<div class="poll-bar"><div class="poll-bar-fill"></div></div>';
+
+        row.querySelector('.poll-row-name').textContent = item.name;
+        row.querySelector('.poll-row-num').textContent = ytPollFormatNumber(item.count) + ' · ' + percent + '%';
+        row.querySelector('.poll-bar-fill').style.width = percent + '%';
+
+        barsBox.appendChild(row);
+      });
+    }
+
+    async function ytPollLoadResults() {
+      const inputs = ytPollInputs();
+      if (!inputs.length) {
+        return;
+      }
+
+      try {
+        const values = await Promise.all(inputs.map(input => ytPollGet(input.value)));
+        ytPollState.votes = {};
+        inputs.forEach((input, index) => {
+          ytPollState.votes[input.value] = values[index];
+        });
+        ytPollState.resultsLoaded = true;
+        ytPollRenderResults();
+      } catch (error) {
+        ytPollSetStatus('Не удалось загрузить результаты опроса. Проверьте интернет и попробуйте ещё раз.');
+        if (!ytPollState.resultsLoaded) {
+          const totalEl = document.getElementById('yt-poll-total');
+          if (totalEl) {
+            totalEl.textContent = 'Результаты временно недоступны — попробуйте обновить страницу позже.';
+          }
+        }
+      }
+    }
+
+    async function ytPollShowResults(message) {
+      const box = document.getElementById('yt-poll-results');
+      if (box) {
+        box.classList.add('visible');
+      }
+      await ytPollLoadResults();
+      if (message) {
+        ytPollSetStatus(message);
+      }
+    }
+
+
+    // После голосования фиксируем выбор на этом устройстве
+    function ytPollLock(channels) {
+      ytPollState.voted = true;
+      ytPollInputs().forEach(input => {
+        input.checked = channels.indexOf(input.value) !== -1;
+        input.disabled = true;
+        const option = input.closest('.poll-option');
+        if (option) {
+          option.classList.add('locked');
+        }
+      });
+      ytPollSyncChecked();
+
+      const button = document.getElementById('yt-poll-submit');
+      if (button) {
+        button.disabled = true;
+        button.textContent = 'Вы уже голосовали';
+      }
+    }
+
+    async function ytPollSubmit(event) {
+      event.preventDefault();
+      if (ytPollState.voting || ytPollState.voted) {
+        return;
+      }
+
+      const selected = ytPollInputs().filter(input => input.checked);
+      if (!selected.length) {
+        ytPollSetStatus('Отметьте хотя бы один канал — можно выбрать несколько.');
+        return;
+      }
+
+      const button = document.getElementById('yt-poll-submit');
+      ytPollState.voting = true;
+      if (button) {
+        button.disabled = true;
+        button.textContent = 'Отправляем…';
+      }
+      ytPollSetStatus('');
+
+      try {
+        const hadResults = ytPollState.resultsLoaded;
+
+        // Отправляем по одному голосу — так мы не упираемся в лимит счётчика
+        for (const input of selected) {
+          await ytPollHit(input.value);
+        }
+
+        const channels = selected.map(input => input.value);
+        ytPollLock(channels);
+
+        try {
+          localStorage.setItem(YT_POLL_STORAGE_KEY, JSON.stringify({
+            channels: channels,
+            date: new Date().toISOString()
+          }));
+        } catch (error) {
+          // Приватный режим браузера может запрещать localStorage — это не критично
+        }
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'vote_youtube_channel', {
+            channels: channels.join(','),
+            count: channels.length
+          });
+        }
+
+        if (button) {
+          button.textContent = 'Голос учтён';
+        }
+
+        // Итоги уже загружены — просто прибавляем свой голос, без лишних запросов.
+        // Если загрузить не успели, читаем счётчики заново.
+        if (hadResults) {
+          selected.forEach(input => {
+            ytPollState.votes[input.value] = (ytPollState.votes[input.value] || 0) + 1;
+          });
+          ytPollRenderResults();
+          const box = document.getElementById('yt-poll-results');
+          if (box) {
+            box.classList.add('visible');
+          }
+        } else {
+          await ytPollLoadResults();
+          const box = document.getElementById('yt-poll-results');
+          if (box) {
+            box.classList.add('visible');
+          }
+        }
+
+        ytPollSetStatus('Спасибо! Голос учтён — результаты обновлены.');
+      } catch (error) {
+        if (button) {
+          button.disabled = false;
+          button.textContent = 'Отправить голос';
+        }
+        ytPollSetStatus('Не получилось отправить голос. Проверьте интернет и попробуйте ещё раз.');
+      } finally {
+        ytPollState.voting = false;
+      }
+    }
+
+    // Инициализация опроса при первом открытии раздела
+    function initYoutubePoll() {
+      if (ytPollState.initialized) {
+        return;
+      }
+      ytPollState.initialized = true;
+
+      ytPollInputs().forEach(input => {
+        input.addEventListener('change', () => {
+          ytPollSyncChecked();
+          ytPollSetStatus('');
+        });
+      });
+
+      const form = document.getElementById('yt-poll-form');
+      if (form) {
+        form.addEventListener('submit', ytPollSubmit);
+      }
+
+      const showButton = document.getElementById('yt-poll-show');
+      const resultsBox = document.getElementById('yt-poll-results');
+      if (showButton && resultsBox) {
+        showButton.addEventListener('click', () => {
+          if (resultsBox.classList.contains('visible')) {
+            resultsBox.classList.remove('visible');
+            showButton.textContent = 'Показать результаты';
+          } else {
+            showButton.textContent = 'Скрыть результаты';
+            ytPollShowResults();
+          }
+        });
+      }
+
+      // Если с этого браузера уже голосовали — восстанавливаем выбор
+      let saved = null;
+      try {
+        saved = JSON.parse(localStorage.getItem(YT_POLL_STORAGE_KEY) || 'null');
+      } catch (error) {
+        saved = null;
+      }
+
+      if (saved && Array.isArray(saved.channels) && saved.channels.length) {
+        ytPollLock(saved.channels);
+        if (resultsBox) {
+          resultsBox.classList.add('visible');
+        }
+        ytPollLoadResults();
+        ytPollSetStatus('Вы уже голосовали с этого устройства — спасибо! Ниже результаты опроса.');
+      } else {
+        ytPollLoadResults();
+      }
+    }
+
+    // Стартуем после того, как объявлены все функции, включая опрос
     handleHash();
 
     const quotes = [
