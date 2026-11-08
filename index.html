@@ -1486,10 +1486,11 @@
     .btn-site { background-color: #475569; }
 
     .quote-box {
-      background: #FFFFFF;
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 35px 24px;
+      background: transparent;
+      border: none;
+      border-top: 1px solid var(--card-border);
+      border-radius: 0;
+      padding: 40px 20px 6px;
       text-align: center;
       margin-bottom: 40px;
       display: flex;
@@ -1498,33 +1499,36 @@
     }
 
     #quote-icon {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: #ffffff;
-      border: 1px solid var(--card-border);
-      color: #0E5A46;
-      font-size: 34px;
+      width: auto;
+      height: auto;
+      border: none;
+      background: none;
+      color: var(--accent);
+      font-size: 26px;
+      line-height: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 14px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      box-shadow: none;
     }
 
     #quote-text {
-      font-size: 1.15rem;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.3rem;
       font-style: italic;
-      color: #2B2621;
-      max-width: 650px;
-      line-height: 1.5;
-      margin-bottom: 8px;
+      color: var(--text-main);
+      max-width: 46ch;
+      line-height: 1.45;
+      margin-bottom: 12px;
     }
 
     #quote-author {
-      font-size: 0.95rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      color: #0E5A46;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-hover);
     }
 
     .page-view {
@@ -2259,6 +2263,77 @@
       text-align: center;
     }
 
+    /* ===== Страницы разделов: шапка и нижняя навигация ===== */
+    .page-hero {
+      padding: 30px 0 26px;
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 14px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .page-back:hover { color: var(--accent-hover); }
+
+    .page-hero h1 {
+      font-size: clamp(1.85rem, 4vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      max-width: 32ch;
+    }
+
+    .page-footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin: 36px 0 8px;
+      padding-top: 24px;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .btn-sm {
+      min-height: 42px;
+      padding: 10px 16px;
+      font-size: 0.9rem;
+    }
+
+    .buttons-tight { margin-bottom: 22px; }
+    .buttons-wide { margin-bottom: 30px; }
+
+    .info-card {
+      margin-bottom: 25px;
+      padding: 22px 24px;
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(27, 24, 21, 0.04);
+    }
+    .info-card-lead {
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+      color: var(--text-main);
+    }
+
+    .section-outro {
+      margin: 30px 0 18px;
+      text-align: center;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-hover);
+    }
+
     /* Адаптив */
     @media (max-width: 900px) {
       .nav-toggle { display: inline-flex; }
@@ -2393,7 +2468,7 @@
   <!-- Навигация -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="javascript:void(0)" onclick="switchPage('home')" aria-label="Дворжик — на главную">
+      <a class="brand" href="#home" aria-label="Дворжик — на главную">
         <span class="brand-mark" aria-hidden="true"><img src="images/logo-mark.png" width="40" height="40" alt="" /></span>
         <span class="brand-text">
           <strong>Дворжик</strong>
@@ -2475,36 +2550,36 @@
 
         <div class="start-grid">
           <article class="start-card">
-            <a class="start-cover" href="javascript:void(0)" onclick="switchPage('beginner')">
+            <a class="start-cover" href="#beginner">
               <img src="images/Learn.png" width="640" height="400" loading="lazy" decoding="async" alt="Учимся играть в шахматы" />
             </a>
             <div class="start-body">
               <span class="start-step">Шаг 1</span>
-              <h3><a href="javascript:void(0)" onclick="switchPage('beginner')">Учимся играть</a></h3>
+              <h3><a href="#beginner">Учимся играть</a></h3>
               <p>Короткие уроки для тех, кто только знакомится с доской. Есть отдельные видео для самых маленьких.</p>
               <button class="btn btn-secondary" onclick="switchPage('beginner')">Учимся играть →</button>
             </div>
           </article>
 
           <article class="start-card">
-            <a class="start-cover" href="javascript:void(0)" onclick="switchPage('playchess')">
+            <a class="start-cover" href="#playchess">
               <img src="images/bot.jpg" width="640" height="400" loading="lazy" decoding="async" alt="Побеждаем ботов" />
             </a>
             <div class="start-body">
               <span class="start-step">Шаг 2</span>
-              <h3><a href="javascript:void(0)" onclick="switchPage('playchess')">Побеждаем ботов</a></h3>
+              <h3><a href="#playchess">Побеждаем ботов</a></h3>
               <p>Пошагово: как запустить приложение, настроить первого бота и выиграть дебютную партию на телефоне или компьютере.</p>
               <button class="btn btn-secondary" onclick="switchPage('playchess')">Инструкция →</button>
             </div>
           </article>
 
           <article class="start-card">
-            <a class="start-cover start-cover--full" href="javascript:void(0)" onclick="switchPage('checkmate')">
+            <a class="start-cover start-cover--full" href="#checkmate">
               <img src="images/checkmate.png" width="640" height="640" loading="lazy" decoding="async" alt="Учимся ставить мат" />
             </a>
             <div class="start-body">
               <span class="start-step">Шаг 3</span>
-              <h3><a href="javascript:void(0)" onclick="switchPage('checkmate')">Учимся матовать</a></h3>
+              <h3><a href="#checkmate">Учимся матовать</a></h3>
               <p>Цель игры — мат. Ставим мат одинокому королю ферзём, ладьёй, двумя ладьями и слоном с конём.</p>
               <button class="btn btn-secondary" onclick="switchPage('checkmate')">Учимся матовать →</button>
             </div>
@@ -2531,42 +2606,42 @@
         </div>
 
         <div class="tiles">
-          <a class="tile" href="javascript:void(0)" onclick="switchPage('history')">
+          <a class="tile" href="#history">
             <span class="tile-icon" aria-hidden="true">♜</span>
             <span class="tile-body">
               <strong>История шахмат</strong>
               <span>1500 лет: главные вехи от истоков до наших дней</span>
             </span>
           </a>
-          <a class="tile" href="javascript:void(0)" onclick="switchPage('films')">
+          <a class="tile" href="#films">
             <span class="tile-icon" aria-hidden="true">🎬</span>
             <span class="tile-body">
               <strong>Фильмы и мультфильмы</strong>
               <span>10 фильмов и 10 мультфильмов о шахматах</span>
             </span>
           </a>
-          <a class="tile" href="javascript:void(0)" onclick="switchPage('youtube')">
+          <a class="tile" href="#youtube">
             <span class="tile-icon" aria-hidden="true">📺</span>
             <span class="tile-body">
               <strong>YouTube о шахматах</strong>
               <span>11 русскоязычных каналов и анонимный опрос</span>
             </span>
           </a>
-          <a class="tile" href="javascript:void(0)" onclick="switchPage('news')">
+          <a class="tile" href="#news">
             <span class="tile-icon" aria-hidden="true">🗞️</span>
             <span class="tile-body">
               <strong>Это интересно</strong>
               <span>Короткие шахматные новости недели</span>
             </span>
           </a>
-          <a class="tile" href="javascript:void(0)" onclick="switchPage('photo')">
+          <a class="tile" href="#photo">
             <span class="tile-icon" aria-hidden="true">📸</span>
             <span class="tile-body">
               <strong>Фотоархив</strong>
               <span>Турниры, сеансы и занятия в фотографиях</span>
             </span>
           </a>
-          <a class="tile" href="javascript:void(0)" onclick="switchPage('parents')">
+          <a class="tile" href="#parents">
             <span class="tile-icon" aria-hidden="true">👨‍👩‍👧</span>
             <span class="tile-body">
               <strong>Для родителей</strong>
@@ -2627,9 +2702,10 @@
     <!-- 2. ПРАВИЛА ИГРЫ (BEGINNER)                              -->
     <!-- ======================================================== -->
     <div id="page-beginner" class="page-view">
-      <div class="top-title-sec">
+      <header class="page-hero">
+        <a class="page-back" href="#home">← Все разделы</a>
         <h1>Правила игры в шахматы</h1>
-      </div>
+      </header>
 
       <section class="section-block">
         <div class="section-img-wrap">
@@ -2700,20 +2776,20 @@
         </div>
       </section>
 
-      <div style="text-align: center; margin: 30px 0;">
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
-          ← Назад
-        </button>
-      </div>
+      <nav class="page-footer-nav" aria-label="Навигация по разделу">
+        <button class="btn btn-ghost btn-sm" type="button" onclick="scrollToTop()">↑ Наверх</button>
+        <a class="btn btn-secondary btn-sm" href="#home">← Все разделы</a>
+      </nav>
     </div>
 
     <!-- ======================================================== -->
     <!-- 3. ПОБЕЖДАЕМ БОТОВ (PLAYCHESS)                           -->
     <!-- ======================================================== -->
     <div id="page-playchess" class="page-view">
-      <div class="top-title-sec">
+      <header class="page-hero">
+        <a class="page-back" href="#home">← Все разделы</a>
         <h1>Как сыграть в шахматы и победить ботов</h1>
-      </div>
+      </header>
 
       <!-- Lichess.org -->
       <h2 class="platform-heading">♞ Побеждаем ботов на Lichess.org</h2>
@@ -2724,7 +2800,7 @@
         <p>Для сохранения прогресса и рейтинга создайте аккаунт. Первые партии можно сыграть и без регистрации.</p>
       </div>
 
-      <div class="play-buttons-group" style="margin-bottom: 22px;">
+      <div class="play-buttons-group buttons-tight">
         <a href="https://lichess.org/app" target="_blank" rel="noopener noreferrer" class="play-btn btn-lichess">
           📱 Скачать приложение Lichess
         </a>
@@ -2781,8 +2857,8 @@
       <h2 class="platform-heading">♟️ Побеждаем ботов на Chess.com</h2>
       <p class="platform-subtitle">Пошаговая инструкция для приложения Chess.com. Нажмите на скриншот, чтобы рассмотреть его крупнее.</p>
 
-      <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; margin-bottom: 25px;">
-        <p style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 10px;">
+      <div class="info-card">
+        <p class="info-card-lead">
           <strong>Установите приложение Chess.com на смартфон или откройте сайт:</strong>
         </p>
         <div class="play-buttons-group">
@@ -2839,21 +2915,21 @@
         </div>
       </div>
 
-      <div style="text-align: center; margin: 30px 0;">
-        <h3 style="color: var(--accent); margin-bottom: 16px;">Удачи — у вас всё получится! 🏆</h3>
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
-          ← Назад
-        </button>
-      </div>
+      <p class="section-outro">Удачи — у вас всё получится! 🏆</p>
+      <nav class="page-footer-nav" aria-label="Навигация по разделу">
+        <button class="btn btn-ghost btn-sm" type="button" onclick="scrollToTop()">↑ Наверх</button>
+        <a class="btn btn-secondary btn-sm" href="#home">← Все разделы</a>
+      </nav>
     </div>
 
     <!-- ======================================================== -->
     <!-- 4. СТАВИМ МАТ (CHECKMATE)                                -->
     <!-- ======================================================== -->
     <div id="page-checkmate" class="page-view">
-      <div class="top-title-sec">
+      <header class="page-hero">
+        <a class="page-back" href="#home">← Все разделы</a>
         <h1>Учимся ставить мат!</h1>
-      </div>
+      </header>
 
       <!-- 1. Мат двумя ладьями -->
       <section class="section-block">
@@ -2960,20 +3036,20 @@
         </div>
       </section>
 
-      <div style="text-align: center; margin: 30px 0;">
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
-          ← Назад
-        </button>
-      </div>
+      <nav class="page-footer-nav" aria-label="Навигация по разделу">
+        <button class="btn btn-ghost btn-sm" type="button" onclick="scrollToTop()">↑ Наверх</button>
+        <a class="btn btn-secondary btn-sm" href="#home">← Все разделы</a>
+      </nav>
     </div>
 
     <!-- ======================================================== -->
     <!-- 5. ИСТОРИЯ ШАХМАТ (HISTORY)                              -->
     <!-- ======================================================== -->
     <div id="page-history" class="page-view">
-      <div class="top-title-sec">
+      <header class="page-hero">
+        <a class="page-back" href="#home">← Все разделы</a>
         <h1>История шахмат</h1>
-      </div>
+      </header>
 
       <div class="yt-intro">
         <p>История шахмат насчитывает около 1500 лет: от настольной игры индийской знати до миллионов онлайн-партий каждый день. Правила, фигуры и даже сама роль игры в обществе менялись десятки раз.</p>
@@ -3030,24 +3106,24 @@
         </div>
       </div>
 
-      <div class="play-buttons-group" style="margin-bottom: 30px;">
+      <div class="play-buttons-group buttons-wide">
         <a class="play-btn btn-telegram" href="https://t.me/chessgames/13713" target="_blank" rel="noopener noreferrer">✈️ Источник: @chessgames</a>
       </div>
 
-      <div style="text-align: center; margin: 30px 0;">
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
-          ← Назад
-        </button>
-      </div>
+      <nav class="page-footer-nav" aria-label="Навигация по разделу">
+        <button class="btn btn-ghost btn-sm" type="button" onclick="scrollToTop()">↑ Наверх</button>
+        <a class="btn btn-secondary btn-sm" href="#home">← Все разделы</a>
+      </nav>
     </div>
 
     <!-- ======================================================== -->
     <!-- 6. ФИЛЬМЫ И МУЛЬТФИЛЬМЫ О ШАХМАТАХ (FILMS)               -->
     <!-- ======================================================== -->
     <div id="page-films" class="page-view">
-      <div class="top-title-sec">
+      <header class="page-hero">
+        <a class="page-back" href="#home">← Все разделы</a>
         <h1>Фильмы и мультфильмы о шахматах</h1>
-      </div>
+      </header>
 
       <div class="films-intro">
         <p>Шахматы — это не только спорт, но и огромный мир историй: о гениях и аутсайдерах, о победах и поражениях, о том, как одна партия может изменить жизнь.</p>
@@ -3398,20 +3474,20 @@
         </article>
       </div>
 
-      <div style="text-align: center; margin: 30px 0;">
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
-          ← Назад
-        </button>
-      </div>
+      <nav class="page-footer-nav" aria-label="Навигация по разделу">
+        <button class="btn btn-ghost btn-sm" type="button" onclick="scrollToTop()">↑ Наверх</button>
+        <a class="btn btn-secondary btn-sm" href="#home">← Все разделы</a>
+      </nav>
     </div>
 
     <!-- ======================================================== -->
     <!-- 7. YOUTUBE О ШАХМАТАХ (YOUTUBE)                          -->
     <!-- ======================================================== -->
     <div id="page-youtube" class="page-view">
-      <div class="top-title-sec">
+      <header class="page-hero">
+        <a class="page-back" href="#home">← Все разделы</a>
         <h1>YouTube о шахматах</h1>
-      </div>
+      </header>
 
       <div class="yt-intro">
         <p>Видео — самый быстрый способ подружиться с шахматами: десять минут урока, и вечером вы уже понимаете, почему проиграли партию.</p>
@@ -3810,11 +3886,10 @@
         </div>
       </div>
 
-      <div style="text-align: center; margin: 30px 0;">
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
-          ← Назад
-        </button>
-      </div>
+      <nav class="page-footer-nav" aria-label="Навигация по разделу">
+        <button class="btn btn-ghost btn-sm" type="button" onclick="scrollToTop()">↑ Наверх</button>
+        <a class="btn btn-secondary btn-sm" href="#home">← Все разделы</a>
+      </nav>
     </div>
 
     <!-- ======================================================== -->
@@ -3852,9 +3927,10 @@
          Дата в заголовок не дублируется — она уже стоит в плашке выше.
     -->
     <div id="page-news" class="page-view">
-      <div class="top-title-sec">
+      <header class="page-hero">
+        <a class="page-back" href="#home">← Все разделы</a>
         <h1>Это интересно</h1>
-      </div>
+      </header>
 
       <div class="news-intro">
         <p>Короткие новости из мира шахмат: рекорды, рейтинги, изменения правил и события, о которых стоит знать.</p>
@@ -3927,20 +4003,20 @@
         </article>
       </div>
 
-      <div style="text-align: center; margin: 30px 0;">
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
-          ← Назад
-        </button>
-      </div>
+      <nav class="page-footer-nav" aria-label="Навигация по разделу">
+        <button class="btn btn-ghost btn-sm" type="button" onclick="scrollToTop()">↑ Наверх</button>
+        <a class="btn btn-secondary btn-sm" href="#home">← Все разделы</a>
+      </nav>
     </div>
 
     <!-- ======================================================== -->
     <!-- 9. ФОТОАРХИВ (CHESSPHOTO)                                -->
     <!-- ======================================================== -->
     <div id="page-photo" class="page-view">
-      <div class="top-title-sec">
+      <header class="page-hero">
+        <a class="page-back" href="#home">← Все разделы</a>
         <h1>Фотоальбомы соревнований и занятий</h1>
-      </div>
+      </header>
 
       <div class="photo-grid">
         <!-- Альбом 1 -->
@@ -4009,15 +4085,21 @@
           </div>
         </a>
       </div>
+
+      <nav class="page-footer-nav" aria-label="Навигация по разделу">
+        <button class="btn btn-ghost btn-sm" type="button" onclick="scrollToTop()">↑ Наверх</button>
+        <a class="btn btn-secondary btn-sm" href="#home">← Все разделы</a>
+      </nav>
     </div>
 
     <!-- ======================================================== -->
     <!-- 10. ИНФОРМАЦИЯ ДЛЯ РОДИТЕЛЕЙ (PARENTS)                   -->
     <!-- ======================================================== -->
     <div id="page-parents" class="page-view">
-      <div class="top-title-sec">
+      <header class="page-hero">
+        <a class="page-back" href="#home">← Все разделы</a>
         <h1>Гаджеты и шахматы: как превратить экранное время в пользу для ребенка</h1>
-      </div>
+      </header>
 
       <section class="section-block">
         <div class="section-img-wrap">
@@ -4087,11 +4169,10 @@
         </div>
       </section>
 
-      <div style="text-align: center; margin: 30px 0;">
-        <button onclick="goBack()" class="play-btn btn-lichess" style="cursor: pointer; border: 1px solid #D8CFC0;">
-          ← Назад
-        </button>
-      </div>
+      <nav class="page-footer-nav" aria-label="Навигация по разделу">
+        <button class="btn btn-ghost btn-sm" type="button" onclick="scrollToTop()">↑ Наверх</button>
+        <a class="btn btn-secondary btn-sm" href="#home">← Все разделы</a>
+      </nav>
     </div>
 
     <!-- Цитата дня -->
@@ -4285,9 +4366,9 @@
       if (yearEl) yearEl.textContent = String(new Date().getFullYear());
     })();
 
-    // Внутренняя кнопка «Назад» — возвращает на предыдущую внутреннюю страницу
-    function goBack() {
-      history.back();
+    // Кнопка «Наверх» в конце раздела
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // При первой загрузке открываем раздел из хэша (прямая ссылка) или главную.
