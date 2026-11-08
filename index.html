@@ -798,9 +798,15 @@
       font-weight: 600;
     }
 
+    /* Квадратные обложки на главной: широкий кадр обрезаем по центру */
+    .section-img-wrap.is-square img {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
     /* Наглядная «обложка» раздела для главной страницы */
     .yt-teaser-art {
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 1 / 1;
       background: radial-gradient(circle at 50% 40%, #1e293b 0%, #0f172a 70%);
       display: flex;
       flex-direction: column;
@@ -1433,7 +1439,7 @@
 
       <!-- Фильмы о шахматах -->
       <section class="section-block">
-        <div class="section-img-wrap">
+        <div class="section-img-wrap is-square">
           <a href="javascript:void(0)" onclick="switchPage('films')">
             <img src="https://img.youtube.com/vi/Lso2O3o9nwU/maxresdefault.jpg" alt="Фильмы и мультфильмы о шахматах" loading="lazy" />
           </a>
